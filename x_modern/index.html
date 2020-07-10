@@ -1,0 +1,642 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>模型评估方法和性能指标</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="MOLU" class="md-header-nav__button md-logo" aria-label="MOLU">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            MOLU
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              模型评估方法和性能指标
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo" aria-label="MOLU">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="机器与深度学习" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        深度
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="深度" class="md-nav__link md-nav__link--active">
+      深度
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    通过本文，你将学到：
+  </a>
+  
+    <nav class="md-nav" aria-label="通过本文，你将学到：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    泛化性能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    模型评估的方法：
+  </a>
+  
+    <nav class="md-nav" aria-label="模型评估的方法：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-" class="md-nav__link">
+    交叉验证——k-折交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    综述
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    模型性能能指标：
+  </a>
+  
+    <nav class="md-nav" aria-label="模型性能能指标：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    混淆矩阵
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="问题分析" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        问题分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="问题" class="md-nav__link">
+      问题
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      高级算法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="高级算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_nerve2." title="算法" class="md-nav__link">
+      算法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    通过本文，你将学到：
+  </a>
+  
+    <nav class="md-nav" aria-label="通过本文，你将学到：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    泛化性能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    模型评估的方法：
+  </a>
+  
+    <nav class="md-nav" aria-label="模型评估的方法：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-" class="md-nav__link">
+    交叉验证——k-折交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    综述
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    模型性能能指标：
+  </a>
+  
+    <nav class="md-nav" aria-label="模型性能能指标：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    混淆矩阵
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>深度</h1>
+                
+                <h2 id="_1">通过本文，你将学到：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>泛化能力</p>
+<p>留出法</p>
+<p>交叉验证法</p>
+<p>自助法</p>
+<p><strong>正样本</strong></p>
+<p><strong>负样本</strong></p>
+<p>混淆矩阵</p>
+<p>F1-score</p>
+<p>ROC曲线</p>
+<p>由于偏差过大导致的模型欠拟合以及方差过大导致的过拟合的存在，为了解决这两个问题，我们需要一整套方法及评价指标。其中评估方法用于评估模型的泛化能力，而性能指标则用于评价单个模型性能的高低。</p>
+<h4 id="_2">泛化性能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>模型的泛化性能是由学习算法的能力，数据的充分性及学习任务本身的难度所决定的，良好的泛化性能代表了较小的偏差，即算法的期望预测结果与真实结果的偏离程度，同时还要有较小的方差，即随训练样本的变化算法本身的学习能力变化不大。</p>
+<h2 id="_3">模型评估的方法：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>留出法：</strong></p>
+<p>留出法是直接将数据集划分为两个互斥的集合，其中一个集合作为训练集，另一个作为测试集。另外需要注意的是在划分的时候要尽可能保证数据分布的一致性，避免因数据划分过程引入额外的偏差而对最终结果产生影响。 而当数据明显的分为有限类时，可以采用分层抽样方式选择测试数据，保证数据分布比例的平衡。</p>
+<p>具体方法如下：
+假设我们有数据集N,其中n个正样本，N-n个负样本，从正负样本中分别抽取比例为p的样本作为训练集的正负样本，其中训练集的正样本为n*p,负样本为(N-n)<em>p，最后把剩下的样本n</em>(1-p)作为测试集的正样本，(N-n)<em>(1-p)作为测试集的负样本。同时，**在数据集的划分比例差异不能太过悬殊*</em>（一般在2:1到4:1之间），p太大会导致其训练结果和用整个数据集N训练的模型相近，p太小会导致模型的结果不稳定，即于整体样本N的训练结果差异过大。</p>
+<p>样本的不同划分方式会导致模型评估的相应结果也会有差别，例如如果我们把正样本进行了排序，那么在排序后的样本中采样与未排序的样本采样得到的结果会有一些不同，因此通常我们都会进行多次随机划分、重复进行实验评估后取平均值作为留出法的评估结果。</p>
+<h5 id="k-">交叉验证——k-折交叉验证<a class="headerlink" href="#k-" title="Permanent link">&para;</a></h5>
+<p>k-折交叉验证（K-fold Cross Validation）是把全集N分成K个相同大小的子集，遍历这k个集合，把当前被抽出的这个集合作为测试集，剩下的k-1个集合作为训练集，最终会得到k个模型，根据模型的结果统计，可以得到集合中测试错误的结果数量m。如果全集N的元素个数是n的话，可以得到该模型的错误率是E=(m1+m2+.....+mk)/n.</p>
+<p>为了提高模型的精确度，可以将k-fold交叉验证的上述步骤重复t次，每一次都是随机划分全集N。在t次测试中，会得到t个模型的错误率E1,...,Et，最终的错误率为e=(E1+E2+...+Et)/t。</p>
+<p>另外：当k=2时，称为2折交叉验证，k=n时，称为n着折交叉验证。</p>
+<p><strong>自助法：</strong></p>
+<p>自助法（BootstrapMethod）在统计学上是一种有放回的抽样方法，不同于留出法和交叉验证法无放回的抽样方式。在做数据集分类时，如果我们对整体样本n进行n次有放回抽样得到n个样本，然后把抽到的n个样本作为训练集，其中会出现部分样本重复，同时有一部分样本一次也没被抽到，这部分作为测试集。</p>
+<p>在有放回的n次抽样中，每次每个样本被抽中的概率为1/n，反过来，未被抽中的概率为1-1/n，进行n次抽样后，这个样本不被抽中的概率为1-1/n的n次方，<strong>当n的取值趋近于无穷大时，样本未被抽中的概率为e的负一次方，约等于0.368，因此可以认为测试集的样本大概会是整体样本的36.8%。</strong></p>
+<h4 id="_4">综述<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>根据以上不同方法的特点，在样本量较多的情况下一般选择留出法或交叉验证法来对数据进行分类，在样本较少的情况下采用自助法</p>
+<h2 id="_5"><strong>模型性能能指标：</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h4 id="_6">混淆矩阵<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>混淆矩阵也称误差矩阵，是表示精度评价的一种标准格式，用n行n列的矩阵形式来表示。在机器学习的模型评价中用到的很多指标都来源于对混淆矩阵结果的运算。</p>
+<p>下图是常见的二分类问题的混淆矩阵：
+<img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824170332.png" /></p>
+<p>其中列表示模型预测值，行表示数据真实值。</p>
+<p>根据图中的交叉结果会出现以下4种状况：（0,1，代表假真）</p>
+<ul>
+<li>真实值为0，预测值也为0，用字母**TP**(True Positive)表示真正类数据。</li>
+<li>真实值为0，预测值为1，用字母**FN(**False Negative)表示假反类数据。</li>
+<li>真实值为1，预测值也为1，用字母**TN**(True Negative)表示真反类数据。</li>
+<li>真实值为1，预测值为0，用字母**FP**(False Positive)表示假正类数据。</li>
+</ul>
+<p>其中，True、False表示预测结果正确与否，Positive、Negative表示预测倾向为正类或者反类。</p>
+<p>准确率：</p>
+<p>整体分类结果的准确率accuracy= (TP+TN) / (TP+FN+TN+FP)</p>
+<p>预测为正类的准确率，即在被预测为正类中真正是正类样本比例，又称精确率或查准率 precision=TP/(TP+FP)</p>
+<p>召回率:</p>
+<p>真实为正类的准确率，即在所有正类样本中被正确识别的比例，又称召回率或查全率TPR/recall=TP/(TP+FN)</p>
+<p>F1-score是综合precision和recall两个指标的判断指标，
+F1-Score=2/(1/precision+1/recall)=2*precision*recall/(precision+recall),</p>
+<p><strong>F1-Score的值在0到1之间，越大越好。</strong></p>
+<p>真实FP为负类预测错误率，即负类被预测为正类占所有真实负类的比例FPR=FP/(FP+TN)</p>
+<p>召回率：TPR=TP/(TP+FN)为纵坐标</p>
+<p>错误率：FPR=FP/(FP+TN)为横坐标</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824170353.png" /></p>
+<p>实际上ROC曲线是对一系列的TPR和FPR的值所构成点的连线绘制，而其中每一个点的都代表一个概率分界值，即把大于分界值得部分分为正类，小于分界值的分为负类。对于模型而言，我们计算出每个样本属于正类的概率，然后对概率值按顺序排序，计算每个概率作为分界点的TPR和FPR，然后绘制曲线，就构成了模型的ROC曲线。</p>
+<p>在样本有限的情况下，ROC曲线通常不是一条平滑的曲线，而是锯齿形的，数据较多的情况下，曲线会接近平滑。同时我们也可以通过计算 AUC(Area Under roc Cure)来做为评价指标。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="主页" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                主页
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../new_test/" title="问题" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                问题
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

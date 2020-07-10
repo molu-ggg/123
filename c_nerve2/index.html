@@ -1,0 +1,541 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>神经网络-下</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#m-p" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="MOLU" class="md-header-nav__button md-logo" aria-label="MOLU">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            MOLU
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              神经网络-下
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo" aria-label="MOLU">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="机器与深度学习" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../x_modern/" title="深度" class="md-nav__link">
+      深度
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="问题分析" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        问题分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="问题" class="md-nav__link">
+      问题
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      高级算法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="高级算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_nerve2." title="算法" class="md-nav__link">
+      算法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#m-p" class="md-nav__link">
+    M-P神经元和感知机回顾
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    神经网络以及算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>神经网络-下</h1>
+                
+                <p><strong><em>图片显示不出来可刷新</em></strong></p>
+<p>​    </p>
+<!--more-->
+
+<h2 id="m-p">M-P神经元和感知机回顾<a class="headerlink" href="#m-p" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162530.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162446.png" /></p>
+<p>其中θ为我们之前提到的神经元的激活阈值，函数f(·)也被称为是激活函数。如上图所示，函数f(⋅)可以用一个阶跃方程表示，大于阈值激活；否则则抑制。但是这样有点太粗暴，因为阶跃函数不光滑，不连续，不可导，因此我们更常用的方法是用sigmoid函数来表示函数函数f(⋅)。</p>
+<p>​       感知机（perceptron）是由两层神经元组成的结构，输入层用于接受外界输入信号，输出层（也被称为是感知机的功能层）就是M-P神经元。下图表示了一个输入层具有三个神经元（分别表示为x0x0、x1x1、x2x2）的感知机结构：</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162550.png" /></p>
+<p>根据上图不难理解，感知机模型可以由如下公式表示：
+$$
+y=f(wx+b)
+$$
+​   其中，w为感知机输入层到输出层连接的权重，b表示输出层的偏置。事实上，感知机是一种判别式的线性分类模型，可以解决与、或、非这样的简单的线性可分（linearly separable）问题。</p>
+<p>参考：(<a href="http://www.cnblogs.com/maybe2030/p/5597716.html">http://www.cnblogs.com/maybe2030/p/5597716.html</a></p>
+<h2 id="_1">神经网络以及算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>说到神经网络，大家看到这个图应该不陌生：</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162621.png" /></p>
+<p>这是典型的三层神经网络的基本构成，Layer L1是输入层，Layer L2是隐含层，Layer L3是隐含层，</p>
+<p>我们现在手里有一堆数据{x1,x2,x3,...,xn},输出也是一堆数据{y1,y2,y3,...,yn},现在要他们在隐含层做某种变换，让你把数据灌进去后得到你期望的输出。如果你希望你的输出和原始输入一样，那么就是最常见的自编码模型（Auto-Encoder）。可能有人会问，为什么要输入输出都一样呢？有什么用啊？其实应用挺广的，在图像识别，文本分类等等都会用到</p>
+<p>​       本文直接举一个例子，带入数值演示反向传播法的过程（注：本文假设你已经懂得基本的神经网络构成，如果完全不懂，可以参考Poll写的笔记：])）</p>
+<p>假设，你有这样一个网络层：</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162644.png" /></p>
+<p>第一层是输入层，包含两个神经元i1，i2，和截距项b1；第二层是隐含层，包含两个神经元h1,h2和截距项b2，第三层是输出o1,o2，每条线上标的wi是层与层之间连接的权重，激活函数我们默认为sigmoid函数。</p>
+<p>现在对他们赋上初值，如下图：</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162724.png" /></p>
+<p>其中，输入数据  i1=0.05，i2=0.10;</p>
+<p>输出数据 o1=0.01,o2=0.99;</p>
+<p>初始权重  w1=0.15,w2=0.20,w3=0.25,w4=0.30;</p>
+<p>w5=0.40,w6=0.45,w7=0.50,w8=0.55</p>
+<p>目标：给出输入数据i1,i2(0.05和0.10)，使输出尽可能与原始输出o1,o2(0.01和0.99)接近。</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162742.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162804.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824162836.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163047.png" /></p>
+<p>现在我们来分别计算每个式子的值：</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163115.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163134.png" /></p>
+<p><img alt="img" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630153103187-515052589.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163635.png" /></p>
+<p><img alt="img" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630153614374-1624035276.png" /></p>
+<p>（其中，<img alt="img" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630153700093-743859667.png" />是学习速率，这里我们取0.5）</p>
+<p>同理，可更新w6,w7,w8:</p>
+<p><img alt="1566635906687" src="../../../../../AppData/Roaming/Typora/typora-user-images/1566635906687.png" /></p>
+<p>3.隐含层----&gt;隐含层的权值更新：</p>
+<p>方法其实与上面说的差不多，但是有个地方需要变一下，在上文计算总误差对w5的偏导时，是从out(o1)----&gt;net(o1)----&gt;w5,但是在隐含层之间的权值更新时，是out(h1)----&gt;net(h1)----&gt;w1,而out(h1)会接受E(o1)和E(o2)两个地方传来的误差，所以这个地方两个都要计算。</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163850.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163916.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824163942.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824164021.png" /></p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824164103.png" /></p>
+<p>同理，额可更新w2,w3,w4的权值：</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824164120.png" /></p>
+<p>这样误差反向传播法就完成了，最后我们再把更新的权值重新计算，不停地迭代，在这个例子中第一次迭代之后，总误差E(total)由0.298371109下降至0.291027924。迭代10000次后，总误差为0.000035085，输出为<a href="原输入为[0.01,0.99]">0.015912196,0.984065734</a>,证明效果还是不错的。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.10</span><span class="p">])</span><span class="c1">#数值</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">]])</span><span class="c1">#权重</span>
+<span class="n">y1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="mf">0.45</span><span class="p">,</span><span class="mf">0.55</span><span class="p">]])</span><span class="c1">#第二层权重</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.99</span><span class="p">])</span><span class="c1">#期望输出</span>
+
+<span class="n">b</span><span class="o">=</span><span class="mf">0.35</span>
+<span class="n">b1</span><span class="o">=</span><span class="mf">0.6</span>
+<span class="n">q</span><span class="o">=</span><span class="mf">0.5</span><span class="c1">#学习率</span>
+
+<span class="k">def</span> <span class="nf">neth</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>    <span class="c1">#将权重与数值相乘</span>
+<span class="c1">##np.dot()   一维矩阵相乘得到內积，多维就是离散课上见得方法，扫射。</span>
+
+<span class="k">def</span> <span class="nf">outh</span><span class="p">():</span>
+
+    <span class="n">outh</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+
+        <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">neth</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="c1"># sigmoid函数</span>
+
+        <span class="n">outh</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="c1">##</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">outh</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">neto</span><span class="p">():</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">outh</span><span class="p">(),</span><span class="n">y1</span><span class="p">)</span><span class="o">+</span><span class="n">b1</span>
+
+<span class="k">def</span> <span class="nf">outo</span><span class="p">():</span>
+
+    <span class="n">outo</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+
+        <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">neto</span><span class="p">()[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">outo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">outo</span><span class="p">)</span>
+<span class="n">o</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">O</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">result</span><span class="o">=</span><span class="p">[]</span>
+<span class="c1">#梯度下降</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">o</span><span class="o">=</span><span class="n">o</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">dif</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">dif1</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+<span class="c1">#对w5-w8进行求导</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+            <span class="n">dif1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">outo</span><span class="p">()[</span><span class="n">j</span><span class="p">]))</span><span class="o">*</span><span class="p">(</span><span class="n">outo</span><span class="p">()[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">outo</span><span class="p">()[</span><span class="n">j</span><span class="p">]))</span><span class="o">*</span><span class="p">(</span><span class="n">outh</span><span class="p">()[</span><span class="n">i</span><span class="p">])</span><span class="c1">#公式</span>
+            <span class="n">y1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">y1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">q</span><span class="o">*</span><span class="n">dif1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="c1">#对w1-w4进行求导</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">outo</span><span class="p">())):</span>
+            <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">outo</span><span class="p">()[</span><span class="n">j</span><span class="p">]))</span><span class="o">*</span><span class="n">outo</span><span class="p">()[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">outo</span><span class="p">()[</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="n">y1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="c1">#公式</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+            <span class="n">dif</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">outh</span><span class="p">()[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">outh</span><span class="p">()[</span><span class="n">k</span><span class="p">]))</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+      <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">q</span><span class="o">*</span><span class="n">dif</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+  <span class="n">e</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">r</span><span class="o">-</span><span class="n">outo</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#总误差</span>
+  <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+  <span class="n">O</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">e</span><span class="o">&lt;</span><span class="mf">0.00001</span><span class="p">:</span>
+    <span class="k">break</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">O</span><span class="p">,</span><span class="n">result</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outo</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> 
+</code></pre></div>
+
+<h2 id="_2">小结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>1.什么是感知器，神经元模型</p>
+<p>2.动量因子又是什么？</p>
+<p>3.B-P神经元反向传播过程，注意w5,w1不同</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
