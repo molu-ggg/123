@@ -1,0 +1,792 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>cnn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_2" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="MOLU" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                MOLU
+              </span>
+              <span class="md-header-nav__topic">
+                CNN
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="机器与深度学习" class="md-tabs__link md-tabs__link--active">
+          机器与深度学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../new_error/" title="问题与分析" class="md-tabs__link">
+          问题与分析
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../c视频经典算法/" title="经典算法" class="md-tabs__link">
+          经典算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../d_GAN/" title="高级算法" class="md-tabs__link">
+          高级算法
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        CNN
+      </label>
+    
+    <a href="./" title="CNN" class="md-nav__link md-nav__link--active">
+      CNN
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="输入层和卷积层，特征图" class="md-nav__link">
+    输入层和卷积层，特征图
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_百度技术认证/" title="百度技术认证" class="md-nav__link">
+      百度技术认证
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题与分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        问题与分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_error/" title="方差,偏差，噪声" class="md-nav__link">
+      方差,偏差，噪声
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_modern/" title="模型评估方法和性能指标" class="md-nav__link">
+      模型评估方法和性能指标
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_sigmoid/" title="激活函数与梯度消失，梯度爆炸" class="md-nav__link">
+      激活函数与梯度消失，梯度爆炸
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="验证集与测试集" class="md-nav__link">
+      验证集与测试集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_transfer/" title="欠拟合，过拟合，正则化" class="md-nav__link">
+      欠拟合，过拟合，正则化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      经典算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        经典算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c视频经典算法/" title="蓝桥杯基础" class="md-nav__link">
+      蓝桥杯基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c蓝桥杯练习题/" title="蓝桥杯题" class="md-nav__link">
+      蓝桥杯题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c背包问题/" title="背包问题" class="md-nav__link">
+      背包问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_leetcode/" title="leetcode" class="md-nav__link">
+      leetcode
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      高级算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAN/" title="GAN" class="md-nav__link">
+      GAN
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="输入层和卷积层，特征图" class="md-nav__link">
+    输入层和卷积层，特征图
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">什么是卷积神经网络<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>卷积神经网络（Convolutional Neural Network，CNN）是一种前馈神经网络，它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。 它包括卷积层(convolutional layer)和池化层(pooling layer)。</p>
+<p>对比：卷积神经网络、全连接神经网络</p>
+<p><img alt="" src="https://moluggg.oss-cn-qingdao.aliyuncs.com/img/20190824113757.png" /></p>
+<p>左图：全连接神经网络（平面），组成：输入层、激活函数、全连接层</p>
+<p>右图：卷积神经网络（立体），组成：输入层、卷积层、激活函数、池化层、全连接层</p>
+<p>在卷积神经网络中有一个重要的概念：<strong>深度(这个概念还不是很明白)</strong></p>
+<p>现在我们先了解结构</p>
+<h4 id="_3">输入层和卷积层，特征图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>输入层：这里跟全连接神经网络，区别在于输入的是一照片，可以理解为三个矩阵</p>
+<p>卷积：（filter）原始的输入上进行特征的提取。特征提取简言之就是，在原始输入上一个小区域一个小区域进行特征的提取，稍后细致讲解卷积的计算过程。如果你学过神经网络的话，这相当于那个参数w形成的矩阵。</p>
+<h2 id="_4">特征图：卷积之后形成的图<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggeAHfAlAAA8kp6ixVw852.png" /></p>
+<h6 id="32323rgbfilter55311">上图中，左方块是输入层，尺寸为32*32的3(rgb三种颜色)通道图像。右边的小方块是filter，尺寸为5*5，<strong>深度为3</strong>。卷积之后形成深度为1的特征图（为什么为1后面过程会讲）<a class="headerlink" href="#32323rgbfilter55311" title="Permanent link">&para;</a></h6>
+<p>这里的步长为1 的话就变成了 28 *   28 *3</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggeAF2KAAACFvnN48lU184.png" /></p>
+<p>上图中，展示出一般使用多个filter分别进行卷积，最终得到多个特征图。（这多个filter提取的特征不一样）</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggeABvFBAAB6mlf9lJs981.png" /></p>
+<p>上图使用了6个filter分别卷积进行特征提取，最终得到6个特征图。将这6层叠在一起就得到了卷积层输出的结果。</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggiAC8-aAACAg54bzYo475.png" /></p>
+<p>卷积不仅限于对原始输入的卷积。蓝色方块是在原始输入上进行卷积操作，使用了6个filter得到了6个提取特征图。绿色方块还能对蓝色方块进行卷积操作，使用了10个filter得到了10个特征图。每一个filter的深度必须与上一层输入的深度相等。（深度：相当于图中的厚度）</p>
+<h3 id="_5">直观理解卷积<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggiATHJ7AAEstloH4_M280.png" /></p>
+<p>以上图为例：</p>
+<p>第一次卷积可以提取出低层次的特征。</p>
+<p>第二次卷积可以提取出中层次的特征。</p>
+<p>第三次卷积可以提取出高层次的特征。</p>
+<p>特征是不断进行提取和压缩的，最终能得到比较高层次特征，简言之就是对原式特征一步又一步的浓缩，最终得到的特征更可靠。利用最后一层特征可以做各种任务：比如分类、回归等。</p>
+<h3 id="_6">卷积计算流程：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggiAVJYtAAEv0s5MlhM898.png" /></p>
+<p>左区域的三个大矩阵是原式图像的输入，RGB三个通道用三个矩阵表示，大小为7*7*3。</p>
+<p>此图只是一张照片2个卷积层（红色，粉色的分别三个矩阵代表两个卷积层）的过程图</p>
+<p>Filter W0表示1个filter助手，尺寸为3*3，深度为3（三个矩阵）；Filter W1也表示1个filter助手。因为卷积中我们用了2个filter，因此该卷积层结果的输出深度为2（绿色矩阵有2个，一个绿矩阵是三个蓝红矩阵乘积之和）。</p>
+<p>Bias b0是Filter W0的偏置项，Bias b1是Filter W1的偏置项。</p>
+<p>OutPut是卷积后的输出，尺寸为3*3，深度为2。（一个卷积层的三个矩阵卷积输入层的三矩阵之后形成一个矩阵，也就是特征图）</p>
+<h3 id="_7">计算过程：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>还是看上面的大图</p>
+<p>输入是固定的，filter是指定的，因此计算就是如何得到绿色矩阵。</p>
+<p>第一步，在输入矩阵上有一个和filter相同尺寸的滑窗，然后输入矩阵的在滑窗里的部分与filter矩阵对应位置相乘：</p>
+<p>即<img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggiAdu98AAA3JRRQkqA064.png" />与<img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggiAHbB9AAA0zhn7kn0788.png" />对应位置相乘后求和，结果为0</p>
+<p>即<img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggmAHKC1AAA8j3RmKH0221.png" />与<img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggmADjKaAABBXoHbvrU697.png" />对应位置相乘后求和，结果为2</p>
+<p>即<img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggmAB4JyAAA-tzT0MI0917.png" />与<img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggmAVgckAABFX3cm22o439.png" />对应位置相乘后求和，结果为0</p>
+<p>第二步，将3个矩阵产生的结果求和，并加上偏置项，即0+2+0+1=3，因此就得到了输出矩阵的左上角的3：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggqAMAUIAAAur4t_qLQ857.png" /></p>
+<p>第三步，让每一个filter都执行这样的操作，变可得到第一个元素：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggqAbb1DAABnl3M4AWY167.png" /></p>
+<p>第四步，滑动窗口2个步长（步长自己设定，这里设定两个），重复之前步骤进行计算</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggqAUl7yAACokZwIXaM214.png" /></p>
+<p>第五步，最终可以得到，在2个filter下，卷积后生成的深度为2的输出结果：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggqAPt54AAAfaKfUS8U979.png" /></p>
+<p>在卷积神经网络中，有一个非常重要的特性：权值共享。</p>
+<p>所谓的权值共享就是说，给一张输入图片，用一个filter去扫这张图，filter里面的数就叫权重，这张图每个位置是被同样的filter扫的，所以权重是一样的，也就是共享。之所以这样设定，也是有他的优点</p>
+<h2 id="_8"><strong>池化层（减少计算量，可以防止过拟合）</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFreggyACO9FAABorvOb-GE402.png" /></p>
+<p>上图显示，池化就是对特征图进行特征压缩，池化也叫做下采样。选择原来某个区域的max或mean代替那个区域，整体就浓缩了。下面演示一下pooling操作，需要制定一个filter的尺寸、stride、pooling方式（max或mean）：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFreggyACkZ-AABzNVZsMiQ031.png" /></p>
+<h2 id="_9">传播过程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">前向传播<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>之前已经讲解了卷积层前向传播过程，这里通过一张图再回顾一下：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg2ATy5SAAEQUsv9WF8019.png" /></p>
+<h3 id="_11">反向传播<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>下面讲解卷积层的反向传播过程：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg2ADWUXAAFXiJnclVI362.png" /></p>
+<p>反向传播的目的：更新参数w。因此要先算出dJ/dw。假设上一层会传过来一个梯度dJ/dout，根据链式求导法则，因此dJ/dw = dJ/dout * dout/dw =dJ/dout * x 。在计算机中方便为变量命名的缘故，将dJ/dout记为dout，dJ/dw记为dw，即图中的情况。后面也用这个记号来讲。</p>
+<p>首先要清楚：dw 和 w 的尺寸是一样的。一个点乘以一个区域还能得到一个区域。那么反向传播过程就相当于：用dout中的一个元素乘以输入层划窗里的矩阵便得到一个dw矩阵；然后滑动滑窗，继续求下一个dw，依次下去，最后将得到的多个dw相加，执行 w = w - dw 就完成了反向传播的计算。</p>
+<p>上面的反向传播可以更新一个filter中的参数，还要求其他的filter。</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg2AM7v7AABkss6tAt4203.png" /></p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg2ABYQWAABgEf-rMzM455.png" /></p>
+<p>下面用图示来看一下2种不同的pooling过程——池化层的前向传播：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg6AcomFAABVu_xqDok934.png" /></p>
+<p>在池化层进行反向传播时，max-pooling和mean-pooling的方式也采用不同的方式。</p>
+<p>对于max-pooling，在前向计算时，是选取的每个2*2区域中的最大值，这里需要记录下最大值在每个小区域中的位置。在反向传播时，只有那个最大值对下一层有贡献，所以将残差传递到该最大值的位置，区域内其他2*2-1=3个位置置零。具体过程如下图，其中4*4矩阵中非零的位置即为前边计算出来的每个小区域的最大值的位置</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg6ANrEgAABPP7yMbEE579.png" /></p>
+<p>对于mean-pooling，我们需要把残差平均分成2*2=4份，传递到前边小区域的4个单元即可。具体过程如图：</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/89/pIYBAFregg6ASNFvAABQ1Rr1H28282.png" /></p>
+<p>思考：**</p>
+<p>①为什么每次滑动是2个格子？</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFreggqAevPZAACt4LAQ1mg096.png" /></p>
+<p>滑动的步长叫stride记为S。S越小，提取的特征越多，但是S一般不取1，主要考虑**时间效率**的问题。S也不能太大，否则会漏掉图像上的信息。</p>
+<p>②由于filter的边长大于S，会造成每次移动滑窗后有交集部分，交集部分意味着多次提取特征，尤其表现在图像的中间区域提取次数较多，边缘部分提取次数较少，怎么办？</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFregguAQ1DbAABCJCgZwDM770.png" /></p>
+<p>一般方法是在图像外围加一圈0，细心的同学可能已经注意到了，在演示案例中已经加上这一圈0了，即+pad 1。 +pad n表示加n圈0.</p>
+<p><strong>加一圈0的目的是：①为缓解中间区域提取次数少，边缘区域提取次数过少 ② 解决因为步长的设置使边缘数据读取不到</strong></p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFregguAU6sIAABx4M3plAk050.png" /></p>
+<p>③一次卷积后的输出特征图的尺寸是多少呢？</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFregguACsB2AABqctUE8zA316.png" /></p>
+<p>请计算上图中Output=？</p>
+<p><img alt="img" src="http://file.elecfans.com/web1/M00/4F/88/pIYBAFregguAJvoGAAATqFaF_Pk601.png" /></p>
+<p>注意：<strong>在一层卷积操作里可以有多个filter，他们是尺寸必须相同。</strong></p>
+<h4 id="cnn">cnn特点：**<a class="headerlink" href="#cnn" title="Permanent link">&para;</a></h4>
+<p>权值共享，神经元间的连接是非全连接的</p>
+<p>缺点：</p>
+<p>需要调参，需要大样本量，训练最好要GPU</p>
+<p>物理含义不明确</p>
+<h4 id="_12">专有名次：<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>光栅化  （<a href="https://baike.baidu.com/item/光栅化/10008122">https://baike.baidu.com/item/光栅化/10008122</a>）</p>
+<p>光栅化就是把顶点数据转换为片元的过程。片元中的每一个元素对应于帧缓冲区中的一个像素。</p>
+<p>光栅化其实是一种将**几何图元变为二维图像的**过程。该过程包含了两部分的工作。第一部分工作：决定窗口坐标中的哪些整型栅格区域被基本图元占用；第二部分工作：分配一个颜色值和一个深度值到各个区域。光栅化过程产生的是片元。</p>
+<p>把物体的数学描述以及与物体相关的颜色信息转换为屏幕上用于对应位置的像素及用于填充像素的颜色，这个过程称为光栅化，这是一个将模拟信号转化为<a href="https://baike.baidu.com/item/%E7%A6%BB%E6%95%A3%E4%BF%A1%E5%8F%B7/6613954">离散信号</a>的过程。</p>
+<p>应用：较为广泛的应用于深度学习卷积神经网络的结构中。</p>
+<p>片元（<a href="https://blog.csdn.net/u014800094/article/details/53035889">https://blog.csdn.net/u014800094/article/details/53035889</a>）</p>
+<h2 id="_13">小结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>1.难点以及重点是：学习cnn的反向传播！！！</p>
+<p>2.cnn可以应用的地方</p>
+<p>3.cnn比ann相比，有什么特点</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="主页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                主页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../a_百度技术认证/" title="百度技术认证" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                百度技术认证
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/baidu-tongji.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
