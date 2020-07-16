@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#logistic-regression" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -537,8 +537,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#logistic-regression" title="交叉熵代价函数(损失函数)及其求导推导 (Logistic Regression)" class="md-nav__link">
-    交叉熵代价函数(损失函数)及其求导推导 (Logistic Regression)
+  <a href="#_1" title="交叉熵代价函数" class="md-nav__link">
+    交叉熵代价函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#softmax" title="Softmax" class="md-nav__link">
+    Softmax
   </a>
   
 </li>
@@ -562,7 +569,7 @@
                 
                   <h1>New 2020</h1>
                 
-                <h2 id="logistic-regression">交叉熵代价函数(损失函数)及其求导推导 (Logistic Regression)<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h2>
+                <h2 id="_1">交叉熵代价函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://blog.csdn.net/jasonzzj/article/details/52017438">https://blog.csdn.net/jasonzzj/article/details/52017438</a></p>
 <p>本文只讨论Logistic回归的交叉熵，对Softmax回归的交叉熵类似（Logistic回归和Softmax回归两者本质是一样的，后面我会专门有一篇文章说明两者关系，先在这里挖个坑）。
 首先，我们二话不说，先放出交叉熵的公式：
@@ -578,6 +585,48 @@ $$</p>
 \frac{\partial}{\partial \theta_{j}} J(\theta)=\frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) x_{j}^{(i)}
 </script>
 </div>
+<h2 id="softmax">Softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.zhihu.com/question/23765351">https://www.zhihu.com/question/23765351</a></p>
+<p>s**oftmax直白来说就是将原来输出是3,1,-3通过softmax函数一作用，就映射成为(0,1)的值，而这些值的累和为1（满足概率的性质），那么我们就可以将它理解成概率，在最后选取输出结点的时候，我们就可以选取概率最大（也就是值对应最大的）结点，作为我们的预测目标！**</p>
+<p><strong>为什么不采用累加求和然后归一化呢？</strong></p>
+<p>累加求和并不能实现归一化，没有考虑到负数的存在，因此不可能所有的概率都在（0,1）之间</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/123031-945210.jpeg" /></p>
+<p><strong>我们能得到下面公式：</strong>
+$$
+z4 = w41*o1+w42*o2+w43*o3\</p>
+<p>z5 = w51*o1+w52*o2+w53*o3\</p>
+<p>z6 = w61*o1+w62*o2+w63*o3
+$$</p>
+<p>根据公式：
+$$
+a_{i}=\frac{e^{i}}{\sum_{j} e^{j}}
+$$
+这里 i就是指第二层传出去的值z4,z5,z6</p>
+<p>交叉损失函数：<span><span class="MathJax_Preview">\operatorname{Los} s=-\sum_{i} y_{i} \ln a_{i}</span><script type="math/tex">\operatorname{Los} s=-\sum_{i} y_{i} \ln a_{i}</script></span></p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 下面这一段并没有看懂</p>
+<blockquote>
+<p>其中y代表我们的真实值，a代表我们softmax求出的值。i代表的是输出结点的标号！在上面例子，i就可以取值为4,5,6三个结点（<strong>当然我这里只是为了简单，真实应用中可能有很多结点</strong>）</p>
+<p><strong>现在看起来是不是感觉复杂了，居然还有累和，然后还要求导，每一个a都是softmax之后的形式！</strong></p>
+<p><strong>但是实际上不是这样的，我们往往在真实中，如果只预测一个结果，那么在目标中只有一个结点的值为1，比如我认为在该状态下，我想要输出的是第四个动作（第四个结点）,那么训练数据的输出就是a4 = 1,a5=0,a6=0，哎呀，这太好了，除了一个为1，其它都是0，那么所谓的求和符合，就是一个幌子，我可以去掉啦！</strong></p>
+<p><strong>为了形式化说明，我这里认为训练数据的真实输出为第j个为1，其它均为0！</strong></p>
+<p><strong>那么Loss就变成了<img alt="[公式]" src="E:\typora图片\equation.svg" />,累和已经去掉了，太好了。现在我们要开始求导数了！</strong></p>
+</blockquote>
+<p>w权重的更新：</p>
+<p><strong>参数的形式在该例子中，总共分为w41,w42,w43,w51,w52,w53,w61,w62,w63.这些，那么比如我要求出w41,w42,w43的偏导，就需要将Loss函数求偏导传到结点4，然后再利用链式法则继续求导即可，举个例子此时求w41的偏导为:</strong></p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/123626-693937.jpeg" /></p>
+<p><strong>w51.....w63等参数的偏导同理可以求出，那么我们的关键就在于Loss函数对于结点4,5,6的偏导怎么求，如下：</strong></p>
+<p><strong>这里分为俩种情况：</strong></p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/123635-299886.png" /></p>
+<p>j=i对应例子里就是如下图所示：</p>
+<p>比如我选定了j为4，那么就是说我现在求导传到4结点这！</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/123636-478041.jpeg" /></p>
+<p>那么由上面求导结果再乘以交叉熵损失函数求导</p>
+<p><span><span class="MathJax_Preview">\operatorname{Loss}=-\ln a_{j}, \text { 它的导数为 }-\frac{1}{a_{i}}, \text { 与上面 } a_{j}\left(1-a_{j}\right) \text { 相乘为 } a_{j}-1</span><script type="math/tex">\operatorname{Loss}=-\ln a_{j}, \text { 它的导数为 }-\frac{1}{a_{i}}, \text { 与上面 } a_{j}\left(1-a_{j}\right) \text { 相乘为 } a_{j}-1</script></span>（<strong>形式非常简单，这说明我只要正向求一次得出结果，然后反向传梯度的时候，只需要将它结果减1即可，后面还会举例子！</strong>）那么我们可以得到Loss对于4结点的偏导就求出了了（<strong>这里假定4是我们的预计输出</strong>）</p>
+<p>第二种情况为：</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/123641-352610.jpeg" /></p>
+<p>这里对应我的例子图如下，我这时对的是j不等于i，往前传：</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/123643-798206.jpeg" /></p>
+<p>可能需要亲手算一下才能够理解</p>
                 
                   
                 
