@@ -213,7 +213,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../d_GAN/" title="高级算法" class="md-tabs__link md-tabs__link--active">
+        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link md-tabs__link--active">
           高级算法
         </a>
       
@@ -487,6 +487,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../d_Deepwalk/" title="Deepwalk等" class="md-nav__link">
+      Deepwalk等
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../d_GAN/" title="GAN" class="md-nav__link">
       GAN
     </a>
@@ -532,6 +544,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explaining-and-harnessing-adversarial-examples" title="【论文阅读】—— Explaining and Harnessing Adversarial Examples" class="md-nav__link">
+    【论文阅读】—— Explaining and Harnessing Adversarial Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="核心内容：" class="md-nav__link">
+    核心内容：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="什么是对抗样本？" class="md-nav__link">
+    什么是对抗样本？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="对抗样本存在的原因：" class="md-nav__link">
+    对抗样本存在的原因：
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-gradient-sign-methodfgsm" title="Fast Gradient Sign Method(FGSM)" class="md-nav__link">
+    Fast Gradient Sign Method(FGSM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="一些直觉" class="md-nav__link">
+    一些直觉
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="对抗训练" class="md-nav__link">
+    对抗训练
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="线性模型的对抗训练" class="md-nav__link">
+    线性模型的对抗训练
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node2vecdeepwalk" title="Node2vec，Deepwalk" class="md-nav__link">
+    Node2vec，Deepwalk
+  </a>
+  
+</li>
+      
       
       
       
@@ -571,6 +664,87 @@
         <li class="md-nav__item">
   <a href="#semi-supervised-classification-with-graph-convolutional-networks" title="SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS" class="md-nav__link">
     SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explaining-and-harnessing-adversarial-examples" title="【论文阅读】—— Explaining and Harnessing Adversarial Examples" class="md-nav__link">
+    【论文阅读】—— Explaining and Harnessing Adversarial Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="核心内容：" class="md-nav__link">
+    核心内容：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="什么是对抗样本？" class="md-nav__link">
+    什么是对抗样本？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="对抗样本存在的原因：" class="md-nav__link">
+    对抗样本存在的原因：
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-gradient-sign-methodfgsm" title="Fast Gradient Sign Method(FGSM)" class="md-nav__link">
+    Fast Gradient Sign Method(FGSM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="一些直觉" class="md-nav__link">
+    一些直觉
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="对抗训练" class="md-nav__link">
+    对抗训练
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="线性模型的对抗训练" class="md-nav__link">
+    线性模型的对抗训练
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node2vecdeepwalk" title="Node2vec，Deepwalk" class="md-nav__link">
+    Node2vec，Deepwalk
   </a>
   
 </li>
@@ -621,7 +795,7 @@ g_{\theta} \star x=U g_{\theta} U^{\top} x
 $$</p>
 <p>式中U代表归一化图形拉普拉斯算子<span><span class="MathJax_Preview"><span><span class="MathJax_Preview">L=IN-D-1/2AD-1/2=UΛUT</span><script type="math/tex">L=IN-D-1/2AD-1/2=UΛUT</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">L=IN-D-1/2AD-1/2=UΛUT</span><script type="math/tex">L=IN-D-1/2AD-1/2=UΛUT</script></span></script></span>的特征向量的矩阵，Λ是它的特征值对角矩阵，UTx是x的图形傅里叶变换，作者提出将gθ理解为为L特征值的一个函数即<span><span class="MathJax_Preview"><span><span class="MathJax_Preview">gθ(Λ)</span><script type="math/tex">gθ(Λ)</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">gθ(Λ)</span><script type="math/tex">gθ(Λ)</script></span></script></span>，由于频谱卷积所提出的公式（2）计算开销过于庞大，特征向量矩阵U的相乘运算时间复杂度是N的平方，此外，L的特征分解运算开销在处理数据量大的图结构时也很大，为了解决这个问题，2011年Hammond等人提出gθ(Λ)可以通过一个切比雪夫多项式Tk(x)的截断展开为第K阶：</p>
 <blockquote>
-<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />作者提出将gθ理解为为L特征值的一个函数即<span><span class="MathJax_Preview"><span><span class="MathJax_Preview">gθ(Λ)</span><script type="math/tex">gθ(Λ)</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">gθ(Λ)</span><script type="math/tex">gθ(Λ)</script></span></script></span>，这句话怎么理解</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />作者提出将gθ理解为为L特征值的一个函数即<span><span class="MathJax_Preview">gθ(Λ)</span><script type="math/tex">gθ(Λ)</script></span>，这句话怎么理解</p>
 </blockquote>
 <div>
 <div class="MathJax_Preview">
@@ -669,14 +843,15 @@ $$
 Z=\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} X \Theta
 $$
 式中θ是滤波器参数的矩阵形式，Z是卷积后得到的输出矩阵，整个卷积操作时间复杂度为<img alt="img" src="https://img-blog.csdn.net/20171225222135135" />。</p>
-<h1 id="explaining-and-harnessing-adversarial-examples">论文阅读】—— Explaining and Harnessing Adversarial Examples<a class="headerlink" href="#explaining-and-harnessing-adversarial-examples" title="Permanent link">&para;</a></h1>
+<h2 id="explaining-and-harnessing-adversarial-examples">【论文阅读】—— Explaining and Harnessing Adversarial Examples<a class="headerlink" href="#explaining-and-harnessing-adversarial-examples" title="Permanent link">&para;</a></h2>
 <p>Posted on 2018-11-26 | views:</p>
-<p>核心内容：</p>
-<h4 id="what-is-adversarial-example">What is adversarial example?<a class="headerlink" href="#what-is-adversarial-example" title="Permanent link">&para;</a></h4>
+<h3 id="_1">核心内容：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>原样本点上加上一些针对性的但是不易察觉的扰动，就会很容易的将神经网络分类错误，并且可能以很高的置信度输出</p>
+<h3 id="_2">什么是对抗样本？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" />      下面一个例子说明，一张原始图片，加上一点扰动就会分类错误</p>
 <p>深度学习的发展使得机器在很多任务上都达到了接近人类的准确率，但是 Szegedy 等人在 “Intriguing properties of neural network” 中首次发现了这些深度网络的flaw并提出了对抗样本**，对抗样本指的是将一些特定的扰动（perturbation）加到clean example上，使得模型对这些样本的分类结果发生错误**，需要注意的是，这些扰动通常来说非常地小，即人类无法察觉，从下面的例子中就可以看出对抗样本是如何得到的。将一些扰动加到原图像上，分类器就会马上分类错误。</p>
 <p><img alt="image-20200715090237850" src="https://gitee.com/moluggg/image/raw/master/img/202007/15/090250-458196.png" /></p>
-<h4 id="_1">对抗样本存在的原因：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h3 id="_3">对抗样本存在的原因：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>过拟合导致？不是！</p>
@@ -694,17 +869,11 @@ $$
 <p><strong>模型的线性性导致！</strong></p>
 </li>
 </ul>
-<p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> score=wTxscore=wTx。由于 x<sub>=x+ηx</sub>=x+η，则 score=wTx+wTη，可以看出当样本改变 ηη 时，activation值就会改变 wTη</p>
-<p>假设 ww 有 nn 个维度，且平均值为 mm，那么activation的增量最多为 ϵmnϵmn。由于 ||η||∞||η||∞ 不会随着维度 nn 的变化而变化，但是增量却会随着 nn 增大而线性增长，因此对于一个高维度的问题，一个样本中即使是无限小的扰动，也会叠加对最后的activation产生很大的影响</p>
+<p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> <strong><span><span class="MathJax_Preview">score=wTx</span><script type="math/tex">score=wTx</script></span>。由于 <span><span class="MathJax_Preview">x~=x+ηx~=x+η</span><script type="math/tex">x~=x+ηx~=x+η</script></span>，则 <span><span class="MathJax_Preview">score=wTx+wTη</span><script type="math/tex">score=wTx+wTη</script></span>，可以看出当样本改变 η 时，activation值就会改变 wTη</strong></p>
+<p><strong>假设 w 有 n 个维度，且平均值为 m，那么activation的增量最多为 ϵmn。由于 ||η||∞ 不会随着维度 n 的变化而变化，但是增量却会随着 n 增大而线性增长，因此对于一个高维度的问题，一个样本中即使是无限小的扰动，也会叠加对最后的activation产生很大的影响</strong></p>
 <ul>
 <li>
 <p>Ian Goodfellow 在2014年发表了 “explaining and harnessing adversarial example” 这篇文章，并说明对抗样本的存在是由于模型过于线性所致。</p>
-</li>
-<li>
-<p>由于样本的输入特征的精度有限，一般的图像的每个像素都是8bits，所以样本中低于1/255的信息都会被丢弃，当样本 x添加一定的扰动值 η，η 满足 ||η||∞&lt;ϵ，即最大的扰动量小于 ϵ，考虑一个线性模型，线性模型的特点在于 dot product，即 score=wTx。由于 x<sub>=x+ηx</sub>=x+η，则 score=wTx+wTηscore=wTx+wTη，可以看出当样本改变 ηη 时，activation值就会改变 wTηwTη。</p>
-</li>
-<li>
-<p>Ian Goodfellow 认为令 η=sign(w)η=sign(w)，可以使得 wTηwTη 最大化，假设 ww 有 nn 个维度，且平均值为 mm，那么activation的增量最多为 ϵmnϵmn。由于 ||η||∞||η||∞ 不会随着维度 nn 的变化而变化，但是增量却会随着 nn 增大而线性增长，因此对于一个高维度的问题，一个样本中即使是无限小的扰动，也会叠加对最后的activation产生很大的影响</p>
 </li>
 <li>
 <p>神经网络似乎自诞生以来就和非线性挂钩，激活函数非线性，那么为什么深度网络还是会有对抗样本呢？Ian Goodfellow 认为现在绝大多数的激活函数都是 piecewise linear，Relu函数是分段线性的，sigmoid 和 tanh在我们care的部分也近似线性。</p>
@@ -725,35 +894,68 @@ $$
 $$</p>
 <p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" />我们平常用的梯度下降方法是通过求损失函数对于模型参数的梯度，进而更新参数使得模型的损失降低。<strong>而 FGSM 方法求模型损失函数对于输入的梯度，然后用梯度上升的方法，使得模型的损失增大。模型的损失增大意味着模型对于该输入样本的分类置信度降低，或者直接分类错误，从而达到对抗样本的目的。</strong></p>
 <p>Note：我们可以随意地将输入样本往任一错误类别上改变。比如输入图片是猫，我们可以求损失函数对于狗的梯度，然后将它作为 reference direction来更新猫的图片，就可以将猫往狗的方向改变。</p>
-<h4 id="some-intuitions">Some Intuitions<a class="headerlink" href="#some-intuitions" title="Permanent link">&para;</a></h4>
-<p><strong>Are adversarial examples rare?</strong></p>
+<h4 id="_4">一些直觉<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><strong>抗样本的存在是否偶然</strong></p>
 <p>Ian Goodfellow认为对抗样本的存在并非偶然，并非像有理数分布到实数上的这种程度，而是对抗样本更像是存在于某一个对抗子空间</p>
 <p><strong>Are adversarial examples off the manifold</strong></p>
 <p>manifold 简单解释即数据存在的区域，通常我们说 manifold是高维空间里面的一个低维空间，比如公路是三维空间里面的一维空间；</p>
 <p><a href="http://vincentho.name/2018/11/26/【论文阅读】——-Explaining-and-Harnessing-Adversarial-Examples/3.png"><img alt="img" src="http://vincentho.name/2018/11/26/%E3%80%90%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E3%80%91%E2%80%94%E2%80%94-Explaining-and-Harnessing-Adversarial-Examples/3.png" /></a></p>
 <p>而对抗样本不属于数据的manifold，可以理解为非自然点，即不在正常数据的分布内。有人理解对抗样本的存在是因为训练数据不够大没有覆盖到对抗样本，才导致模型欠拟合出现分类错误，但**实际上对抗样本不属于正常数据，即使我们的训练数据有无穷多，也不可能包含对抗样本，因为对抗样本不在正常数据的分布内。**</p>
-<h4 id="_2">对抗训练<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h4 id="_5">对抗训练<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>这是基于 Ian Goodfellow 论文中提到的方法</p>
-<h5 id="_3">线性模型的对抗训练<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
-<p>考虑最简单的逻辑回归模型，假设训练一个逻辑回归模型来进行分类，分类的标签 y∈{−1,+1}y∈{−1,+1}，预测函数 P(y=1)=σ(wTx+b)P(y=1)=σ(wTx+b)，损失函数为 J(x,y)=ζ(−y(wTx+b))J(x,y)=ζ(−y(wTx+b))，其中 ζ(x)=log(1+exp(z))ζ(x)=log(1+exp(z)) 为softplus函数。</p>
-<p>其实这个损失函数就是我们一般的cross-entropy loss，经过一系列变形成上面的形式。</p>
-<p>Likelihood(x,y)=σ(y<sup>)y+12(1−σ(y</sup>))1−y+12Likelihood(x,y)=σ(y<sup>)y+12(1−σ(y</sup>))1−y+12</p>
-<p>其中 y<sup>=wTx+by</sup>=wTx+b</p>
-<p>Loss(x,y)=−log Likelihood(x,y)={log(1+exp(−y<sup>))log(1+exp(y</sup>))y=1y=−1Loss(x,y)=−log Likelihood(x,y)={log(1+exp(−y<sup>))y=1log(1+exp(y</sup>))y=−1</p>
-<p>ζ(−yy<sup>)={log(1+exp(−y</sup>))log(1+exp(y<sup>))y=1y=−1ζ(−yy</sup>)={log(1+exp(−y<sup>))y=1log(1+exp(y</sup>))y=−1</p>
-<p>所以，Loss(x,y)=ζ(−y(wTx+b))Loss(x,y)=ζ(−y(wTx+b))</p>
-<p>对该模型使用FGSM方法，求得扰动量为</p>
-<p>η=ϵsign(▽xζ(y(wTx+b)))=ϵsign(−w)=−ϵsign(w)η=ϵsign(▽xζ(y(wTx+b)))=ϵsign(−w)=−ϵsign(w)</p>
-<p>因此对抗样本的Loss为</p>
-<p>ζ(−y(wT(x+η)+b))=ζ(y(ϵ||w||1−wTx−b))ζ(−y(wT(x+η)+b))=ζ(y(ϵ||w||1−wTx−b))</p>
-<p>其中 wTη=−ϵ||w||1wTη=−ϵ||w||1</p>
-<p>对于对抗样本的Loss，加入了模型的权重，就好比L1正则，区别在于L1正则权重是加到整体损失函数之后，而上面的式子权重是加到activation。</p>
-<p>当模型能够做出置信度很高的预测的时候，即 wTx+bwTx+b 很大的时候，上式的正则效果会消失；而当预测的置信度很小的时候，会使得欠拟合更加严重，因为上式的主导项变成了权重项。</p>
-<h5 id="_4">深度网络的对抗训练<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
-<p>Ian Goodfellow同时提出了一种基于深度网络的对抗训练方法，同样是基于FGSM算法</p>
-<p>J<sub>(θ,x,y)=αJ(θ,x,y)+(1−α)J(θ,x+ϵsign(▽xJ(θ,x,y)))J</sub>(θ,x,y)=αJ(θ,x,y)+(1−α)J(θ,x+ϵsign(▽xJ(θ,x,y)))</p>
-<p>这种对抗训练的方法意味着在训练过程中不断更新对抗样本，从而使得当前模型可以抵御对抗样本。</p>
-<p>文章表明，在不进行对抗训练的情况下，模型识别FGSM攻击方法生成样本的错误率是89.4%，但是通过对抗训练，同样的模型识别对抗样本的错误率下降到17.9%。</p>
+<h5 id="_6"><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> 线性模型的对抗训练<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<p>首先将分类标签两类{-1,1}通过 <span><span class="MathJax_Preview">(1+y)/2</span><script type="math/tex">(1+y)/2</script></span> 映射到 {0,1）两类，</p>
+<p>所以现在的分类标签是由<span><span class="MathJax_Preview">y ----&gt; (1+y)/2</span><script type="math/tex">y ----> (1+y)/2</script></span></p>
+<p>通过交叉熵的损失函数定义：
+$$
+J(\theta)=-\frac{1}{m} \sum_{i=1}^{m} y^{(i)} \log \left(h_{\theta}\left(x<sup>{(i)}\right)\right)+\left(1-y</sup>{(i)}\right) \log \left(1-h_{\theta}\left(x^{(i)}\right)\right)
+$$
+可以得到该模型的损失函数：
+$$
+J=-\frac{1+y}{2} \log P(y=1 \mid \boldsymbol{x})-\frac{1-y}{2} \log P(y=-1 \mid \boldsymbol{x})
+$$
+这里的p就是表示：<span><span class="MathJax_Preview">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</span><script type="math/tex">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</script></span></p>
+<p>那么损失函数的化简推导为：
+$$
+\begin{aligned}
+J &amp;=-\frac{1+y}{2} \log P(y=1 \mid \boldsymbol{x})-\frac{1-y}{2} \log P(y=-1 \mid \boldsymbol{x}) \
+&amp;=-\frac{1}{2} \log p(1-p)-\frac{y}{2} \log \frac{p}{1-p} \
+&amp;=-\frac{1}{2} \log e^{-f}+\log \left(1+e^{-f}\right)-\frac{y}{2} \log e^{f} \
+&amp;=\frac{1}{2}(f-y f)+\log \left(1+e^{-f}\right) \
+&amp;=\left{\begin{array}{l}
+\log \left(1+e^{-f}\right) \quad y=1 \
+\log \left(1+e^{f}\right) \quad y=-1 
+&amp; =\log \left(1+e^{-y f}\right)
+\end{array}\right.
+\end{aligned}
+$$
+我们对上面的函数求梯度可以得到
+$$
+\nabla_{x} J=\frac{e^{-y f}}{1+e^{-y f}}(-y) \boldsymbol{w}
+$$</p>
+<p>因此通过FGSM得到的对抗样本为x<sub>=x−ϵysign(wT)x</sub>=x−ϵysign(wT)，对于对抗样本的损失函数，有：
+$$
+\begin{aligned}
+J &amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}-e y \boldsymbol{w}^{T} \operatorname{sign}(\boldsymbol{w})+b\right)}\right) \
+&amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}+b\right)+\epsilon|w|_{1}}\right)
+\end{aligned}
+$$</p>
+<p>对于学到足够的置信度的模型来说，即−y(wTx+b)足够小时，ϵ||w||1几乎不起作用。而对于欠拟合的模型来说，则会使得模型更加欠拟合。（还是刚刚那个原因，高维情况下很小的扰动都会使得内积产生很大的变化，而对于L1范数的变化却是极小的，所以很容易就忽略了||w||1）。
+ 进一步的，作者基于FGSM生成的对抗样本提出了一个高效的对抗训练方法：
+$$
+\tilde{J}(\boldsymbol{\theta}, \boldsymbol{x}, y)=\alpha J(\boldsymbol{\theta}, \boldsymbol{x}, y)+(1-\alpha) J\left(\boldsymbol{\theta}, \boldsymbol{x}+\epsilon \operatorname{sign}\left(\nabla_{x} J(\boldsymbol{\theta}, \boldsymbol{x}, y)\right)\right.
+$$</p>
+<h2 id="node2vecdeepwalk">Node2vec，Deepwalk<a class="headerlink" href="#node2vecdeepwalk" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked/> 随机游走：<strong>什么是随机游走？</strong></p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked/> word2wec-skipgram</p>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Deepwalk</li>
+<li class="task-list-item"><input type="checkbox" disabled/> node2wec</li>
+</ul>
 <p>GCN代码：</p>
 <p><a href="https://github.com/tkipf/gcn">https://github.com/tkipf/gcn</a></p>
 <p>图的表示学习是什么，什么是embedding
