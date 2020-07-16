@@ -593,18 +593,12 @@
     对抗训练
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_6" title="线性模型的对抗训练" class="md-nav__link">
     线性模型的对抗训练
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -717,18 +711,12 @@
     对抗训练
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_6" title="线性模型的对抗训练" class="md-nav__link">
     线性模型的对抗训练
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -903,18 +891,16 @@ $$</p>
 <p>而对抗样本不属于数据的manifold，可以理解为非自然点，即不在正常数据的分布内。有人理解对抗样本的存在是因为训练数据不够大没有覆盖到对抗样本，才导致模型欠拟合出现分类错误，但**实际上对抗样本不属于正常数据，即使我们的训练数据有无穷多，也不可能包含对抗样本，因为对抗样本不在正常数据的分布内。**</p>
 <h4 id="_5">对抗训练<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>这是基于 Ian Goodfellow 论文中提到的方法</p>
-<h5 id="_6"><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> 线性模型的对抗训练<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<h4 id="_6"><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> 线性模型的对抗训练<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>首先将分类标签两类{-1,1}通过 <span><span class="MathJax_Preview">(1+y)/2</span><script type="math/tex">(1+y)/2</script></span> 映射到 {0,1）两类，</p>
 <p>所以现在的分类标签是由<span><span class="MathJax_Preview">y ----&gt; (1+y)/2</span><script type="math/tex">y ----> (1+y)/2</script></span></p>
-<p>通过交叉熵的损失函数定义：
-$$
-J(\theta)=-\frac{1}{m} \sum_{i=1}^{m} y^{(i)} \log \left(h_{\theta}\left(x<sup>{(i)}\right)\right)+\left(1-y</sup>{(i)}\right) \log \left(1-h_{\theta}\left(x^{(i)}\right)\right)
-$$
-可以得到该模型的损失函数：
+<p>通过交叉熵的损失函数定义：</p>
+<p><img alt="image-20200716200702600" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/200703-603565.png" /></p>
+<p>可以得到该模型的损失函数：
 $$
 J=-\frac{1+y}{2} \log P(y=1 \mid \boldsymbol{x})-\frac{1-y}{2} \log P(y=-1 \mid \boldsymbol{x})
-$$
-这里的p就是表示：<span><span class="MathJax_Preview">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</span><script type="math/tex">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</script></span></p>
+$$</p>
+<p>这里的p就是表示：<span><span class="MathJax_Preview">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</span><script type="math/tex">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</script></span></p>
 <p>那么损失函数的化简推导为：</p>
 <p><img alt="image-20200716195703984" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/195705-988910.png" /></p>
 <p>我们对上面的函数求梯度可以得到
@@ -922,12 +908,7 @@ $$
 \nabla_{x} J=\frac{e^{-y f}}{1+e^{-y f}}(-y) \boldsymbol{w}
 $$</p>
 <p>因此通过FGSM得到的对抗样本为x<sub>=x−ϵysign(wT)x</sub>=x−ϵysign(wT)，对于对抗样本的损失函数，有：</p>
-<p>$$
-\begin{aligned}</p>
-<p>J &amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}-e y \boldsymbol{w}^{T} \operatorname{sign}(\boldsymbol{w})+b\right)}\right) \
-&amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}+b\right)+\epsilon|w|_{1}}\right)</p>
-<p>\end{aligned}
-$$</p>
+<p><img alt="image-20200716200723230" src="E:\typora图片\image-20200716200723230.png" /></p>
 <p>对于学到足够的置信度的模型来说，即−y(wTx+b)足够小时，ϵ||w||1几乎不起作用。而对于欠拟合的模型来说，则会使得模型更加欠拟合。（还是刚刚那个原因，高维情况下很小的扰动都会使得内积产生很大的变化，而对于L1范数的变化却是极小的，所以很容易就忽略了||w||1）。
  进一步的，作者基于FGSM生成的对抗样本提出了一个高效的对抗训练方法：
 $$
