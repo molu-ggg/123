@@ -915,30 +915,18 @@ $$
 J=-\frac{1+y}{2} \log P(y=1 \mid \boldsymbol{x})-\frac{1-y}{2} \log P(y=-1 \mid \boldsymbol{x})
 $$
 这里的p就是表示：<span><span class="MathJax_Preview">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</span><script type="math/tex">p=P(y=1 \mid \boldsymbol{x})=\frac{1}{1+e^{-} f}=\frac{1}{1+e^{-\left(w^{T} x+b\right)}}</script></span></p>
-<p>那么损失函数的化简推导为：
-$$
-\begin{aligned}
-J &amp;=-\frac{1+y}{2} \log P(y=1 \mid \boldsymbol{x})-\frac{1-y}{2} \log P(y=-1 \mid \boldsymbol{x}) \
-&amp;=-\frac{1}{2} \log p(1-p)-\frac{y}{2} \log \frac{p}{1-p} \
-&amp;=-\frac{1}{2} \log e^{-f}+\log \left(1+e^{-f}\right)-\frac{y}{2} \log e^{f} \
-&amp;=\frac{1}{2}(f-y f)+\log \left(1+e^{-f}\right) \
-&amp;=\left{\begin{array}{l}
-\log \left(1+e^{-f}\right) \quad y=1 \
-\log \left(1+e^{f}\right) \quad y=-1 
-&amp; =\log \left(1+e^{-y f}\right)
-\end{array}\right.
-\end{aligned}
-$$
-我们对上面的函数求梯度可以得到
+<p>那么损失函数的化简推导为：</p>
+<p><img alt="image-20200716195703984" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/195705-988910.png" /></p>
+<p>我们对上面的函数求梯度可以得到
 $$
 \nabla_{x} J=\frac{e^{-y f}}{1+e^{-y f}}(-y) \boldsymbol{w}
 $$</p>
-<p>因此通过FGSM得到的对抗样本为x<sub>=x−ϵysign(wT)x</sub>=x−ϵysign(wT)，对于对抗样本的损失函数，有：
-$$
-\begin{aligned}
-J &amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}-e y \boldsymbol{w}^{T} \operatorname{sign}(\boldsymbol{w})+b\right)}\right) \
-&amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}+b\right)+\epsilon|w|_{1}}\right)
-\end{aligned}
+<p>因此通过FGSM得到的对抗样本为x<sub>=x−ϵysign(wT)x</sub>=x−ϵysign(wT)，对于对抗样本的损失函数，有：</p>
+<p>$$
+\begin{aligned}</p>
+<p>J &amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}-e y \boldsymbol{w}^{T} \operatorname{sign}(\boldsymbol{w})+b\right)}\right) \
+&amp;=\log \left(1+e<sup>{-y\left(\boldsymbol{w}</sup>{T} \boldsymbol{x}+b\right)+\epsilon|w|_{1}}\right)</p>
+<p>\end{aligned}
 $$</p>
 <p>对于学到足够的置信度的模型来说，即−y(wTx+b)足够小时，ϵ||w||1几乎不起作用。而对于欠拟合的模型来说，则会使得模型更加欠拟合。（还是刚刚那个原因，高维情况下很小的扰动都会使得内积产生很大的变化，而对于L1范数的变化却是极小的，所以很容易就忽略了||w||1）。
  进一步的，作者基于FGSM生成的对抗样本提出了一个高效的对抗训练方法：

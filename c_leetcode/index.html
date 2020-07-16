@@ -500,6 +500,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#716" title="716" class="md-nav__link">
+    716
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="整数转罗马数字" class="md-nav__link">
+    整数转罗马数字
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -621,6 +641,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#716" title="716" class="md-nav__link">
+    716
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="整数转罗马数字" class="md-nav__link">
+    整数转罗马数字
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -684,6 +724,85 @@
 <p>启示：</p>
 <p>o(n)算法；化时间为空间</p>
 <p>边走边存，变量碰边改变方向（递增还是递减</p>
+<h2 id="716">716<a class="headerlink" href="#716" title="Permanent link">&para;</a></h2>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> <a href="https://leetcode-cn.com/problems/is-graph-bipartite/">https://leetcode-cn.com/problems/is-graph-bipartite/</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isBipartite</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">graph</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">vis</span><span class="p">[</span><span class="mi">99999</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+      <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">q</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">graph</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+      <span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+      <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+          <span class="n">k</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+          <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+             <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="n">vis</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">=-</span><span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+             <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">==</span><span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                 <span class="k">else</span> <span class="k">continue</span><span class="p">;</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+
+      <span class="p">}</span>
+       <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="_2">整数转罗马数字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>数字中的贪心问题：</p>
+<p><img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/171510-803032.png" /></p>
+<p>可以这样做，当前数num，</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/171545-423563.jpeg" /></p>
+<p>每一次从小到大的与上述数组比较即可。</p>
+<p>三数之和-双指针</p>
+<p><a href="https://leetcode-cn.com/problems/3sum/">https://leetcode-cn.com/problems/3sum/</a></p>
+<p>排序sort，不重复枚举；</p>
+<p>三重循环，第二层和第三层实际上是并列关系，大小的排序已经固定</p>
+<p>第一层枚举a</p>
+<p>第二层，第三层用一个双指针法o(n)空间的大小</p>
+<p>从左到右枚举b，b增大，由于b+c=-a固定，c一定减小，</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">threeSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+
+       <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span> <span class="p">();</span>
+       <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+       <span class="kt">int</span> <span class="n">pai</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+       <span class="kt">int</span> <span class="n">times</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+       <span class="n">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+       <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+           <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">continue</span> <span class="p">;</span>
+          <span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+          <span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+          <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&lt;</span><span class="n">c</span><span class="p">){</span>
+              <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">&gt;</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span><span class="n">j</span><span class="o">++</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
+              <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span><span class="n">c</span><span class="o">--</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
+
+              <span class="k">if</span><span class="p">(</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+              <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="n">c</span><span class="o">--</span><span class="p">;</span>
+              <span class="k">else</span> <span class="p">{</span>
+                  <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">]});</span>
+                  <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+       <span class="p">}</span>
+       <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
                 
                   
                 
