@@ -872,7 +872,8 @@
 <p>式（1）中各个变量的含义：</p>
 <p>L0表示图结构中有标签的部分数据的监督代价**，**</p>
 <p><strong>f(·)是一个神经网络的梯度函数</strong>，λ是权值系数，</p>
-<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> X是图结构中的节点特征向量Xi拼接得到的矩阵形式，</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> <strong>X是图结构中的节点特征向量Xi拼接得到的矩阵形式</strong>，</p>
+<p><img alt="image-20200717164912783" src="https://gitee.com/moluggg/image/raw/master/img/202007/17/164913-506756.png" /></p>
 <p>A代表图结构数据的邻接矩阵（01二进制或者权值），</p>
 <p>Dii表示邻接矩阵Aij对j所有项求和，如下图可以明白</p>
 <p><strong>△=D-A表示无向图**G=（V,ε）（V表示图中的N个节点集合，ε表示各个节点之间的边关系）的非标准图结构的拉普拉斯算子，如下图，**也就是L</strong>。</p>
@@ -958,6 +959,7 @@ $$
 <p>Zachary 空手道俱乐部是一个被广泛使用的社交网络，其中的节点代表空手道俱乐部的成员，边代表成员之间的相互关系。当年，Zachary 在研究空手道俱乐部的时候，管理员和教员发生了冲突，导致俱乐部一分为二。下图显示了该网络的图表征，其中的节点标注是根据节点属于俱乐部的哪个部分而得到的，「A」和「I」分别表示属于管理员和教员阵营的节点。</p>
 <p>空手道数据集为下面的链接：</p>
 <p><a href="https://blog.csdn.net/ksearch/article/details/44412005">https://blog.csdn.net/ksearch/article/details/44412005</a></p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/18/100814-871502.webp" /></p>
 <p><strong>构建 GCN</strong></p>
 <p>接下来，我们将构建一个图卷积网络。我们并不会真正训练该网络，但是会对其进行简单的随机初始化，从而生成我们在本文开头看到的特征表征。我们将使用 networkx，它有一个可以很容易实现的 Zachary 空手道俱乐部的图表征。然后，我们将计算 A_hat 和 D_hat 矩阵。</p>
 <div class="highlight"><pre><span></span><code>from networkx import to_numpy_matrix

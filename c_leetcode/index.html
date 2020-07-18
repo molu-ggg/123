@@ -520,6 +520,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#718" title="718" class="md-nav__link">
+    718
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33" title="33. 搜索旋转排序数组" class="md-nav__link">
+    33. 搜索旋转排序数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#97" title="97. 交错字符串" class="md-nav__link">
+    97. 交错字符串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -652,6 +679,33 @@
           <li class="md-nav__item">
   <a href="#_2" title="整数转罗马数字" class="md-nav__link">
     整数转罗马数字
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#718" title="718" class="md-nav__link">
+    718
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33" title="33. 搜索旋转排序数组" class="md-nav__link">
+    33. 搜索旋转排序数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#97" title="97. 交错字符串" class="md-nav__link">
+    97. 交错字符串
   </a>
   
 </li>
@@ -803,6 +857,68 @@
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
+
+<h2 id="718">718<a class="headerlink" href="#718" title="Permanent link">&para;</a></h2>
+<h4 id="33"><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a><a class="headerlink" href="#33" title="Permanent link">&para;</a></h4>
+<p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p>
+<p>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。</p>
+<p>搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</p>
+<p>你可以假设数组中不存在重复的元素。</p>
+<p>你的算法时间复杂度必须是 O(log n) 级别。</p>
+<p>思路很简单，就是，找到那个轴点，然后分成两个上升数组，就可以了。</p>
+<p>我要说的是：</p>
+<p>下面的代码中有：</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+       <span class="kt">int</span> <span class="n">flag</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+
+     <span class="kt">void</span> <span class="nf">find</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">target</span><span class="p">){</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="n">flag</span> <span class="o">=</span><span class="n">l</span><span class="p">;</span>
+               <span class="k">return</span><span class="p">;</span>
+           <span class="p">}</span>
+         <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="p">{</span><span class="n">flag</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="k">return</span><span class="p">;}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">target</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+        <span class="k">else</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="c1">//7 1 2 3 4 5 6 3</span>
+     <span class="kt">void</span> <span class="nf">dian</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+         <span class="c1">//下面的语句如果不带大括号会导致 后面的内容也会囊括在内</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">mid</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="n">f</span><span class="o">=</span><span class="mi">0</span><span class="p">;}</span>
+         <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">mid</span><span class="o">==</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">;</span>
+         <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="n">f</span><span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+
+    <span class="c1">//  cout&lt;&lt;nums[mid]&lt;&lt;endl;         </span>
+         <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">dian</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">mid</span><span class="p">);</span>       <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">dian</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>        <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="c1">//特别是在dfs中，全局变量引领结束函数，后面一定要跟上判断条件</span>
+         <span class="k">return</span><span class="p">;</span>
+     <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">search</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//看下面的几行，在真正的算法考试中一定务必要特判定，因为你不知道的小问题即可暴露</span>
+        <span class="c1">//也就是说，对一道题而言，要有一般性，也要考虑特殊性。</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="k">return</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">dian</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span> <span class="n">f</span><span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span><span class="o">&lt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">target</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="p">);</span> 
+        <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> 也就是说**，对一道题而言，要有一般性，也要考虑特殊性。**</p>
+<h4 id="97"><a href="https://leetcode-cn.com/problems/interleaving-string/">97. 交错字符串</a><a class="headerlink" href="#97" title="Permanent link">&para;</a></h4>
+<p>这道题告诉我们，方法走不通可以巧妙的选择别的方法</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 你的动态规划需要继续探索</p>
                 
                   
                 
