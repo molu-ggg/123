@@ -547,6 +547,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#720" title="720" class="md-nav__link">
+    720
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#95-ii" title="95. 不同的二叉搜索树 II" class="md-nav__link">
+    95. 不同的二叉搜索树 II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" title="62. 不同路径" class="md-nav__link">
+    62. 不同路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#722" title="722" class="md-nav__link">
+    722
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#154-ii" title="154. 寻找旋转排序数组中的最小值 II" class="md-nav__link">
+    154. 寻找旋转排序数组中的最小值 II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" title="10. 正则表达式匹配" class="md-nav__link">
+    10. 正则表达式匹配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -614,6 +668,18 @@
   <li class="md-nav__item">
     <a href="../d_GCN论文解读/" title="GCN" class="md-nav__link">
       GCN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAT.md" title="GAT" class="md-nav__link">
+      GAT
     </a>
   </li>
 
@@ -706,6 +772,60 @@
           <li class="md-nav__item">
   <a href="#97" title="97. 交错字符串" class="md-nav__link">
     97. 交错字符串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#720" title="720" class="md-nav__link">
+    720
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#95-ii" title="95. 不同的二叉搜索树 II" class="md-nav__link">
+    95. 不同的二叉搜索树 II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" title="62. 不同路径" class="md-nav__link">
+    62. 不同路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#722" title="722" class="md-nav__link">
+    722
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#154-ii" title="154. 寻找旋转排序数组中的最小值 II" class="md-nav__link">
+    154. 寻找旋转排序数组中的最小值 II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" title="10. 正则表达式匹配" class="md-nav__link">
+    10. 正则表达式匹配
   </a>
   
 </li>
@@ -919,6 +1039,153 @@
 <h4 id="97"><a href="https://leetcode-cn.com/problems/interleaving-string/">97. 交错字符串</a><a class="headerlink" href="#97" title="Permanent link">&para;</a></h4>
 <p>这道题告诉我们，方法走不通可以巧妙的选择别的方法</p>
 <p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 你的动态规划需要继续探索</p>
+<h2 id="720">720<a class="headerlink" href="#720" title="Permanent link">&para;</a></h2>
+<h4 id="95-ii"><a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">95. 不同的二叉搜索树 II</a><a class="headerlink" href="#95-ii" title="Permanent link">&para;</a></h4>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 递归构造一棵树，遍历所有节点：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Definition for a binary tree node.</span>
+<span class="cm"> * struct TreeNode {</span>
+<span class="cm"> *     int val;</span>
+<span class="cm"> *     TreeNode *left;</span>
+<span class="cm"> *     TreeNode *right;</span>
+<span class="cm"> *     TreeNode() : val(0), left(nullptr), right(nullptr) {}</span>
+<span class="cm"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}</span>
+<span class="cm"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}</span>
+<span class="cm"> * };</span>
+<span class="cm"> */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">generateTrees</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span> <span class="k">nullptr</span> <span class="p">};</span>
+        <span class="p">}</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">allTrees</span><span class="p">;</span>
+        <span class="c1">// 枚举可行根节点</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 获得所有可行的左子树集合</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">leftTrees</span> <span class="o">=</span> <span class="n">generateTrees</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+            <span class="c1">// 获得所有可行的右子树集合</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">rightTrees</span> <span class="o">=</span> <span class="n">generateTrees</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+
+            <span class="c1">// 从左子树集合中选出一棵左子树，从右子树集合中选出一棵右子树，拼接到根节点上</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">left</span> <span class="p">:</span> <span class="n">leftTrees</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">right</span> <span class="p">:</span> <span class="n">rightTrees</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">currTree</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                    <span class="n">currTree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="p">;</span>
+                    <span class="n">currTree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">;</span>
+                    <span class="n">allTrees</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">currTree</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">allTrees</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">generateTrees</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{};</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">generateTrees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="62"><a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a><a class="headerlink" href="#62" title="Permanent link">&para;</a></h4>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 排列组合问题</p>
+<p>需要看一看</p>
+<h2 id="722">722<a class="headerlink" href="#722" title="Permanent link">&para;</a></h2>
+<h4 id="154-ii"><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">154. 寻找旋转排序数组中的最小值 II</a><a class="headerlink" href="#154-ii" title="Permanent link">&para;</a></h4>
+<p>本题是 153. 寻找旋转排序数组中的最小值 的延伸。读者可以先尝试 153 题，体会在旋转数组中进行二分查找的思路，再来尝试解决本题。</p>
+<p>方法一：二分查找
+思路与算法</p>
+<p>一个包含重复元素的升序数组在经过旋转之后，可以得到下面可视化的折线图：</p>
+<p><img alt="fig1" src="https://gitee.com/moluggg/image/raw/master/img/202007/22/160131-709054.png" /></p>
+<p><img alt="fig2" src="https://gitee.com/moluggg/image/raw/master/img/202007/22/160143-61760.png" /></p>
+<p>最后一幅图是最不好处理的：</p>
+<p>就是当左右两端相等的情况有多种可能：</p>
+<p><img alt="fig4" src="https://gitee.com/moluggg/image/raw/master/img/202007/22/160151-883430.png" /></p>
+<p>这里 处理方法是：high--;</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">findMin</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">high</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">high</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="n">low</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="10"><a href="https://leetcode-cn.com/problems/regular-expression-matching/">10. 正则表达式匹配</a><a class="headerlink" href="#10" title="Permanent link">&para;</a></h4>
+<p>这道题比较难理解，是个字符串的匹配问题，这里用到了动态规划。</p>
+<p>首先，对于一般情况，就是不含有，*和.的，可以的转移方程式：
+$$
+f[i][j]=\left{\begin{array}{ll}
+f[i-1][j-1], &amp; s[i]=p[j] \
+\text { false }, &amp; s[i] \neq p[j]
+\end{array}\right.
+$$
+现在，考虑这个其次复杂的.,很显然，.存在，一定可以够匹配
+$$
+\text { f[i][j] }=\left{\begin{array}{ll}
+f[i-1][j-1] \text , &amp; \text { matches }(s[i], p[j]) \
+0, &amp; \text { otherwise }
+\end{array}\right.
+$$
+matches(s[i],p[j])表示相等，或者p[j]是.</p>
+<p>最后，考虑最为复杂的*：</p>
+<p>x*可以与前面的x联合在一起，醉成x*组合，多个*连在一起并没有多大的意义，前期处理可以去掉。</p>
+<p>当<span><span class="MathJax_Preview">s[i]!=p[j-1]</span><script type="math/tex">s[i]!=p[j-1]</script></span>的时候，<span><span class="MathJax_Preview">f[i][j]=f[i][j-2]</span><script type="math/tex">f[i][j]=f[i][j-2]</script></span>，</p>
+<p>当存在一个，<span><span class="MathJax_Preview">s[i]=p[j-1]</span><script type="math/tex">s[i]=p[j-1]</script></span>的时候，<span><span class="MathJax_Preview">f[i][j]=f[i-1][j-2]</span><script type="math/tex">f[i][j]=f[i-1][j-2]</script></span></p>
+<p>也可以是两个<span><span class="MathJax_Preview">s[i-1]=s[i]=p[j-1]</span><script type="math/tex">s[i-1]=s[i]=p[j-1]</script></span>，<span><span class="MathJax_Preview">f[i][j]=f[i-2][j-2]</span><script type="math/tex">f[i][j]=f[i-2][j-2]</script></span></p>
+<p>也可以是n个,<span><span class="MathJax_Preview">s[i-n+1]=s[i-n+2].....=s[i]=p[j-1]</span><script type="math/tex">s[i-n+1]=s[i-n+2].....=s[i]=p[j-1]</script></span>,<span><span class="MathJax_Preview">f[i][j]=f[i-n][j-2]</span><script type="math/tex">f[i][j]=f[i-n][j-2]</script></span></p>
+<p>以上可以概括为，</p>
+<p>本质上只会有两种情况：</p>
+<ul>
+<li>匹配 <em>s</em> 末尾的一个字符，将该字符扔掉，而该组合还可以继续进行匹配；</li>
+</ul>
+<p>（就是说，s如果存在重复的元素，且与*相遇，则<span><span class="MathJax_Preview">f[i][j]=f[i-1][j]</span><script type="math/tex">f[i][j]=f[i-1][j]</script></span>)</p>
+<ul>
+<li>不匹配字符，将该组合扔掉，不再进行匹配。</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+f[i][j]=\left\{\begin{array}{ll}
+f[i-1][j] \text { or } f[i][j-2], &amp; s[i]=p[j-1] \\
+f[i][j-2], &amp; s[i] \neq p[j-1]
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+f[i][j]=\left\{\begin{array}{ll}
+f[i-1][j] \text { or } f[i][j-2], & s[i]=p[j-1] \\
+f[i][j-2], & s[i] \neq p[j-1]
+\end{array}\right.
+</script>
+</div>
+<p>综合上述三个方面，可以列总的状态转移方程为：
+$$
+f[i][j]=\left{\begin{array}{l}
+\text { if }\left(p[j] \neq{ }^{*},\right)=\left{\begin{array}{ll}
+f[i-1][j-1], &amp; \text { matches }(s[i], p[j]) \
+\text { false, }
+\end{array}\right. \
+\text { otherwise }=\left{\begin{array}{ll}
+f[i-1][j] \text { or } f[i][j-2], &amp; \text { otherwise } \
+f[i][j-2], &amp; \text { otherwise }
+\end{array}\right.
+\end{array}\right.
+$$</p>
                 
                   
                 
