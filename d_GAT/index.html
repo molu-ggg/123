@@ -668,6 +668,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fgsm" title="FGSM" class="md-nav__link">
+    FGSM
+  </a>
+  
+</li>
+      
       
       
       
@@ -825,6 +832,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fgsm" title="FGSM" class="md-nav__link">
+    FGSM
+  </a>
+  
+</li>
+      
       
       
       
@@ -970,6 +984,28 @@ $$</p>
 生成对抗网(GANs)框架，这是学习更有效的嵌入MF。CFGAN[4]是矢量方向的</p>
 <p>基于gan的CF，不需要学习嵌入向量。他们有非常复杂的框架和遭受公认的艰苦训练问题。APR[14]考虑在高校开展对抗性训练</p>
 <p>DAT应用于推荐系统中</p>
+<h2 id="fgsm">FGSM<a class="headerlink" href="#fgsm" title="Permanent link">&para;</a></h2>
+<p>$$
+\left{\begin{array}{c}
+w^{T} \tilde{x}=w^{T} x+w^{T} \eta \
+|\eta|_{\infty}&lt;\epsilon \
+\operatorname{dim}(w)=n \
+\text { average }(G(x))=m
+\end{array}\right.
+$$
+<img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />对抗扰动通过ωTη影响激活函数从而影响分类结果。如果ω有n个维度，权向量的一个元素的平均大小是mm，那么激活函数就会增加εmnεmn。虽然‖η‖∞不会随着维度增加而增加，但是η会随nn线性增长，然后就有高维问题了。</p>
+<p>非线性模型的线性扰动
+我们假设神经网络都太线性了以至于不能抵抗对抗样本。常见的LSTM、ReLU和maxout网络都趋向于线性表现，而类似sigmod这种非线性性模型也把大量的时间花在非饱和和线性系统中。（这里我也不怎么理解，望大神讲解）</p>
+<p>我们从公式开始理解（fast gradient sign method）：
+$η=εsign(▽xJ(θ,x,y))
+$
+模型参数：θ
+模型输入，即图像：x
+结果标签：y
+损失函数：J(θ,x,y)
+符号函数：sign()
+我们可以线性化代价函数的当前值θ,获得最优max-norm η
+<img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 符号函数sign()是一个什么样的函数？</p>
                 
                   
                 
@@ -1049,8 +1085,6 @@ $$</p>
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="../js/extra.js"></script>
-      
-        <script src="../js/baidu-tongji.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

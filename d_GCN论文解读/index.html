@@ -1035,7 +1035,9 @@ output = H_2
 </li>
 </ul>
 <p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> <strong><span><span class="MathJax_Preview">score=wTx</span><script type="math/tex">score=wTx</script></span>。由于 <span><span class="MathJax_Preview">x~=x+ηx~=x+η</span><script type="math/tex">x~=x+ηx~=x+η</script></span>，则 <span><span class="MathJax_Preview">score=wTx+wTη</span><script type="math/tex">score=wTx+wTη</script></span>，可以看出当样本改变 η 时，activation值就会改变 wTη</strong></p>
-<p><strong>假设 w 有 n 个维度，且平均值为 m，那么activation的增量最多为 ϵmn。由于 ||η||∞ 不会随着维度 n 的变化而变化，但是增量却会随着 n 增大而线性增长，因此对于一个高维度的问题，一个样本中即使是无限小的扰动，也会叠加对最后的activation产生很大的影响</strong></p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> <strong>假设 w 有 n 个维度，且平均值为 m，那么activation的增量最多为 ϵmn。由于 ||η||∞ 不会随着维度 n 的变化而变化，但是增量却会随着 n 增大而线性增长，因此对于一个高维度的问题，一个样本中即使是无限小的扰动，也会叠加对最后的activation产生很大的影响</strong></p>
+<p>这句话的w是一个n维度的向量，比如，如果w是一个三维向量，就是：<span><span class="MathJax_Preview">(x,y,z)</span><script type="math/tex">(x,y,z)</script></span> </p>
+<p>这里假设<span><span class="MathJax_Preview">(x+y+z)/3 =m</span><script type="math/tex">(x+y+z)/3 =m</script></span>,因此随着w的维度增加，m若不变，ϵmn会增大。</p>
 <ul>
 <li>
 <p>Ian Goodfellow 在2014年发表了 “explaining and harnessing adversarial example” 这篇文章，并说明对抗样本的存在是由于模型过于线性所致。</p>
@@ -1212,8 +1214,6 @@ GCN代码：</p>
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="../js/extra.js"></script>
-      
-        <script src="../js/baidu-tongji.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
