@@ -1,0 +1,1822 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>数据分析算法 - MOLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="MOLU" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                MOLU
+              </span>
+              <span class="md-header-nav__topic">
+                数据分析算法
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="机器与深度学习" class="md-tabs__link md-tabs__link--active">
+          机器与深度学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../new_error/" title="问题与分析" class="md-tabs__link">
+          问题与分析
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../c视频经典算法/" title="经典算法" class="md-tabs__link">
+          经典算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link">
+          高级算法
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        数据分析算法
+      </label>
+    
+    <a href="./" title="数据分析算法" class="md-nav__link md-nav__link--active">
+      数据分析算法
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1.最短路径" class="md-nav__link">
+    1.最短路径
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.数值概率算法和舍伍德算法。" class="md-nav__link">
+    2.数值概率算法和舍伍德算法。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3.灰色预测" class="md-nav__link">
+    3.灰色预测
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4.聚类算法" class="md-nav__link">
+    4.聚类算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5.蒙特卡洛" class="md-nav__link">
+    5.蒙特卡洛
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6.模拟退火" class="md-nav__link">
+    6.模拟退火
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7.遗传算法" class="md-nav__link">
+    7.遗传算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8.粒子群算法" class="md-nav__link">
+    8.粒子群算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" title="9.种群竞争：" class="md-nav__link">
+    9.种群竞争：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" title="10.排队论：" class="md-nav__link">
+    10.排队论：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" title="11.层次分析：" class="md-nav__link">
+    11.层次分析：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" title="12.多元回归：" class="md-nav__link">
+    12.多元回归：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" title="13.主成分分析：" class="md-nav__link">
+    13.主成分分析：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" title="14.神经网络" class="md-nav__link">
+    14.神经网络
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" title="神经网络（2,2,1）结构" class="md-nav__link">
+    神经网络（2,2,1）结构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_cnn/" title="CNN" class="md-nav__link">
+      CNN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_百度技术认证/" title="百度技术认证" class="md-nav__link">
+      百度技术认证
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题与分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        问题与分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_error/" title="方差,偏差，噪声" class="md-nav__link">
+      方差,偏差，噪声
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_modern/" title="模型评估方法和性能指标" class="md-nav__link">
+      模型评估方法和性能指标
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_sigmoid/" title="激活函数与梯度消失，梯度爆炸" class="md-nav__link">
+      激活函数与梯度消失，梯度爆炸
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="验证集与测试集" class="md-nav__link">
+      验证集与测试集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_transfer/" title="欠拟合，过拟合，正则化" class="md-nav__link">
+      欠拟合，过拟合，正则化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      经典算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        经典算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c视频经典算法/" title="蓝桥杯基础" class="md-nav__link">
+      蓝桥杯基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c蓝桥杯练习题/" title="蓝桥杯题" class="md-nav__link">
+      蓝桥杯题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c背包问题/" title="背包问题" class="md-nav__link">
+      背包问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_leetcode/" title="leetcode" class="md-nav__link">
+      leetcode
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      高级算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_Deepwalk/" title="Deepwalk等" class="md-nav__link">
+      Deepwalk等
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAN/" title="GAN" class="md-nav__link">
+      GAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GCN论文解读/" title="GCN" class="md-nav__link">
+      GCN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAT/" title="GAT" class="md-nav__link">
+      GAT
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1.最短路径" class="md-nav__link">
+    1.最短路径
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.数值概率算法和舍伍德算法。" class="md-nav__link">
+    2.数值概率算法和舍伍德算法。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3.灰色预测" class="md-nav__link">
+    3.灰色预测
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4.聚类算法" class="md-nav__link">
+    4.聚类算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5.蒙特卡洛" class="md-nav__link">
+    5.蒙特卡洛
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6.模拟退火" class="md-nav__link">
+    6.模拟退火
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7.遗传算法" class="md-nav__link">
+    7.遗传算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8.粒子群算法" class="md-nav__link">
+    8.粒子群算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" title="9.种群竞争：" class="md-nav__link">
+    9.种群竞争：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" title="10.排队论：" class="md-nav__link">
+    10.排队论：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" title="11.层次分析：" class="md-nav__link">
+    11.层次分析：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" title="12.多元回归：" class="md-nav__link">
+    12.多元回归：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" title="13.主成分分析：" class="md-nav__link">
+    13.主成分分析：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" title="14.神经网络" class="md-nav__link">
+    14.神经网络
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" title="神经网络（2,2,1）结构" class="md-nav__link">
+    神经网络（2,2,1）结构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>数据分析算法</h1>
+                
+                <h2 id="1">1.最短路径<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>有向图到各点的最短距离：</p>
+<p>类似：这种图或者邻接矩阵的形式，可以得到某一点a向各个节点的最短路径</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/120821-168754.jpeg" /></p>
+<p>算法描述：</p>
+<ol>
+<li>
+<p>初始化，以该节点更新与有向连接的邻结点的距离进行更新，不能通过的，两者之间距离为正无穷、</p>
+</li>
+<li>
+<p>找出最短路的结点b，确定该路径ab是a到b的最短路，并将b作为下一节点，继续重复算法一直到结束。</p>
+</li>
+<li>以该节点更新与有向连接的邻结点的距离进行更新，<span><span class="MathJax_Preview">dis[a][y]=min(dis[x][y],dis[x][b]+dis[b][y])</span><script type="math/tex">dis[a][y]=min(dis[x][y],dis[x][b]+dis[b][y])</script></span></li>
+<li>重复23过程一直到结束</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#define MaxNum 765432100</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">ifstream</span> <span class="nf">fin</span><span class="p">(</span><span class="s">&quot;Dijkstra.in&quot;</span><span class="p">);</span>
+<span class="n">ofstream</span> <span class="nf">fout</span><span class="p">(</span><span class="s">&quot;Dijkstra.out&quot;</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="n">Map</span><span class="p">[</span><span class="mi">501</span><span class="p">][</span><span class="mi">501</span><span class="p">];</span>
+<span class="kt">bool</span> <span class="n">is_arrived</span><span class="p">[</span><span class="mi">501</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">Dist</span><span class="p">[</span><span class="mi">501</span><span class="p">],</span><span class="n">From</span><span class="p">[</span><span class="mi">501</span><span class="p">],</span><span class="n">Stack</span><span class="p">[</span><span class="mi">501</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">Path</span><span class="p">,</span><span class="n">Source</span><span class="p">,</span><span class="n">Vertex</span><span class="p">,</span><span class="n">Temp</span><span class="p">,</span><span class="n">SetCard</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">FindMin</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="n">Temp</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">Minm</span><span class="o">=</span><span class="n">MaxNum</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">Vertex</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">&lt;</span><span class="n">Minm</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="n">is_arrived</span><span class="p">[</span><span class="n">p</span><span class="p">]))</span>
+<span class="p">{</span>
+<span class="n">Minm</span><span class="o">=</span><span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
+<span class="n">Temp</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">Temp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">memset</span><span class="p">(</span><span class="n">is_arrived</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">is_arrived</span><span class="p">));</span>
+
+<span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">Source</span> <span class="o">&gt;&gt;</span> <span class="n">Vertex</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">Vertex</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">q</span><span class="o">&lt;=</span><span class="n">Vertex</span><span class="p">;</span><span class="n">q</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">Map</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Map</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="n">Map</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">=</span><span class="n">MaxNum</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">Vertex</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">Map</span><span class="p">[</span><span class="n">Source</span><span class="p">][</span><span class="n">p</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">!=</span><span class="n">MaxNum</span><span class="p">)</span> 
+<span class="n">From</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">Source</span><span class="p">;</span>
+<span class="k">else</span> 
+<span class="n">From</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">is_arrived</span><span class="p">[</span><span class="n">Source</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+<span class="n">SetCard</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">do</span>
+<span class="p">{</span>
+<span class="n">Temp</span><span class="o">=</span><span class="n">FindMin</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Temp</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">SetCard</span><span class="o">=</span><span class="n">SetCard</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">is_arrived</span><span class="p">[</span><span class="n">Temp</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">Vertex</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">&gt;</span><span class="n">Dist</span><span class="p">[</span><span class="n">Temp</span><span class="p">]</span><span class="o">+</span><span class="n">Map</span><span class="p">[</span><span class="n">Temp</span><span class="p">][</span><span class="n">p</span><span class="p">])</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="n">is_arrived</span><span class="p">[</span><span class="n">p</span><span class="p">]))</span>
+<span class="p">{</span>
+<span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">Dist</span><span class="p">[</span><span class="n">Temp</span><span class="p">]</span><span class="o">+</span><span class="n">Map</span><span class="p">[</span><span class="n">Temp</span><span class="p">][</span><span class="n">p</span><span class="p">];</span>
+<span class="n">From</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">Temp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">SetCard</span><span class="o">!=</span><span class="n">Vertex</span><span class="p">);</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">Vertex</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">!=</span><span class="n">Source</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;========================</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Source:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Source</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Target:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">==</span><span class="n">MaxNum</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Distance:&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Infinity</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Path:No Way!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span> 
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Distance:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">Path</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">From</span><span class="p">[</span><span class="n">Path</span><span class="p">]</span><span class="o">!=</span><span class="n">Path</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">Stack</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">Path</span><span class="p">;</span>
+<span class="n">Path</span><span class="o">=</span><span class="n">From</span><span class="p">[</span><span class="n">Path</span><span class="p">];</span>
+<span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Path:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Source</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">q</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">q</span><span class="o">--</span><span class="p">)</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Stack</span><span class="p">[</span><span class="n">q</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">========================</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="n">fout</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="2"><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 2.数值概率算法和舍伍德算法。<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h2 id="3">3.灰色预测<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>这是像线性回归一下，建立起一个预测模型，然后进行预测未知数据</p>
+<p>什么情况下使用灰色预测模型？</p>
+<p>数据量小，预测的周期短，预测的长度短</p>
+<p>分为GM(1,1)，GM(1,m)，GM(n,m)分别用于一个自变量一个因变量，多个自变量一个因变量，多个自变量多个因变量</p>
+<p>这里有两个程序，有一个简单版本，有一个复杂版本，复杂版本请参考github</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>[]<span class="p">=</span><span class="nf">greymodel</span><span class="p">(</span>y<span class="p">)</span><span class="w"></span>
+<span class="c">% 本程序主要用来计算根据灰色理论建立的模型的预测值。</span>
+<span class="c">% 应用的数学模型是 GM(1,1)。</span>
+<span class="c">% 原始数据的处理方法是一次累加法。</span>
+<span class="n">y</span><span class="p">=</span><span class="n">input</span><span class="p">(</span><span class="s">&#39;请输入数据 &#39;</span><span class="p">);</span>
+<span class="n">n</span><span class="p">=</span><span class="nb">length</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<span class="n">yy</span><span class="p">=</span><span class="nb">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">yy</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">for</span> <span class="s">i=2:n</span>
+    <span class="n">yy</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yy</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">B=ones(n-1,2)</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=1:(n-1)</span>
+    <span class="n">B</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)=</span><span class="o">-</span><span class="p">(</span><span class="n">yy</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="n">yy</span><span class="p">(</span><span class="nb">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">B</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">end</span>
+<span class="s">BT=B&#39;;</span>
+<span class="s">for j=1:n-1</span>
+<span class="s">    YN(j)=y(j+1);</span>
+<span class="s">end</span>
+<span class="s">YN=YN&#39;</span><span class="p">;</span>
+<span class="n">A</span><span class="p">=</span><span class="n">inv</span><span class="p">(</span><span class="n">BT</span><span class="o">*</span><span class="n">B</span><span class="p">)</span><span class="o">*</span><span class="n">BT</span><span class="o">*</span><span class="n">YN</span><span class="p">;</span>
+<span class="n">a</span><span class="p">=</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">u</span><span class="p">=</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">t</span><span class="p">=</span><span class="n">u</span><span class="o">/</span><span class="n">a</span><span class="p">;</span>
+<span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">yys</span><span class="p">(</span><span class="nb">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)=(</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">.*</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="n">t</span><span class="p">;</span>
+<span class="n">yys</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">for</span> <span class="s">j=n+2:-1:2</span>
+    <span class="n">ys</span><span class="p">(</span><span class="nb">j</span><span class="p">)=</span><span class="n">yys</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span><span class="o">-</span><span class="n">yys</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">x=1:n</span><span class="p">;</span>
+<span class="n">xs</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">yn</span><span class="p">=</span><span class="n">ys</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;^r&#39;</span><span class="p">,</span><span class="n">xs</span><span class="p">,</span><span class="n">yn</span><span class="p">,</span><span class="s">&#39;*-b&#39;</span><span class="p">);</span>
+<span class="n">det</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="n">sum1</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">sumpe</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=1:n</span>
+    <span class="n">sumpe</span><span class="p">=</span><span class="n">sumpe</span><span class="o">+</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">pe=sumpe/n</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=1:n</span><span class="p">;</span>
+    <span class="n">sum1</span><span class="p">=</span><span class="n">sum1</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">pe</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">end</span>
+<span class="s">s1=sqrt(sum1/n)</span><span class="p">;</span>
+<span class="n">sumce</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=2:n</span>
+    <span class="n">sumce</span><span class="p">=</span><span class="n">sumce</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">yn</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
+<span class="n">end</span>
+<span class="s">ce=sumce/(n-1)</span><span class="p">;</span>
+<span class="n">sum2</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=2:n</span><span class="p">;</span>
+    <span class="n">sum2</span><span class="p">=</span><span class="n">sum2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">yn</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">ce</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">end</span>
+<span class="s">s2=sqrt(sum2/(n-1))</span><span class="p">;</span>
+<span class="n">c</span><span class="p">=(</span><span class="n">s2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;后验差比值为：&#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">c</span><span class="p">)]);</span>
+<span class="n">if</span> <span class="s">c&lt;0.35</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统预测精度好&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span> <span class="n">c</span><span class="o">&lt;</span><span class="mf">0.5</span>
+        <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统预测精度合格&#39;</span><span class="p">)</span>
+    <span class="n">else</span> <span class="s">if</span> <span class="s">c&lt;0.65</span>
+            <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;系统预测精度勉强&#39;</span><span class="p">)</span>
+        <span class="n">else</span>
+            <span class="s">disp(&#39;系统预测精度不合格&#39;)</span>
+        <span class="n">end</span>
+    <span class="s">end</span>
+<span class="k">end</span>
+
+<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;下个拟合值为 &#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">ys</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))]);</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;再下个拟合值为&#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">ys</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">))]);</span>
+</code></pre></div>
+
+<h2 id="4">4.聚类算法<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>就是将数据分为k类，我们这里用kmeans，</p>
+<p>比如将数据分成4类：，这里的样本以前都是黑色的，我们认为设定k=4，就是分为4类以后得到的分类结果</p>
+<p><img alt="image-20200723183009694" src="https://gitee.com/moluggg/image/raw/master/img/202007/23/183011-843982.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># calculate Euclidean distance</span>
+<span class="k">def</span> <span class="nf">euclDistance</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="n">vector2</span> <span class="o">-</span> <span class="n">vector1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+
+<span class="c1"># init centroids with random samples</span>
+<span class="k">def</span> <span class="nf">initCentroids</span><span class="p">(</span><span class="n">dataSet</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">numSamples</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="n">dataSet</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">centroids</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numSamples</span><span class="p">))</span>
+        <span class="n">centroids</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">dataSet</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="k">return</span> <span class="n">centroids</span>
+
+<span class="c1"># k-means cluster</span>
+<span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">dataSet</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">numSamples</span> <span class="o">=</span> <span class="n">dataSet</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># first column stores which cluster this sample belongs to,</span>
+    <span class="c1"># second column stores the error between this sample and its centroid</span>
+    <span class="n">clusterAssment</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">zeros</span><span class="p">((</span><span class="n">numSamples</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="n">clusterChanged</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1">## step 1: init centroids</span>
+    <span class="n">centroids</span> <span class="o">=</span> <span class="n">initCentroids</span><span class="p">(</span><span class="n">dataSet</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">clusterChanged</span><span class="p">:</span>
+        <span class="n">clusterChanged</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1">## for each sample</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">numSamples</span><span class="p">):</span>
+            <span class="n">minDist</span>  <span class="o">=</span> <span class="mf">100000.0</span>
+            <span class="n">minIndex</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="c1">## for each centroid</span>
+            <span class="c1">## step 2: find the centroid who is closest</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">distance</span> <span class="o">=</span> <span class="n">euclDistance</span><span class="p">(</span><span class="n">centroids</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:],</span> <span class="n">dataSet</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span>
+                <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">minDist</span><span class="p">:</span>
+                    <span class="n">minDist</span>  <span class="o">=</span> <span class="n">distance</span>
+                    <span class="n">minIndex</span> <span class="o">=</span> <span class="n">j</span>
+
+            <span class="c1">## step 3: update its cluster</span>
+            <span class="k">if</span> <span class="n">clusterAssment</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">minIndex</span><span class="p">:</span>
+                <span class="n">clusterChanged</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">clusterAssment</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">minIndex</span><span class="p">,</span> <span class="n">minDist</span><span class="o">**</span><span class="mi">2</span>
+
+        <span class="c1">## step 4: update centroids</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">pointsInCluster</span> <span class="o">=</span> <span class="n">dataSet</span><span class="p">[</span><span class="n">nonzero</span><span class="p">(</span><span class="n">clusterAssment</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">A</span> <span class="o">==</span> <span class="n">j</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">centroids</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">pointsInCluster</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="nb">print</span> <span class="s1">&#39;Congratulations, cluster complete!&#39;</span>
+    <span class="k">return</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">clusterAssment</span>
+
+<span class="c1"># show your cluster only available with 2-D data</span>
+<span class="k">def</span> <span class="nf">showCluster</span><span class="p">(</span><span class="n">dataSet</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">clusterAssment</span><span class="p">):</span>
+    <span class="n">numSamples</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="n">dataSet</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">dim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s2">&quot;Sorry! I can not draw because the dimension of your data is not 2!&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="n">mark</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">,</span> <span class="s1">&#39;og&#39;</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">,</span> <span class="s1">&#39;^r&#39;</span><span class="p">,</span> <span class="s1">&#39;+r&#39;</span><span class="p">,</span> <span class="s1">&#39;sr&#39;</span><span class="p">,</span> <span class="s1">&#39;dr&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;r&#39;</span><span class="p">,</span> <span class="s1">&#39;pr&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">mark</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s2">&quot;Sorry! Your k is too large! please contact Zouxy&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="c1"># draw all samples</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">numSamples</span><span class="p">):</span>
+        <span class="n">markIndex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">clusterAssment</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dataSet</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dataSet</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">mark</span><span class="p">[</span><span class="n">markIndex</span><span class="p">])</span>
+
+    <span class="n">mark</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Dr&#39;</span><span class="p">,</span> <span class="s1">&#39;Db&#39;</span><span class="p">,</span> <span class="s1">&#39;Dg&#39;</span><span class="p">,</span> <span class="s1">&#39;Dk&#39;</span><span class="p">,</span> <span class="s1">&#39;^b&#39;</span><span class="p">,</span> <span class="s1">&#39;+b&#39;</span><span class="p">,</span> <span class="s1">&#39;sb&#39;</span><span class="p">,</span> <span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;b&#39;</span><span class="p">,</span> <span class="s1">&#39;pb&#39;</span><span class="p">]</span>
+    <span class="c1"># draw the centroids</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">centroids</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">centroids</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">mark</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#测试代码：</span>
+
+
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">## step 1: load data</span>
+<span class="nb">print</span> <span class="s2">&quot;step 1: load data...&quot;</span>
+<span class="n">dataSet</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">##################################修改##########################</span>
+<span class="n">fileIn</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;E:/Python/Machine Learning in Action/testSet.txt&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileIn</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+    <span class="n">lineArr</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">dataSet</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">lineArr</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">lineArr</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+
+<span class="c1">## step 2: clustering...</span>
+<span class="nb">print</span> <span class="s2">&quot;step 2: clustering...&quot;</span>
+<span class="n">dataSet</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">dataSet</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">centroids</span><span class="p">,</span> <span class="n">clusterAssment</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">dataSet</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="c1">## step 3: show the result</span>
+<span class="nb">print</span> <span class="s2">&quot;step 3: show the result...&quot;</span>
+<span class="n">showCluster</span><span class="p">(</span><span class="n">dataSet</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">clusterAssment</span><span class="p">)</span>
+</code></pre></div>
+
+<p>数据文件长这个样子</p>
+<p><img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202007/23/183142-836169.png" /></p>
+<h2 id="5">5.蒙特卡洛<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h2 id="6">6.模拟退火<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>功能：</p>
+<p>寻找全局最优值（寻找最小值或者最大值）</p>
+<p>例题：</p>
+<p>TSP最短路径</p>
+<p>基本思想：</p>
+<p>是贪心算法，在搜索过程中加入随机扰动，如果找到一个更接近最优值的点，接受该解。否则，以一定的概率接收一个比当前解要差的解，防止陷入局部最优解，**做到更加接近最优值。**模拟退火过程，初始温度最高，随着搜索的过程，温度越低，内能减小，搜索范围趋于稳定。</p>
+<p>算法步骤：（以最小值为例）</p>
+<p><strong>Step1.</strong>  设置初始温度<span><span class="MathJax_Preview">t_{k}=t_{max}</span><script type="math/tex">t_{k}=t_{max}</script></span>,当前迭代步数<span><span class="MathJax_Preview">k=0</span><script type="math/tex">k=0</script></span> ，起点<span><span class="MathJax_Preview">x=x_{0}</span><script type="math/tex">x=x_{0}</script></span></p>
+<p><strong>Step2.</strong>  得到新解 <span><span class="MathJax_Preview">x_{new }= x+\Delta x</span><script type="math/tex">x_{new }= x+\Delta x</script></span>    其中 <span><span class="MathJax_Preview">\Delta x</span><script type="math/tex">\Delta x</script></span>在[dmin,dmax]之间</p>
+<p><strong>Step3.</strong>  <span><span class="MathJax_Preview">dE = f(x_{new})- f(x)</span><script type="math/tex">dE = f(x_{new})- f(x)</script></span> ，我中<span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span>是优化目标</p>
+<p><strong>Step4.</strong>  若$dE &gt;0 $ 则接受该点，否则，以概率<span><span class="MathJax_Preview">\exp (-dE/(k T))</span><script type="math/tex">\exp (-dE/(k T))</script></span>接受该点；并降温。</p>
+<blockquote>
+<p><strong>Step4.</strong>  若$dE &lt;0 $ 则接受该点，否则，以概率<span><span class="MathJax_Preview">\exp (dE/(k T))</span><script type="math/tex">\exp (dE/(k T))</script></span>接受该点(最大值)</p>
+</blockquote>
+<p>这样一直重复2,3,4一直达到阈值温度结束</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nf">main</span>
+<span class="n">clc</span>
+<span class="s">clear</span><span class="p">;</span>
+
+<span class="c">%范围</span>
+<span class="n">section_l</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">section_h</span> <span class="p">=</span> <span class="mi">9</span><span class="p">;</span>
+
+<span class="c">%绘制函数图像</span>
+<span class="n">draw_base</span><span class="p">();</span>
+
+<span class="c">%初始温度，停止温度与降温系数</span>
+<span class="n">tmp</span> <span class="p">=</span> <span class="mf">1e5</span><span class="p">;</span>
+<span class="n">tmp_min</span> <span class="p">=</span> <span class="mf">1e-3</span><span class="p">;</span>
+<span class="n">alpha</span> <span class="p">=</span> <span class="mf">0.98</span><span class="p">;</span>
+
+<span class="c">%生成初始随机解</span>
+<span class="n">x_old</span> <span class="p">=</span> <span class="p">(</span><span class="n">section_h</span> <span class="o">-</span> <span class="n">section_l</span><span class="p">)</span> <span class="o">*</span> <span class="nb">rand</span><span class="p">()</span> <span class="o">+</span> <span class="n">section_l</span><span class="p">;</span>
+<span class="n">x_new</span> <span class="p">=</span> <span class="n">x_old</span><span class="p">;</span>
+<span class="n">s_old</span> <span class="p">=</span> <span class="n">val</span><span class="p">(</span><span class="n">x_old</span><span class="p">);</span>
+<span class="n">s_new</span> <span class="p">=</span> <span class="n">s_old</span><span class="p">;</span>
+
+<span class="n">text_lt</span> <span class="p">=</span> <span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;Init&#39;</span><span class="p">);</span>
+
+<span class="c">%计数器</span>
+<span class="n">counter</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c">%退火的主体部分，一个循环</span>
+<span class="k">while</span><span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;</span> <span class="n">tmp_min</span><span class="p">)</span>  <span class="c">%阈值温度</span>
+  <span class="c">%随机扰动</span>
+  <span class="n">delta</span> <span class="p">=</span> <span class="p">(</span><span class="nb">rand</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="n">x_new</span> <span class="p">=</span> <span class="n">x_old</span> <span class="o">+</span> <span class="n">delta</span><span class="p">;</span>
+  <span class="c">%扰动的值小于一半的区间范围时，可以用这种办法防止新值超出区间范围</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">x_new</span> <span class="o">&lt;</span> <span class="n">section_l</span> <span class="o">||</span> <span class="n">x_new</span> <span class="o">&gt;</span> <span class="n">section_h</span><span class="p">)</span>
+    <span class="n">x_new</span> <span class="p">=</span> <span class="n">x_new</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
+  <span class="n">end</span>
+
+  <span class="s">s_new</span> <span class="s">=</span> <span class="s">val(x_new)</span><span class="p">;</span>
+
+  <span class="c">%求差值，这里是找最大值而非最小值，所以不是s_new - s_old    3</span>
+  <span class="n">dE</span> <span class="p">=</span> <span class="n">s_old</span> <span class="o">-</span> <span class="n">s_new</span><span class="p">;</span>
+
+  <span class="c">%判断，是否接受该点    4 </span>
+  <span class="nb">j</span> <span class="p">=</span> <span class="n">judge</span><span class="p">(</span><span class="n">dE</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span> 
+  <span class="k">if</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span>
+    <span class="n">s_old</span> <span class="p">=</span> <span class="n">s_new</span><span class="p">;</span>
+    <span class="n">x_old</span> <span class="p">=</span> <span class="n">x_new</span><span class="p">;</span>
+  <span class="n">end</span>
+
+  <span class="s">%只有当dE</span> <span class="s">&lt;</span> <span class="s">0的情况下才降温</span> 
+  <span class="k">if</span><span class="p">(</span><span class="n">dE</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">delete</span><span class="p">(</span><span class="n">text_lt</span><span class="p">);</span>
+    <span class="n">hold</span> <span class="s">on,</span> <span class="s">scatter(x_old,</span> <span class="s">s_old)</span><span class="p">;</span>
+    <span class="n">hold</span> <span class="s">on,</span> <span class="s">text_lt</span> <span class="s">=</span> <span class="s">text(0.3,</span> <span class="s">21,</span> <span class="s">[&#39;tmp: &#39;,</span> <span class="s">num2str(tmp)])</span><span class="p">;</span>
+    <span class="n">pause</span><span class="p">(</span><span class="mf">0.01</span><span class="p">);</span>
+    <span class="c">%上面是绘图的代码，下面降温</span>
+    <span class="n">tmp</span> <span class="p">=</span> <span class="n">tmp</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
+  <span class="n">else</span>
+    <span class="s">counter</span> <span class="s">=</span> <span class="s">counter</span> <span class="s">+</span> <span class="s">1</span><span class="p">;</span>
+  <span class="n">end</span>
+
+  <span class="s">%当接受更差的解的概率太小时，若又长时间找不到更优的解，那么退出循环，结束算法</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">counter</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="n">end</span>
+
+<span class="s">end</span>
+<span class="k">end</span>
+<span class="k">function</span><span class="w"> </span>[y] <span class="p">=</span><span class="w"> </span><span class="nf">val</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">y</span> <span class="p">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">);</span>
+<span class="n">end</span>
+
+<span class="s">function</span> <span class="s">draw_base()</span>
+    <span class="n">X</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">:</span><span class="mi">9</span><span class="p">;</span>
+    <span class="n">M</span> <span class="p">=</span> <span class="n">val</span><span class="p">(</span><span class="n">X</span><span class="p">);</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">function</span> <span class="s">[y]</span> <span class="s">=</span> <span class="s">judge(dE,</span> <span class="s">t)</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">dE</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">y</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">else</span>
+    <span class="s">d</span> <span class="s">=</span> <span class="s">exp(-(dE</span> <span class="s">/</span> <span class="s">t))</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="nb">rand</span><span class="p">)</span>
+      <span class="n">y</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">else</span>
+      <span class="s">y</span> <span class="s">=</span> <span class="s">0</span><span class="p">;</span>
+    <span class="n">end</span>
+  <span class="s">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p><a href="https://zhuanlan.zhihu.com/p/33184423">https://zhuanlan.zhihu.com/p/33184423</a></p>
+<p>优缺点：</p>
+<p>温度管理问题是一个难以处理的问题，实际应用中，由于必须考虑计算复杂度的切实可行性等问题，很容易受到参数的影响</p>
+<p>具有局部搜索能力强、运行时间短的优点</p>
+<p>例题： 110警车配置</p>
+<p>思路：图论问题，简化问题，将图结点保留，边信息保留，由图转化成邻接矩阵的问题</p>
+<p><img alt="image-20200726111233676" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/111234-101527.png" /></p>
+<h2 id="7">7.遗传算法<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>功能：也是寻找最优值方案的算法</p>
+<p>所以求最大值的过程就转化成一个“袋鼠跳”的过程。**</p>
+<p>下面介绍介绍“袋鼠跳”的几种方式。</p>
+<ul>
+<li>爬山算法：一只袋鼠朝着比现在高的地方跳去。它找到了不远处的最高的山峰。但是这座山不一定是最高峰。这就是爬山算法，它不能保证局部最优值就是全局最优值。</li>
+<li>模拟退火：袋鼠喝醉了。它随机地跳了很长时间。这期间，它可能走向高处，也可能踏入平地。但是，它渐渐清醒了并朝最高峰跳去。这就是模拟退火算法。</li>
+<li>遗传算法：有很多袋鼠，它们降落到喜玛拉雅山脉的任意地方。这些袋鼠并不知道它们的任务是寻找珠穆朗玛峰。但每过几年，就在一些海拔高度较低的地方射杀一些袋鼠。于是，不断有袋鼠死于海拔较低的地方，而越是在海拔高的袋鼠越是能活得更久，也越有机会生儿育女。就这样经过许多年，这些袋鼠们竟然都不自觉地聚拢到了一个个的山峰上，可是在所有的袋鼠中，只有聚拢到珠穆朗玛峰的袋鼠被带回了美丽的澳洲。</li>
+</ul>
+<p><a href="https://blog.csdn.net/JX_Cesare/article/details/81268771">https://blog.csdn.net/JX_Cesare/article/details/81268771</a></p>
+<p><a href="https://www.jianshu.com/p/ae5157c26af9">https://www.jianshu.com/p/ae5157c26af9</a></p>
+<p>基本思想：适者生存（接近最优值的），劣者淘汰（每隔一段时间淘汰掉一些结点）</p>
+<p>并遵循遗传中的基因遗传，变异，交配产生后代</p>
+<p>h函数还是没有太看懂</p>
+<p>算法步骤：</p>
+<ol>
+<li>
+<p>编码（设计基因片段）</p>
+</li>
+<li>
+<p>设计适应度函数，一个目标函数</p>
+</li>
+<li>选择（轮盘赌：根据自身的优势把所有种群放在0-1之间选择，随机竞争，最佳保留等算法）</li>
+<li>遗传（染色体交叉）基因片段的交换</li>
+<li>变异</li>
+</ol>
+<p>轮盘赌：</p>
+<p><img alt="image-20200725175759649" src="https://gitee.com/moluggg/image/raw/master/img/202007/25/175801-996578.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="n">clear</span><span class="p">;</span>
+<span class="n">clc</span><span class="p">;</span>
+<span class="c">%种群大小</span>
+<span class="n">popsize</span><span class="p">=</span><span class="mi">100</span><span class="p">;</span>
+<span class="c">%二进制编码长度</span>
+<span class="n">chromlength</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="c">%交叉概率</span>
+<span class="n">pc</span> <span class="p">=</span> <span class="mf">0.6</span><span class="p">;</span>
+<span class="c">%变异概率</span>
+<span class="n">pm</span> <span class="p">=</span> <span class="mf">0.001</span><span class="p">;</span>
+<span class="c">%初始种群</span>
+<span class="n">pop</span> <span class="p">=</span> <span class="n">initpop</span><span class="p">(</span><span class="n">popsize</span><span class="p">,</span><span class="n">chromlength</span><span class="p">);</span>
+
+<span class="n">for</span> <span class="s">i</span> <span class="s">=</span> <span class="s">1:100</span>
+    <span class="c">%计算适应度值（函数值）</span>
+    <span class="n">objvalue</span> <span class="p">=</span> <span class="n">cal_objvalue</span><span class="p">(</span><span class="n">pop</span><span class="p">);</span>
+    <span class="n">fitvalue</span> <span class="p">=</span> <span class="n">objvalue</span><span class="p">;</span>
+    <span class="c">%选择操作</span>
+    <span class="n">newpop</span> <span class="p">=</span> <span class="n">selection</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span><span class="n">fitvalue</span><span class="p">);</span>
+    <span class="c">%交叉操作</span>
+    <span class="n">newpop</span> <span class="p">=</span> <span class="n">crossover</span><span class="p">(</span><span class="n">newpop</span><span class="p">,</span><span class="n">pc</span><span class="p">);</span>
+    <span class="c">%变异操作</span>
+    <span class="n">newpop</span> <span class="p">=</span> <span class="n">mutation</span><span class="p">(</span><span class="n">newpop</span><span class="p">,</span><span class="n">pm</span><span class="p">);</span>
+    <span class="c">%更新种群</span>
+    <span class="n">pop</span> <span class="p">=</span> <span class="n">newpop</span><span class="p">;</span>
+    <span class="c">%寻找最优解</span>
+    <span class="p">[</span><span class="n">bestindividual</span><span class="p">,</span><span class="n">bestfit</span><span class="p">]</span> <span class="p">=</span> <span class="n">best</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span><span class="n">fitvalue</span><span class="p">);</span>
+    <span class="n">x2</span> <span class="p">=</span> <span class="n">binary2decimal</span><span class="p">(</span><span class="n">bestindividual</span><span class="p">);</span>
+    <span class="n">x1</span> <span class="p">=</span> <span class="n">binary2decimal</span><span class="p">(</span><span class="n">newpop</span><span class="p">);</span>
+    <span class="n">y1</span> <span class="p">=</span> <span class="n">cal_objvalue</span><span class="p">(</span><span class="n">newpop</span><span class="p">);</span>
+    <span class="n">if</span> <span class="s">mod(i,10)</span> <span class="s">==</span> <span class="s">0</span>
+        <span class="n">figure</span><span class="p">;</span>
+        <span class="n">fplot</span><span class="p">(</span><span class="s">&#39;10*sin(5*x)+7*abs(x-5)+10&#39;</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">10</span><span class="p">]);</span>
+        <span class="n">hold</span> <span class="s">on</span><span class="p">;</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s">&#39;*&#39;</span><span class="p">);</span>
+        <span class="n">title</span><span class="p">([</span><span class="s">&#39;迭代次数为n=&#39;</span> <span class="n">num2str</span><span class="p">(</span><span class="nb">i</span><span class="p">)]);</span>
+        <span class="c">%plot(x1,y1,&#39;*&#39;);</span>
+    <span class="n">end</span>
+<span class="s">end</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;The best X is ---&gt;&gt;%5.2f\n&#39;</span><span class="p">,</span><span class="n">x2</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;The best Y is ---&gt;&gt;%5.2f\n&#39;</span><span class="p">,</span><span class="n">bestfit</span><span class="p">);</span>
+</code></pre></div>
+
+<h2 id="8">8.粒子群算法<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h2 id="9">9.种群竞争：<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h2 id="10">10.排队论：<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h2 id="11">11.层次分析：<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<h2 id="12">12.多元回归：<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<h2 id="13">13.主成分分析：<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<p>对于二维数据而言：</p>
+<table>
+<thead>
+<tr>
+<th><img alt="image-20200726113919926" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/113949-282365.png" /></th>
+<th><img alt="image-20200726112600558" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/113942-122991.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始数据</td>
+<td>将原始数据求质点的数据分布</td>
+</tr>
+</tbody>
+</table>
+<p>这样求出来的数据，<span><span class="MathJax_Preview">\bar{X},\bar{Y}=0</span><script type="math/tex">\bar{X},\bar{Y}=0</script></span>便于以下的计算</p>
+<p>x,y轴上的方差与协方差公式：</p>
+<p>$$
+\begin{array}{c}
+s<sup>{2}(X)=\frac{\sum_{i=1}</sup>{n}\left(X_{i}-\bar{X}\right)^{2}}{n-1} \
+s^{2}\left(D_{1}\right)=18.97 \
+s^{2}\left(D_{2}\right)=3.13 \
+\operatorname{cov}(X, Y)=\frac{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)\left(Y_{i}-\bar{Y}\right)}{n-1} \
+\operatorname{cov}\left(D_{1}, D_{2}\right)=6.49 \</p>
+<p>\end{array}
+$$</p>
+<p><strong>实际上可以表示为：</strong></p>
+<div>
+<div class="MathJax_Preview">
+\begin{aligned}
+C=\left[\begin{array}{ll}
+s^{2}(X) &amp; \operatorname{cov}(X Y) \\
+\operatorname{cov}(X Y) &amp; s^{2}(Y)
+\end{array}\right]=\left[\begin{array}{cc}
+18.97 &amp; 6.49 \\
+6.49 &amp; 3.13
+\end{array}\right] \\
+&amp;=\frac{1}{6-1} A^{T} A
+\end{aligned}
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+C=\left[\begin{array}{ll}
+s^{2}(X) & \operatorname{cov}(X Y) \\
+\operatorname{cov}(X Y) & s^{2}(Y)
+\end{array}\right]=\left[\begin{array}{cc}
+18.97 & 6.49 \\
+6.49 & 3.13
+\end{array}\right] \\
+&=\frac{1}{6-1} A^{T} A
+\end{aligned}
+</script>
+</div>
+<p>其中，$A  $是以质心为（0,0）的处理后的数据 ，形状为 4*2</p>
+<p>我们的目标就是重新寻找一个方向，使得这些点让在这个方向上分散得最开。</p>
+<p>也就是说，在这个方向上，点到中心原点的方差最大。</p>
+<div>
+<div class="MathJax_Preview">
+\begin{array}{c}
+S=\vec{a} \cdot \vec{v}=|a||v| \cos \theta=|a| \cos \theta \\
+s^{2}=\sum_{i=1}^{n} \frac{S^{2}}{n-1}=\frac{\vec{v} \cdot \vec{A}^{T} \cdot\left(\vec{v} \cdot \vec{A}^{T}\right)^{T}}{n-1} \\
+=\vec{v} \cdot \frac{\vec{A}^{T} \vec{A}}{n-1} \cdot \vec{v}^{T} \\
+=\vec{v} C \vec{v}^{T}
+\end{array}
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+S=\vec{a} \cdot \vec{v}=|a||v| \cos \theta=|a| \cos \theta \\
+s^{2}=\sum_{i=1}^{n} \frac{S^{2}}{n-1}=\frac{\vec{v} \cdot \vec{A}^{T} \cdot\left(\vec{v} \cdot \vec{A}^{T}\right)^{T}}{n-1} \\
+=\vec{v} \cdot \frac{\vec{A}^{T} \vec{A}}{n-1} \cdot \vec{v}^{T} \\
+=\vec{v} C \vec{v}^{T}
+\end{array}
+</script>
+</div>
+<p>构造 目标函数以及 约束函数，利用拉格朗日定理,求解：</p>
+<p>$$
+\begin{array}{l}
+J=s^{2}=\vec{v} C \vec{v}^{T} \
+\text {s.t.} \vec{v} \cdot \vec{v}^{T}=1 \
+F(\vec{v})=\vec{v} C \vec{v}^{T}-\lambda\left(1-\vec{v} \cdot \vec{v}^{T}\right)
+\end{array}
+$$
+<img alt="image-20200726114911807" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/114938-645529.png" /></p>
+<p>求最值之后会得到一个特征值公式：</p>
+<div>
+<div class="MathJax_Preview">
+\begin{array}{c}
+\frac{\partial F(\vec{v})}{\partial \vec{v}}=0 \\
+2 C v^{T}-2 \lambda v^{T}=0 \\
+C v^{T}=\lambda v^{T}
+\end{array}
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+\frac{\partial F(\vec{v})}{\partial \vec{v}}=0 \\
+2 C v^{T}-2 \lambda v^{T}=0 \\
+C v^{T}=\lambda v^{T}
+\end{array}
+</script>
+</div>
+<p>然后特征值分解会得到两个相互独立的向量（线性代数有求解过程）</p>
+<table>
+<thead>
+<tr>
+<th><img alt="image-20200726115215898" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/115216-408997.png" /></th>
+<th><img alt="image-20200726115155432" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/115223-541960.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>求解的两个向量</td>
+<td>表示咱图中</td>
+</tr>
+</tbody>
+</table>
+<p><span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>的含义：带入到公式（2）此时，Cv=<span><span class="MathJax_Preview">\lambda v</span><script type="math/tex">\lambda v</script></span> 带入可得，由于<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>是一个常数，可以提出来，<span><span class="MathJax_Preview">v^{T}v=1</span><script type="math/tex">v^{T}v=1</script></span></p>
+<p>所以  <span><span class="MathJax_Preview">s^{2}= \lambda</span><script type="math/tex">s^{2}= \lambda</script></span></p>
+<p>最后得到的两个方向：信息集中到了一个方向里面，因此主成分分析降维技术，将信息少的维度省去</p>
+<p><img alt="image-20200726115717782" src="E:\typora图片\image-20200726115717782.png" /></p>
+<p>例题：</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/115943-499677.jpeg" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">clc</span>
+<span class="s">clear</span> <span class="s">all</span>
+<span class="n">A</span><span class="p">=</span><span class="n">xlsread</span><span class="p">(</span><span class="s">&#39;这里换成你自己的数据根目录，例如：D:\资料库区\大三上\HUAWEI\MATLAB\主成分分析.xls&#39;</span><span class="p">,</span><span class="s">&#39;B3:I17&#39;</span><span class="p">);</span>
+<span class="c">%得到的数据矩阵的行数和列数</span>
+<span class="n">a</span><span class="p">=</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">b</span><span class="p">=</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="c">%数据的标准化处理:得到标准化后的矩阵SA</span>
+<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">b</span>
+    <span class="n">SA</span><span class="p">(:,</span><span class="nb">i</span><span class="p">)=(</span><span class="n">A</span><span class="p">(:,</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">(:,</span><span class="nb">i</span><span class="p">)))</span><span class="o">/</span><span class="n">std</span><span class="p">(</span><span class="n">A</span><span class="p">(:,</span><span class="nb">i</span><span class="p">));</span>
+<span class="n">end</span>
+<span class="s">%计算系数矩阵:CM</span>
+<span class="n">CM</span><span class="p">=</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">SA</span><span class="p">);</span>
+<span class="c">%计算CM的特征值和特征向量</span>
+<span class="p">[</span><span class="n">V</span><span class="p">,</span><span class="n">D</span><span class="p">]=</span><span class="n">eig</span><span class="p">(</span><span class="n">CM</span><span class="p">);</span>
+<span class="c">%将特征值按降序排列到DS中</span>
+<span class="k">for</span> <span class="nb">j</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">b</span>
+    <span class="n">DS</span><span class="p">(</span><span class="nb">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)=</span><span class="n">D</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="nb">j</span><span class="p">,</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="nb">j</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">%计算贡献率</span>
+<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">b</span>
+    <span class="n">DS</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)=</span><span class="n">DS</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">sum</span><span class="p">(</span><span class="n">DS</span><span class="p">(:,</span><span class="mi">1</span><span class="p">));</span><span class="c">%单个贡献率</span>
+    <span class="n">DS</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">3</span><span class="p">)=</span><span class="n">sum</span><span class="p">(</span><span class="n">DS</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">sum</span><span class="p">(</span><span class="n">DS</span><span class="p">(:,</span><span class="mi">1</span><span class="p">));</span><span class="c">%累计贡献率</span>
+<span class="k">end</span>
+<span class="c">%假定主成分的信息保留率</span>
+<span class="n">T</span><span class="p">=</span><span class="mf">0.9</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">k=1:b</span>
+    <span class="n">if</span> <span class="s">DS(k,3)</span> <span class="s">&gt;=</span> <span class="s">T</span>
+        <span class="n">com_num</span><span class="p">=</span><span class="n">k</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="n">end</span>
+<span class="s">end</span>
+<span class="c">%提取主成分的特征向量</span>
+<span class="k">for</span> <span class="nb">j</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">com_num</span>
+    <span class="n">PV</span><span class="p">(:,</span><span class="nb">j</span><span class="p">)=</span><span class="n">V</span><span class="p">(:,</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="nb">j</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">%计算主成分得分</span>
+<span class="n">new_score</span><span class="p">=</span><span class="n">SA</span><span class="o">*</span><span class="n">PV</span><span class="p">;</span>
+<span class="n">for</span> <span class="s">i=1:a</span>
+    <span class="n">total_score</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)=</span><span class="n">sum</span><span class="p">(</span><span class="n">new_score</span><span class="p">(</span><span class="nb">i</span><span class="p">,:));</span>
+    <span class="n">total_score</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)=</span><span class="nb">i</span><span class="p">;</span>
+<span class="n">end</span>
+<span class="s">%强主成分得分与总分放到同一个矩阵中</span>
+<span class="n">result_report</span><span class="p">=[</span><span class="n">new_score</span><span class="p">,</span><span class="n">total_score</span><span class="p">];</span>
+<span class="c">%按总分降序排列</span>
+<span class="n">result_report</span><span class="p">=</span><span class="n">sortrows</span><span class="p">(</span><span class="n">result_report</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+<span class="c">%输出结果</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;特征值、贡献率、累计贡献率：&#39;</span><span class="p">)</span>
+<span class="n">DS</span>
+<span class="s">disp(&#39;信息保留率T对应的主成分数与特征向量：&#39;)</span>
+<span class="n">com_num</span>
+<span class="s">PV</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;主成分得分及排序（按第4列的总分进行降序排列，前3列为个各成分得分，第5列为企业编号）&#39;</span><span class="p">)</span>
+<span class="n">result_report</span>
+
+<span class="s">可以用下方数据训练一下</span>
+</code></pre></div>
+
+<h2 id="14">14.神经网络<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<p><strong>神经网络的普通应用：回归与分类</strong></p>
+<h3 id="221">神经网络（2,2,1）结构<a class="headerlink" href="#221" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#这是一层神经网络的构造：</span>
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="c1"># Our activation function: f(x) = 1 / (1 + e^(-x))</span>
+  <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">Neuron</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">bias</span>
+
+  <span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="c1"># Weight inputs, add bias, then use the activation function</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+    <span class="k">return</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># w1 = 0, w2 = 1</span>
+<span class="n">bias</span> <span class="o">=</span> <span class="mi">4</span>                   <span class="c1"># b = 4</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">Neuron</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>       <span class="c1"># x1 = 2, x2 = 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">feedforward</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>    <span class="c1"># 0.9990889488055994</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>0.9990889488055994
+</code></pre></div>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># ... code from previous section here</span>
+
+<span class="k">class</span> <span class="nc">OurNeuralNetwork</span><span class="p">:</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  A neural network with:</span>
+<span class="sd">    - 2 inputs</span>
+<span class="sd">    - a hidden layer with 2 neurons (h1, h2)</span>
+<span class="sd">    - an output layer with 1 neuron (o1)</span>
+<span class="sd">  Each neuron has the same weights and bias:</span>
+<span class="sd">    - w = [0, 1]</span>
+<span class="sd">    - b = 0</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># The Neuron class here is from the previous section</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">h1</span> <span class="o">=</span> <span class="n">Neuron</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">h2</span> <span class="o">=</span> <span class="n">Neuron</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">o1</span> <span class="o">=</span> <span class="n">Neuron</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">)</span> <span class="c1">#初始化</span>
+
+  <span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">out_h1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="o">.</span><span class="n">feedforward</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#前向传播</span>
+    <span class="n">out_h2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="o">.</span><span class="n">feedforward</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1"># The inputs for o1 are the outputs from h1 and h2</span>
+    <span class="n">out_o1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o1</span><span class="o">.</span><span class="n">feedforward</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">out_h1</span><span class="p">,</span> <span class="n">out_h2</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="n">out_o1</span>
+
+<span class="n">network</span> <span class="o">=</span> <span class="n">OurNeuralNetwork</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">feedforward</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># 0.7216325609518421</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>0.7216325609518421
+</code></pre></div>
+
+
+<p><img alt="image-20200725163502982" src="E:\typora图片\163504-697438.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="c1"># Sigmoid activation function: f(x) = 1 / (1 + e^(-x))</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">deriv_sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="c1"># Derivative of sigmoid: f&#39;(x) = f(x) * (1 - f(x))</span>
+    <span class="n">fx</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fx</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">fx</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">mse_loss</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+  <span class="c1"># y_true and y_pred are numpy arrays of the same length.</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">OurNeuralNetwork</span><span class="p">:</span> <span class="c1">#这个神经网络只是用于有2两个输入，一个隐藏层（含有2个结点），一个输出的简单的神经网络</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># 权重，Weights</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+
+        <span class="c1"># 截距项，Biases</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># x is a numpy array with 2 elements.</span>
+        <span class="n">h1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w1</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b1</span><span class="p">)</span>
+        <span class="n">h2</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w3</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b2</span><span class="p">)</span>
+        <span class="n">o1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w5</span> <span class="o">*</span> <span class="n">h1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w6</span> <span class="o">*</span> <span class="n">h2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">o1</span>
+
+    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">all_y_trues</span><span class="p">):</span> <span class="c1">#l=里面涉及到反向梯度更新传播算法</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        - data is a (n x 2) numpy array, n = # of samples in the dataset.</span>
+<span class="sd">        - all_y_trues is a numpy array with n elements.</span>
+<span class="sd">          Elements in all_y_trues correspond to those in data.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">learn_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="n">epochs</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># number of times to loop through the entire dataset</span>
+
+        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+
+            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y_true</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">all_y_trues</span><span class="p">):</span>
+
+
+                <span class="c1"># --- Do a feedforward (we&#39;ll need these values later) 每一次的前向传播，可以用feedforward代替</span>
+                <span class="n">sum_h1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w1</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b1</span>
+                <span class="n">h1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">sum_h1</span><span class="p">)</span>
+
+                <span class="n">sum_h2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b2</span>
+                <span class="n">h2</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">sum_h2</span><span class="p">)</span>
+
+                <span class="n">sum_o1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w5</span> <span class="o">*</span> <span class="n">h1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w6</span> <span class="o">*</span> <span class="n">h2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b3</span>
+                <span class="n">o1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">sum_o1</span><span class="p">)</span>
+                <span class="n">y_pred</span> <span class="o">=</span> <span class="n">o1</span>
+                <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">                h1,h2,o1 =OurNeuralNetwork.feedforward(data)   #类的使用还不太会</span>
+<span class="sd">                y_pred = o1</span>
+<span class="sd">                &#39;&#39;&#39;</span>
+
+                <span class="c1"># --- Calculate partial derivatives.</span>
+                <span class="c1"># --- Naming: d_L_d_w1 represents &quot;partial L / partial w1&quot;</span>
+                <span class="n">d_L_d_ypred</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span>
+
+                <span class="c1"># Neuron o1</span>
+                <span class="n">d_ypred_d_w5</span> <span class="o">=</span> <span class="n">h1</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_o1</span><span class="p">)</span>
+                <span class="n">d_ypred_d_w6</span> <span class="o">=</span> <span class="n">h2</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_o1</span><span class="p">)</span>
+                <span class="n">d_ypred_d_b3</span> <span class="o">=</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_o1</span><span class="p">)</span>
+
+                <span class="n">d_ypred_d_h1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w5</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_o1</span><span class="p">)</span>
+                <span class="n">d_ypred_d_h2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w6</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_o1</span><span class="p">)</span>
+
+                <span class="c1"># Neuron h1</span>
+                <span class="n">d_h1_d_w1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_h1</span><span class="p">)</span>
+                <span class="n">d_h1_d_w2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_h1</span><span class="p">)</span>
+                <span class="n">d_h1_d_b1</span> <span class="o">=</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_h1</span><span class="p">)</span>
+
+                <span class="c1"># Neuron h2</span>
+                <span class="n">d_h2_d_w3</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_h2</span><span class="p">)</span>
+                <span class="n">d_h2_d_w4</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_h2</span><span class="p">)</span>
+                <span class="n">d_h2_d_b2</span> <span class="o">=</span> <span class="n">deriv_sigmoid</span><span class="p">(</span><span class="n">sum_h2</span><span class="p">)</span>
+
+                <span class="c1"># --- Update weights and biases</span>
+                <span class="c1"># Neuron h1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">w1</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_h1</span> <span class="o">*</span> <span class="n">d_h1_d_w1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">w2</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_h1</span> <span class="o">*</span> <span class="n">d_h1_d_w2</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b1</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_h1</span> <span class="o">*</span> <span class="n">d_h1_d_b1</span>
+
+                <span class="c1"># Neuron h2</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">w3</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_h2</span> <span class="o">*</span> <span class="n">d_h2_d_w3</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">w4</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_h2</span> <span class="o">*</span> <span class="n">d_h2_d_w4</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b2</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_h2</span> <span class="o">*</span> <span class="n">d_h2_d_b2</span>
+
+                <span class="c1"># Neuron o1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">w5</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_w5</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">w6</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_w6</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">b3</span> <span class="o">-=</span> <span class="n">learn_rate</span> <span class="o">*</span> <span class="n">d_L_d_ypred</span> <span class="o">*</span> <span class="n">d_ypred_d_b3</span>
+
+          <span class="c1"># --- Calculate total loss at the end of each epoch</span>
+        <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">y_preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feedforward</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">mse_loss</span><span class="p">(</span><span class="n">all_y_trues</span><span class="p">,</span> <span class="n">y_preds</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch </span><span class="si">%d</span><span class="s2"> loss: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">loss</span><span class="p">))</span>
+
+<span class="c1"># Define dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+  <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># Alice</span>
+  <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>   <span class="c1"># Bob</span>
+  <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>   <span class="c1"># Charlie</span>
+  <span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="c1"># Diana</span>
+<span class="p">])</span>
+<span class="n">all_y_trues</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+  <span class="mi">1</span><span class="p">,</span> <span class="c1"># Alice</span>
+  <span class="mi">0</span><span class="p">,</span> <span class="c1"># Bob</span>
+  <span class="mi">0</span><span class="p">,</span> <span class="c1"># Charlie</span>
+  <span class="mi">1</span><span class="p">,</span> <span class="c1"># Diana</span>
+<span class="p">])</span>
+
+<span class="c1"># Train our neural network!</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">OurNeuralNetwork</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">all_y_trues</span><span class="p">))</span>
+</code></pre></div>
+
+<p><img alt="image-20200725163508715" src="E:\typora图片\163509-759581.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="主页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                主页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../a_cnn/" title="CNN" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                CNN
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/baidu-tongji.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

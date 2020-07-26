@@ -174,7 +174,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../a_cnn/" title="机器与深度学习" class="md-tabs__link">
+        <a href="../a_算法/" title="机器与深度学习" class="md-tabs__link">
           机器与深度学习
         </a>
       
@@ -274,6 +274,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_算法/" title="数据分析算法" class="md-nav__link">
+      数据分析算法
+    </a>
+  </li>
+
         
           
           
@@ -601,6 +613,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#724" title="724" class="md-nav__link">
+    724
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1025" title="1025. 除数博弈" class="md-nav__link">
+    1025. 除数博弈
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -826,6 +858,26 @@
           <li class="md-nav__item">
   <a href="#10" title="10. 正则表达式匹配" class="md-nav__link">
     10. 正则表达式匹配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#724" title="724" class="md-nav__link">
+    724
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1025" title="1025. 除数博弈" class="md-nav__link">
+    1025. 除数博弈
   </a>
   
 </li>
@@ -1175,17 +1227,32 @@ f[i][j-2], & s[i] \neq p[j-1]
 </div>
 <p>综合上述三个方面，可以列总的状态转移方程为：
 $$
-f[i][j]=\left{\begin{array}{l}
-\text { if }\left(p[j] \neq{ }^{*},\right)=\left{\begin{array}{ll}
-f[i-1][j-1], &amp; \text { matches }(s[i], p[j]) \
-\text { false, }
-\end{array}\right. \
-\text { otherwise }=\left{\begin{array}{ll}
-f[i-1][j] \text { or } f[i][j-2], &amp; \text { otherwise } \
-f[i][j-2], &amp; \text { otherwise }
-\end{array}\right.
-\end{array}\right.
+f[i][j]=\left{\begin{array}{l}\text { if }\left(p[j] \neq{ }^{*},\right)=\left{\begin{array}{ll}f[i-1][j-1], &amp; \text { matches }(s[i], p[j]) \\text { false, }\end{array}\right. \\text { otherwise }=\left{\begin{array}{ll}f[i-1][j] \text { or } f[i][j-2], &amp; \text { otherwise } \f[i][j-2], &amp; \text { otherwise }\end{array}\right.\end{array}\right.
 $$</p>
+<h2 id="724">724<a class="headerlink" href="#724" title="Permanent link">&para;</a></h2>
+<h4 id="1025"><a href="https://leetcode-cn.com/problems/divisor-game/">1025. 除数博弈</a><a class="headerlink" href="#1025" title="Permanent link">&para;</a></h4>
+<p>难度简单203收藏分享切换为英文关注反馈</p>
+<p>爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。</p>
+<p>最初，黑板上有一个数字 <code>N</code> 。在每个玩家的回合，玩家需要执行以下操作：</p>
+<ul>
+<li>选出任一 <code>x</code>，满足 <code>0 &lt; x &lt; N</code> 且 <code>N % x == 0</code> 。</li>
+<li>用 <code>N - x</code> 替换黑板上的数字 <code>N</code> 。</li>
+</ul>
+<p>如果玩家无法执行这些操作，就会输掉游戏。</p>
+<p>只有在爱丽丝在游戏中取得胜利时才返回 <code>True</code>，否则返回 <code>false</code>。假设两个玩家都以最佳状态参与游戏。</p>
+<p>找规律</p>
+<p><strong>思路与算法</strong></p>
+<p>博弈类的问题常常让我们摸不着头脑。当我们没有解题思路的时候，不妨试着写几项试试：</p>
+<p>N = 1的时候，区间 (0, 1)(0,1) 中没有整数是 nn 的因数，所以此时 Alice 败。
+N = 2的时候，Alice 只能拿 1，N 变成 1，Bob 无法继续操作，故 Alice 胜。
+N = 3 的时候，Alice 只能拿 1，N 变成 2，根据 N = 2 的结论，我们知道此时 Bob 会获胜，Alice 败。
+N = 4 的时候，Alice 能拿 1 或 2，如果 Alice 拿 1，根据 NN=3 的结论，Bob 会失败，Alice 会获胜。
+N = 5的时候，Alice 只能拿 1，根据 N = 4的结论，Alice 会失败。
+......
+写到这里，也许你有了一些猜想。没关系，请大胆地猜想，在这种情况下大胆地猜想是 AC 的第一步。也许你会发现这样一个现象：NN 为奇数的时候 Alice（先手）必败，NN 为偶数的时候 Alice 必胜。 这个猜想是否正确呢？下面我们来想办法证明它。</p>
+<p><strong>证明</strong></p>
+<p>数学归纳：</p>
+<p><img alt="image-20200724220827637" src="https://gitee.com/moluggg/image/raw/master/img/202007/24/220830-607827.png" /></p>
                 
                   
                 

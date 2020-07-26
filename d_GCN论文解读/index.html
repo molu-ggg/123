@@ -174,7 +174,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../a_cnn/" title="机器与深度学习" class="md-tabs__link">
+        <a href="../a_算法/" title="机器与深度学习" class="md-tabs__link">
           机器与深度学习
         </a>
       
@@ -274,6 +274,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_算法/" title="数据分析算法" class="md-nav__link">
+      数据分析算法
+    </a>
+  </li>
+
         
           
           
@@ -1038,6 +1050,7 @@ output = H_2
 <p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> <strong>假设 w 有 n 个维度，且平均值为 m，那么activation的增量最多为 ϵmn。由于 ||η||∞ 不会随着维度 n 的变化而变化，但是增量却会随着 n 增大而线性增长，因此对于一个高维度的问题，一个样本中即使是无限小的扰动，也会叠加对最后的activation产生很大的影响</strong></p>
 <p>这句话的w是一个n维度的向量，比如，如果w是一个三维向量，就是：<span><span class="MathJax_Preview">(x,y,z)</span><script type="math/tex">(x,y,z)</script></span> </p>
 <p>这里假设<span><span class="MathJax_Preview">(x+y+z)/3 =m</span><script type="math/tex">(x+y+z)/3 =m</script></span>,因此随着w的维度增加，m若不变，ϵmn会增大。</p>
+<p><strong>因此：对抗样本发生的原因：深度学习模型的高度线性性质，导致通过线性模型参数的点乘累积放大输入图像像素值的微小改变。</strong></p>
 <ul>
 <li>
 <p>Ian Goodfellow 在2014年发表了 “explaining and harnessing adversarial example” 这篇文章，并说明对抗样本的存在是由于模型过于线性所致。</p>

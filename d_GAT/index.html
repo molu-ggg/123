@@ -174,7 +174,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../a_cnn/" title="机器与深度学习" class="md-tabs__link">
+        <a href="../a_算法/" title="机器与深度学习" class="md-tabs__link">
           机器与深度学习
         </a>
       
@@ -274,6 +274,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_算法/" title="数据分析算法" class="md-nav__link">
+      数据分析算法
+    </a>
+  </li>
+
         
           
           
@@ -643,8 +655,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-virtual-graph-adversarial-training" title="4.2 Virtual Graph Adversarial Training" class="md-nav__link">
-    4.2 Virtual Graph Adversarial Training
+  <a href="#42-virtual-graph-adversarial-training" title="4.2 Virtual Graph Adversarial Training**" class="md-nav__link">
+    4.2 Virtual Graph Adversarial Training**
   </a>
   
 </li>
@@ -671,6 +683,13 @@
         <li class="md-nav__item">
   <a href="#fgsm" title="FGSM" class="md-nav__link">
     FGSM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kl-" title="kl 散度---相对熵" class="md-nav__link">
+    kl 散度---相对熵
   </a>
   
 </li>
@@ -807,8 +826,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-virtual-graph-adversarial-training" title="4.2 Virtual Graph Adversarial Training" class="md-nav__link">
-    4.2 Virtual Graph Adversarial Training
+  <a href="#42-virtual-graph-adversarial-training" title="4.2 Virtual Graph Adversarial Training**" class="md-nav__link">
+    4.2 Virtual Graph Adversarial Training**
   </a>
   
 </li>
@@ -839,6 +858,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#kl-" title="kl 散度---相对熵" class="md-nav__link">
+    kl 散度---相对熵
+  </a>
+  
+</li>
+      
       
       
       
@@ -863,7 +889,7 @@
 <h3 id="1">1.摘要:<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>(话题方向切人,他人最近的有关成果，再次基础上他人成果的不足。提出我们的做法，结果以及引出我们的</p>
 <h3 id="_1">对抗性训练的引入以及现阶段存在的缺点：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>**对抗性训练是通过在模型训练过程中在输入空间中进行随机扰动(perturbations)来提高深度学习模型泛化能力的有效方法。** 最近的一次 奥迪已经成功地将对抗性训练应用于推荐系统，通过极小极大的游戏干扰用户和项目的嵌入。 然而，这种方法**忽略了协同信号 在推荐系统中，未能捕获数据分布中的平滑性**。 我们认为，**揭示用户和项目之间行为相似性的协作信号是至关重要的建模推荐系统**。 在本工作中，我们通过显式地将协作信号注入扰动过程来开发定向对抗性训练(DAT)策略。 即b 用户和项目对嵌入空间中的相似邻居感到不安(perturbed)，并受到适当的限制。 为了验证其有效性，我们演示了DAT在广义矩阵事实上的使用 定向(GMF)是最具代表性的协同过滤方法之一。 我们在三个公共数据集上的实验结果表明，我们的方法(称为DAGMF)达到了显著的精度I对GMF的改进，同时，它比GMF更不容易过度拟合。
+<div class="codehilite"><pre><span></span><code>对抗性训练是通过在模型训练过程中在输入空间中进行随机扰动(perturbations)来提高深度学习模型泛化能力的有效方法。 最近的一次 奥迪已经成功地将对抗性训练应用于推荐系统，通过极小极大的游戏干扰用户和项目的嵌入。 然而，这种方法忽略了协同信号 在推荐系统中，未能捕获数据分布中的平滑性。 我们认为，揭示用户和项目之间行为相似性的协作信号是至关重要的建模推荐系统。 在本工作中，我们通过显式地将协作信号注入扰动过程来开发定向对抗性训练(DAT)策略。 即b 用户和项目对嵌入空间中的相似邻居感到不安(perturbed)，并受到适当的限制。 为了验证其有效性，我们演示了DAT在广义矩阵事实上的使用 定向(GMF)是最具代表性的协同过滤方法之一。 我们在三个公共数据集上的实验结果表明，我们的方法(称为DAGMF)达到了显著的精度I对GMF的改进，同时，它比GMF更不容易过度拟合。
 </code></pre></div>
 
 
@@ -880,7 +906,7 @@
 </p>
 </blockquote>
 <p>方法是借用对抗性训练的方法，但是又是远远不够的。</p>
-<p><img alt="image-20200720110723267" src="E:\typora图片\image-20200720110723267.png" /></p>
+<p><img alt="image-20200720110723267" src="https://gitee.com/moluggg/image/raw/master/img/202007/24/113807-95698.png" /></p>
 <p>图 1：一个直观的例子来说明将扰动应用于输入节点特征对图神经网络预测的影响。 在这里，模型实现了图平滑度c通过在图上传播节点嵌入进行约束。 在右边，模型在目标节点3的连接节点上传播应用的扰动，导致错误的预测。 而且，在节点1和2上的扰动直接导致错误的相关预测，如在标准神经网络中。</p>
 <p>GraphAT的关键思想是，当在目标示例 target example上产生扰动时，<strong>它使目标示例的预测与其连接示例（connected examples）之间的分歧最大化</strong>。 也就是说，a对抗性扰动应该**尽可能地攻击图形平滑约束**。 然后，GraphAT通过额外最小化图对抗性正则化(<em>graph adversarial regularizer</em>)来更新模型参数，减少 扰动目标实例与其连通实例之间的预测发散。 通过这种方法，GraphAT可以抵抗基于图形学习的最坏情况扰动，并增强模型半身像。 为了有效地计算对抗性扰动，我们进一步设计了一种基于**反向传播的线性逼近方法**。 </p>
 <p>为了演示GraphAT， 我们将其应用于一个建立良好的图形神经网络模型-图形卷积网络(GCN)[7]，该模型通过执行**嵌入传播**(performing embedding propagation)来实现平滑约束。 我们研究美索 节点分类的性能，这是基于图的学习中最受欢迎的任务之一。 我们研究了该方法在节点分类上的性能，这是基于图的学习中最流行的任务之一。 在三个公共基准（两个引文图和一个知识）上进行广泛的实验图)验证了图AT的优势-与GCN的正常训练相比，GraphAT的精度提高了4.51。 此外，对不太受欢迎的节点（有很小的程度）的改进是MOR 重要的，强调了用所考虑的图结构执行AT的必要性。</p>
@@ -930,25 +956,47 @@ $$
 <p><img alt="image-20200721095707729" src="https://gitee.com/moluggg/image/raw/master/img/202007/21/095708-79832.png" /></p>
 <p>Fig 2：GraphAT的训练过程：1)构造图对抗性实例；2)通过最小化损耗值和图对抗性正则化来更新模型参数。</p>
 <p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 这个图是怎么体现这个过程的？</p>
-<p>GraphAT 的公式：
-$$
+<p>GraphAT 的公式：</p>
+<div>
+<div class="MathJax_Preview">
 \begin{array}{l}
-\left.\min : \Gamma_{G A T}=\Gamma+\beta \sum_{i=1} \sum_{j \in \mathcal{N}<em>{i}} d\left(f\left(\boldsymbol{x}</em>{i}+\boldsymbol{r}<em>{i}^{g}, G \mid \boldsymbol{\Theta}\right), f\left(\boldsymbol{x}</em>{j}, G \mid \Theta\right)\right)\right) \
-\max : \boldsymbol{r}<em>{i}^{g}=\arg \max _{\boldsymbol{r}</em>{i},\left|\boldsymbol{r}<em>{i}\right| \leq \epsilon} \sum</em>{j \in \mathcal{N}<em>{i}} d\left(f\left(\boldsymbol{x}</em>{i}+\boldsymbol{r}<em>{i}, G \mid \hat{\Theta}\right), f\left(\boldsymbol{x}</em>{j}, G \mid \hat{\Theta}\right)\right)
+\left.\min : \Gamma_{G A T}=\Gamma+\beta \sum_{i=1} \sum_{j \in \mathcal{N}_{i}} d\left(f\left(\boldsymbol{x}_{i}+\boldsymbol{r}_{i}^{g}, G \mid \boldsymbol{\Theta}\right), f\left(\boldsymbol{x}_{j}, G \mid \Theta\right)\right)\right) \\
+\max : \boldsymbol{r}_{i}^{g}=\arg \max _{\boldsymbol{r}_{i},\left\|\boldsymbol{r}_{i}\right\| \leq \epsilon} \sum_{j \in \mathcal{N}_{i}} d\left(f\left(\boldsymbol{x}_{i}+\boldsymbol{r}_{i}, G \mid \hat{\Theta}\right), f\left(\boldsymbol{x}_{j}, G \mid \hat{\Theta}\right)\right)
 \end{array}
-$$
-<span><span class="MathJax_Preview">\Gamma_{G A T}</span><script type="math/tex">\Gamma_{G A T}</script></span>训练目标函数有两个术语：基于原点的图形学习模型的标准目标函数（例如，方程(1)）和图形对抗性正则化。</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\left.\min : \Gamma_{G A T}=\Gamma+\beta \sum_{i=1} \sum_{j \in \mathcal{N}_{i}} d\left(f\left(\boldsymbol{x}_{i}+\boldsymbol{r}_{i}^{g}, G \mid \boldsymbol{\Theta}\right), f\left(\boldsymbol{x}_{j}, G \mid \Theta\right)\right)\right) \\
+\max : \boldsymbol{r}_{i}^{g}=\arg \max _{\boldsymbol{r}_{i},\left\|\boldsymbol{r}_{i}\right\| \leq \epsilon} \sum_{j \in \mathcal{N}_{i}} d\left(f\left(\boldsymbol{x}_{i}+\boldsymbol{r}_{i}, G \mid \hat{\Theta}\right), f\left(\boldsymbol{x}_{j}, G \mid \hat{\Theta}\right)\right)
+\end{array}
+</script>
+</div>
+<p><span><span class="MathJax_Preview">\Gamma_{G A T}</span><script type="math/tex">\Gamma_{G A T}</script></span>训练目标函数有两个术语：基于原点的图形学习模型的标准目标函数（例如，方程(1)）和图形对抗性正则化。</p>
 <p>第二项max公式鼓励将图对抗性示例类似地归类为连接示例，其中Θ表示要学习的参数，d是**度量的非负函数 两个预测之间的差异**(例如Kullback-Leibler散度[45]。$ \boldsymbol{r}_{i}^{g}$表示图对抗性扰动，它被用于clean exapmle i，来构造输入特征 一个图形对抗性的例子。</p>
 <p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> d()函数是什么意思，怎么度量？</p>
 <p><strong>在模型参数的当前值下，通过最大化图对抗性正则化来计算图对抗性扰动</strong>。 也就是说，<strong>图的对抗性扰动是输入特征上的变化方向，它可以最大限度地攻击图形对抗性正则化</strong>，即从邻居节点传播的扰动的最坏情况。 是一个超参数控制 令扰动的大小，这通常被设置为小值，以便对抗性示例的特征分布接近干净示例。</p>
 <p>一般来说，类似于标准AT，GraphAT的每一次迭代也可以看作是玩一个极小极大的游戏：· Maximization: 图AT从干净的例子w生成图的对抗性扰动最大限度地破坏了连接节点之间的平滑性。 然后通过将扰动添加到相关的干净示例的输入中来构造图形对抗性示例。</p>
 <p>Minimization: 图AT通过鼓励对抗性预测之间的平滑性，在图对抗性示例上增加一个正则化器，使图神经网络的目标函数最小化 示例和连接示例。 因此，该模型对通过图传播的扰动变得鲁棒。</p>
 <p>图2说明了图AT的过程。 而传统的基于图的正则化(例如，图Laplacian术语)也鼓励了图结构上预测的平滑性，图AT被认为是一个更先进的规则，原因有两个：1)图AT执行的正则化是动态的 由于对抗性示例是根据模型的当前参数和预测自适应生成的，而基于标准图形的正则化是静态的；2)图A Tto 在一定程度上增加了训练数据，因为在训练数据中没有出现生成的对抗性例子，这有利于模型的泛化。</p>
-<p>近似: 得到$ \boldsymbol{r}<em>{i}^{g}$的封闭形式的解不平凡的。 在[15]提出的标准对抗性训练的线性逼近方法的启发下，我们还设计了一个线性应用程序 计算Graph-AT中图对抗性扰动的近似方法，其公式为：
-$$
-\boldsymbol{r}</em>{i}^{g} \approx \epsilon \frac{\boldsymbol{g}}{|\boldsymbol{g}|}, \text { where } \boldsymbol{g}=\nabla_{\boldsymbol{x}<em>{i}} \sum</em>{j \in \mathcal{N}<em>{i}} D\left(f\left(\boldsymbol{x}</em>{i}, G \mid \hat{\boldsymbol{\Theta}}\right), f\left(\boldsymbol{x}_{j}, G \mid \hat{\boldsymbol{\Theta}}\right)\right)
-$$</p>
-<h4 id="42-virtual-graph-adversarial-training"><strong>4.2 Virtual Graph Adversarial Training</strong><a class="headerlink" href="#42-virtual-graph-adversarial-training" title="Permanent link">&para;</a></h4>
+<p>近似: 得到$ \boldsymbol{r}_{i}^{g}$的封闭形式的解不平凡的。 在[15]提出的标准对抗性训练的线性逼近方法的启发下，我们还设计了一个线性应用程序 计算Graph-AT中图对抗性扰动的近似方法，其公式为：</p>
+<div>
+<div class="MathJax_Preview">
+\boldsymbol{r}_{i}^{g} \approx \epsilon \frac{\boldsymbol{g}}{\|\boldsymbol{g}\|}, \text { where } \boldsymbol{g}=\nabla_{\boldsymbol{x}_{i}} \sum_{j \in \mathcal{N}_{i}} D\left(f\left(\boldsymbol{x}_{i}, G \mid \hat{\boldsymbol{\Theta}}\right), f\left(\boldsymbol{x}_{j}, G \mid \hat{\boldsymbol{\Theta}}\right)\right)
+</div>
+<script type="math/tex; mode=display">
+\boldsymbol{r}_{i}^{g} \approx \epsilon \frac{\boldsymbol{g}}{\|\boldsymbol{g}\|}, \text { where } \boldsymbol{g}=\nabla_{\boldsymbol{x}_{i}} \sum_{j \in \mathcal{N}_{i}} D\left(f\left(\boldsymbol{x}_{i}, G \mid \hat{\boldsymbol{\Theta}}\right), f\left(\boldsymbol{x}_{j}, G \mid \hat{\boldsymbol{\Theta}}\right)\right)
+</script>
+</div>
+<p>需要搞清楚：</p>
+<p>$ \boldsymbol{r}_{i}^{g}$:是一个扰动</p>
+<p>这个公式的来源：</p>
+<p>FGSM和FGM方法是Goodfellow等人分别在[1]和[2]中提出的。思想很简单，就是让扰动<span><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span>的方向是沿着梯度提升的方向的，沿着梯度提升也就意味着让损失增大的最大。FGSM（Fast Gradient Sign Method）和FGM（Fast Gradient Method）的区别在于采用的归一化的方法不同，FGSM是通过Sign函数对梯度采取max归一化，FGM则采用的是  L2归一化。max归一化是是说如果梯度某个维度上的值为正，则设为1；如果为负，则设为-1；如果为0，则设为0。<img alt="[公式]" src="https://www.zhihu.com/equation?tex=L_%7B2%7D" />归一化则将梯度的每个维度的值除以梯度的<img alt="[公式]" src="https://www.zhihu.com/equation?tex=L_%7B2%7D" />范数。 理论上<img alt="[公式]" src="https://www.zhihu.com/equation?tex=L_%7B2%7D" />归一化更严格的保留了梯度的方向，但是max归一化则不一定和原始梯度的方向相同。</p>
+<p>FGSM：<span><span class="MathJax_Preview">\delta=\epsilon \cdot \operatorname{sign}(g)</span><script type="math/tex">\delta=\epsilon \cdot \operatorname{sign}(g)</script></span></p>
+<p>FGM: <img alt="[公式]" src="E:\typora图片\equation-1595564058679.svg" /></p>
+<p>其中， <span><span class="MathJax_Preview">g=\nabla_{X}\left(L\left(f_{\theta}(X), y\right)\right)</span><script type="math/tex">g=\nabla_{X}\left(L\left(f_{\theta}(X), y\right)\right)</script></span> ，也就是损失函数L关于输入X的梯度，这个梯度在我们做神经网络优化的时候是很容易求出来的。</p>
+<p>当然两种方法都有个假设，就是损失函数是线性的或者至少是局部线性的。如果不是（局部）线性的，那梯度提升的方向就不一定是最优方向了。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/104040055">https://zhuanlan.zhihu.com/p/104040055</a></p>
+<h4 id="42-virtual-graph-adversarial-training">4.2 Virtual Graph Adversarial Training**<a class="headerlink" href="#42-virtual-graph-adversarial-training" title="Permanent link">&para;</a></h4>
 <p>暂且不看</p>
 <p>考虑到节点分类本质上是半监督学习的一项任务，我们进一步设计了一个扩展版本的GraphAT，名为GraphVAT，它进一步平滑了Pr的分布 围绕每个干净的例子，进一步增强模型的鲁棒性。 受虚拟对抗训练[35]思想的启发，我们进一步在traini中添加了一个虚拟对抗正则化器 吴目标函数并构造虚拟对抗性例子来攻击预测的局部平滑性。 与标准AT相比，它只考虑标记的干净示例，虚拟对抗性 培训还鼓励模型围绕未标记的清洁示例进行一致的预测。 Graph-VAT的公式为：</p>
 <p><img src="E:\typora图片\111141-333486-1595316027899.png" alt="img" style="zoom: 80%;" /></p>
@@ -985,15 +1033,25 @@ $$</p>
 <p>基于gan的CF，不需要学习嵌入向量。他们有非常复杂的框架和遭受公认的艰苦训练问题。APR[14]考虑在高校开展对抗性训练</p>
 <p>DAT应用于推荐系统中</p>
 <h2 id="fgsm">FGSM<a class="headerlink" href="#fgsm" title="Permanent link">&para;</a></h2>
-<p>$$
-\left{\begin{array}{c}
-w^{T} \tilde{x}=w^{T} x+w^{T} \eta \
-|\eta|_{\infty}&lt;\epsilon \
-\operatorname{dim}(w)=n \
+<div>
+<div class="MathJax_Preview">
+\left\{\begin{array}{c}
+w^{T} \tilde{x}=w^{T} x+w^{T} \eta \\
+\|\eta\|_{\infty}&lt;\epsilon \\
+\operatorname{dim}(w)=n \\
 \text { average }(G(x))=m
 \end{array}\right.
-$$
-<img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />对抗扰动通过ωTη影响激活函数从而影响分类结果。如果ω有n个维度，权向量的一个元素的平均大小是mm，那么激活函数就会增加εmnεmn。虽然‖η‖∞不会随着维度增加而增加，但是η会随nn线性增长，然后就有高维问题了。</p>
+</div>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{c}
+w^{T} \tilde{x}=w^{T} x+w^{T} \eta \\
+\|\eta\|_{\infty}<\epsilon \\
+\operatorname{dim}(w)=n \\
+\text { average }(G(x))=m
+\end{array}\right.
+</script>
+</div>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />对抗扰动通过ωTη影响激活函数从而影响分类结果。如果ω有n个维度，权向量的一个元素的平均大小是mm，那么激活函数就会增加εmnεmn。虽然‖η‖∞不会随着维度增加而增加，但是η会随nn线性增长，然后就有高维问题了。</p>
 <p>非线性模型的线性扰动
 我们假设神经网络都太线性了以至于不能抵抗对抗样本。常见的LSTM、ReLU和maxout网络都趋向于线性表现，而类似sigmod这种非线性性模型也把大量的时间花在非饱和和线性系统中。（这里我也不怎么理解，望大神讲解）</p>
 <p>我们从公式开始理解（fast gradient sign method）：
@@ -1006,6 +1064,32 @@ $
 符号函数：sign()
 我们可以线性化代价函数的当前值θ,获得最优max-norm η
 <img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 符号函数sign()是一个什么样的函数？</p>
+<h2 id="kl-">kl 散度---相对熵<a class="headerlink" href="#kl-" title="Permanent link">&para;</a></h2>
+<p><a href="https://blog.csdn.net/weixinhum/article/details/85064685">https://blog.csdn.net/weixinhum/article/details/85064685</a></p>
+<p>在信息论中，相对熵等价于两个概率分布的信息熵的差值，若其中一个概率分布为真实分布，另一个为理论（拟合）分布，则此时相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时产生**的信息损耗** </p>
+<div>
+<div class="MathJax_Preview">
+D_{K L}(p \| q)=\sum_{i=1}^{N}\left[p\left(x_{i}\right) \log p\left(x_{i}\right)-p\left(x_{i}\right) \log q\left(x_{i}\right)\right]
+</div>
+<script type="math/tex; mode=display">
+D_{K L}(p \| q)=\sum_{i=1}^{N}\left[p\left(x_{i}\right) \log p\left(x_{i}\right)-p\left(x_{i}\right) \log q\left(x_{i}\right)\right]
+</script>
+</div>
+<p>这里的p（x),q(X)分别表示真实时间的概率和理论拟合出来的概率</p>
+<p>作用：</p>
+<p>该公式得出来的解要么=0,要么大于0</p>
+<p>很显然,p == q的时候，公式等于0</p>
+<p>其他情况,公式大于0（证明在最后5）</p>
+<p>但它有不好的地方，就是它是不对称的。举个例子，比如随机变量<span><span class="MathJax_Preview">X∼p</span><script type="math/tex">X∼p</script></span>取值为1,2,3时的概率分别为[0.1,0.4,0.5]，随机变量Y∼Q取值为1,2,3时的概率分别为[0.4,0.2,0.4]，则：
+$$
+\begin{array}{l}
+D(P | Q)=0.1 \times \log \left(\frac{0.1}{0.4}\right)+0.4 \times \log \left(\frac{0.4}{0.2}\right)+0.5 \times \log \left(\frac{0.5}{0.4}\right)=0.250 \
+D(Q | P)=0.4 \times \log \left(\frac{0.4}{0.1}\right)+0.2 \times \log \left(\frac{0.2}{0.4}\right)+0.4 \times \log \left(\frac{0.4}{0.5}\right)=0.327
+\end{array}
+$$</p>
+<p>也就是用P来拟合Q和用Q来拟合P的相对熵居然不一样，而他们的距离是一样的。这也就是说，<strong>相对熵的大小并不跟距离有一一对应的关系</strong>。这点蛮头疼的，因为一般我们希望距离越远下降越快，而相对熵取哪个为参考在同等距离情况下下降的速度都不一样，这就非常尴尬了。</p>
+<p>5证明步骤：</p>
+<p><img alt="image-20200724124817276" src="E:\typora图片\image-20200724124817276.png" /></p>
                 
                   
                 
