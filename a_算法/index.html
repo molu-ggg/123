@@ -949,7 +949,7 @@
 <h2 id="3">3.灰色预测<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>这是像线性回归一下，建立起一个预测模型，然后进行预测未知数据</p>
 <p>什么情况下使用灰色预测模型？</p>
-<p>数据量小，预测的周期短，预测的长度短</p>
+<p><strong>数据量小，预测的周期短，预测的长度短</strong></p>
 <p>分为GM(1,1)，GM(1,m)，GM(n,m)分别用于一个自变量一个因变量，多个自变量一个因变量，多个自变量多个因变量</p>
 <p>这里有两个程序，有一个简单版本，有一个复杂版本，复杂版本请参考github</p>
 <div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>[]<span class="p">=</span><span class="nf">greymodel</span><span class="p">(</span>y<span class="p">)</span><span class="w"></span>
@@ -1331,6 +1331,8 @@
 <h2 id="9">9.种群竞争：<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <h2 id="10">10.排队论：<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
 <h2 id="11">11.层次分析：<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p>做决策：</p>
+<p><img alt="img" src="E:\typora图片\v2-08ab75dabd1234a80b74cb1bd1105df7_720w.jpg" /></p>
 <h2 id="12">12.多元回归：<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
 <h2 id="13">13.主成分分析：<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
 <p>对于二维数据而言：</p>
@@ -1350,15 +1352,26 @@
 </table>
 <p>这样求出来的数据，<span><span class="MathJax_Preview">\bar{X},\bar{Y}=0</span><script type="math/tex">\bar{X},\bar{Y}=0</script></span>便于以下的计算</p>
 <p>x,y轴上的方差与协方差公式：</p>
-<p>$$
+<div>
+<div class="MathJax_Preview">
 \begin{array}{c}
-s<sup>{2}(X)=\frac{\sum_{i=1}</sup>{n}\left(X_{i}-\bar{X}\right)^{2}}{n-1} \
-s^{2}\left(D_{1}\right)=18.97 \
-s^{2}\left(D_{2}\right)=3.13 \
-\operatorname{cov}(X, Y)=\frac{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)\left(Y_{i}-\bar{Y}\right)}{n-1} \
-\operatorname{cov}\left(D_{1}, D_{2}\right)=6.49 \</p>
-<p>\end{array}
-$$</p>
+s^{2}(X)=\frac{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}}{n-1} \\
+s^{2}\left(D_{1}\right)=18.97 \\
+s^{2}\left(D_{2}\right)=3.13 \\
+\operatorname{cov}(X, Y)=\frac{\sum_{i-1}^{n}\left(X_{i}-\bar{X}\right)\left(Y_{i}-\bar{Y}\right)}{n-1} \\
+\operatorname{cov}\left(D_{1}, D_{2}\right)=6.49
+\end{array}
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+s^{2}(X)=\frac{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}}{n-1} \\
+s^{2}\left(D_{1}\right)=18.97 \\
+s^{2}\left(D_{2}\right)=3.13 \\
+\operatorname{cov}(X, Y)=\frac{\sum_{i-1}^{n}\left(X_{i}-\bar{X}\right)\left(Y_{i}-\bar{Y}\right)}{n-1} \\
+\operatorname{cov}\left(D_{1}, D_{2}\right)=6.49
+\end{array}
+</script>
+</div>
 <p><strong>实际上可以表示为：</strong></p>
 <div>
 <div class="MathJax_Preview">
@@ -1583,7 +1596,7 @@ C v^{T}=\lambda v^{T}
 </code></pre></div>
 
 
-<p><img alt="image-20200725163502982" src="E:\typora图片\163504-697438.png" /></p>
+<p><img alt="image-20200725163502982" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/121228-640748.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1715,7 +1728,11 @@ C v^{T}=\lambda v^{T}
 <span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">all_y_trues</span><span class="p">))</span>
 </code></pre></div>
 
-<p><img alt="image-20200725163508715" src="E:\typora图片\163509-759581.png" /></p>
+<p><img alt="image-20200725163508715" src="https://gitee.com/moluggg/image/raw/master/img/202007/26/121233-970393.png" /></p>
+<p><img alt="image-20200801093306281" src="E:\typora图片\image-20200801093306281.png" /></p>
+<p><img alt="image-20200801093317595" src="E:\typora图片\image-20200801093317595.png" /></p>
+<p><img alt="image-20200801093451450" src="https://gitee.com/moluggg/image/raw/master/img/202008/01/093649-72979.png" /></p>
+<p>lINGO 做规划</p>
                 
                   
                 

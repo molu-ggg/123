@@ -678,6 +678,80 @@
     300-paper
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" title="1 引入：" class="md-nav__link">
+    1 引入：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" title="2 相关工作" class="md-nav__link">
+    2 相关工作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3 初步" class="md-nav__link">
+    3 初步
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 问题定义" class="md-nav__link">
+    3.1 问题定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bpr" title="3.2 引入BPR：" class="md-nav__link">
+    3.2 引入BPR：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" title="4 措施：" class="md-nav__link">
+    4 措施：
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bpr" title="4.1 构造对抗正则项并应用到BPR上：" class="md-nav__link">
+    4.1 构造对抗正则项并应用到BPR上：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-dat" title="4.2 DAT" class="md-nav__link">
+    4.2 DAT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -849,6 +923,80 @@
     300-paper
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" title="1 引入：" class="md-nav__link">
+    1 引入：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" title="2 相关工作" class="md-nav__link">
+    2 相关工作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3 初步" class="md-nav__link">
+    3 初步
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 问题定义" class="md-nav__link">
+    3.1 问题定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bpr" title="3.2 引入BPR：" class="md-nav__link">
+    3.2 引入BPR：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" title="4 措施：" class="md-nav__link">
+    4 措施：
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bpr" title="4.1 构造对抗正则项并应用到BPR上：" class="md-nav__link">
+    4.1 构造对抗正则项并应用到BPR上：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-dat" title="4.2 DAT" class="md-nav__link">
+    4.2 DAT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1011,27 +1159,160 @@ $$
 </div>
 <p>这里那个正则化与公式（1）不相同，他通过引入了对抗训练中的对抗样本对训练进行干扰，形成的对抗性正则化，目的是增加模型的鲁棒性。</p>
 <h2 id="300-paper">300-paper<a class="headerlink" href="#300-paper" title="Permanent link">&para;</a></h2>
+<h3 id="1_1"><strong>1 引入：</strong><a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>对抗性训练是[12]提出的一种新的方法，以解决深度学习模型很容易被对抗性例子[26]愚弄的问题，这些例子是通过施加小的代价来构造的 输入示例上的涡轮。 最近，一些研究[12,22,23]指出，<strong>对抗性训练可以作为一种正则化方法来提高泛化性能以及防止深度学习模型过度拟合。</strong> </p>
 <p>虽然对抗性训练在计算机视觉(CV)领域取得了很大的成功，但很难直接将其应用于推荐系统。 这是因为输入数据是离散的和主要由高维单热向量（例如，对于用户和项）表示，它们不同于图像域中的连续值。 直接向离散值添加噪声是不合理的，因为它将改变输入示例的原始语义。 相反，最近的一项研究，APR， 通过在嵌入空间中添加扰动，将对敌训练扩展到推荐系统中 朝着能够最大化损失函数的方向。 为了简单起见，我们将这种扰动策略称为**最大方向**（maximum direction）。</p>
 <p><img src="https://gitee.com/moluggg/image/raw/master/img/20200710203732.png"/></p>
-<p>图一： 直观素描说明定向对抗性训练的过程。 </p>
-<p>观察到的与用户有交互作用的项目在小圆圈中，而在大圆圈中的其他项目是不可观察的 d项目。</p>
-<p>对抗性训练的基本策略是输入 例x，它将保持相同的标签为x和对抗性的例子xadv扰动从x在训练期间。 这使得模型可以考虑x周围更多看不见的空间，从而鼓励loca 相似实例之间的l平滑性，进一步将模型推向更好的泛化[23]。 然而，如图1(A)所示，最大方向扰动可能会移动嵌入示例x向量接近具有不同标签（不同示例）甚至不存在示例的示例。 我们通过图2中的初步实验给出了一个详细的例子。 我们2(A)显示了ID16用户的原始Top-10最近邻，图2(B)显示了在嵌入空间中添加最大方向扰动后的Top-10最近邻。 作为我们可以看到，在最大方向扰动下，Top-10最近邻有很大的变化。 这意味着当**前的最大方向策略不能保持原来的语义信息 在隐藏在用户-项目交互中，并没有充分利用对抗性训练对推荐系统的优势。**</p>
+<p>​                                        图一： 直观素描说明定向对抗性训练的过程。 </p>
+<p><strong>观察到的与用户有交互作用的项目在小圆圈（白色圈）中，而在大圆圈中的其他项目是不可观察的 d项目（黄色圈）。圈外无意义</strong></p>
+<p>对抗性训练的基本策略是输入 例x，它将保持相同的标签为x和对抗性的例子xadv扰动从x在训练期间。 这使得模型可以考虑x周围更多看不见的空间，从而鼓励loca 相似实例之间的l平滑性，进一步将模型推向更好的泛化[23]。 然而，如图1(A)所示，最大方向扰动可能会移动嵌入示例x向量接近具有不同标签（不同示例**）甚至不存在示例的示例**。 我们通过图2中的初步实验给出了一个详细的例子。 我们2(A)显示了ID16用户的原始Top-10最近邻，图2(B)显示了在嵌入空间中添加最大方向扰动后的Top-10最近邻。 作为我们可以看到，在最大方向扰动下，Top-10最近邻有很大的变化。 这意味着当**前的最大方向策略不能保持原来的语义信息 在隐藏在用户-项目交互中，并没有充分利用对抗性训练对推荐系统的优势。**</p>
 <p><img src="https://gitee.com/moluggg/image/raw/master/img/20200710204549.png"/></p>
 <p>权重w将通过最大化贝叶斯个性化排名(B PR)损失[24]来计算；接下来，对模型进行训练，以最小化B PR损失和DAT损失。 此外，我们考虑产生更多的效果在协同滤波(CF)推荐系统中，<strong>通过引导扰动方向与关键协作信号进行有效嵌入</strong>。 直觉是**具有相似行为的用户w我们对物品表现出类似的偏好**。 图1(B)说明了我们的方向扰动策略。 给定一个用户u，我们使它对嵌入空间bas中的Top-K最近的邻居进行扰动 关于预先训练的模型参数的ED。 同时，观察到的项目I和未观察到的项目j的扰动方向将被扰动到小圆和未观察到的其他 分别在大圆圈中提供物品。 这样，类似例子的信息就会在彼此之间流动，这明确地将协作信号注入到对抗性学习中 吴工艺。 图2(C)显示了在添加我们的方向扰动后，用户16的Top-10最近邻，这与原来的方向扰动更相干。</p>
 <blockquote>
 <p>圆圈表示什么？观察到的与用户有交互作用的项目在小圆圈中，而在大圆圈中的其他项目是不可观察的 d项目。数字又是什么？表示邻居的编号</p>
 </blockquote>
+<p>在本文中，我们通过对扰动方向施加适当的限制来解决这个问题，我们称之为定向对抗性训练(DAT)。 我们将一个例子x扰动到嵌入空间中的另一个x' ,一个权重w被设置为控制x向x0的距离， DAT引入了一个额外的对抗性损失，使得训练过程发挥了极小极大的游戏：</p>
+<p>权重w将通过**最大化**贝叶斯个性化排名(B PR)损失[24]来计算；接下来，对模型进行训练，以最小化B PR损失和DAT损失。 此外，我们考虑产生更多的效果 在协同滤波(CF)推荐系统中，通过引导扰动方向与关键协作信号进行有效嵌入。 直觉是具**有相似行为的用户w 我们对物品表现出类似的偏好**。</p>
+<p>图1(B)说明了我们的方向扰动策略。 给定一个用户u，我们根据预先训练的模型参数，使它对嵌入空间中的Top-K最近邻进行扰动。 意思是**在小圆中，观察到的项目I和未观察到的项目j的扰动方向将被扰动到小圆中的其他观察项目和大圆中的未观察项目**，。 这样，**类似例子的信息就会在彼此之间流动，**这明确地将协作信号注入到对抗性学习过程中。 图2(C)显示了前10名 在添加我们的方向扰动后，用户16的最近邻居，这与原来的方向扰动更相干。</p>
 <p>本文的主要贡献总结如下：</p>
 <p>我们通过初步实验研究了现有对抗性训练方法在推荐中的局限性。 </p>
-<p>我们支持 提出了一种新的技术，定向对抗性训练(DAT)，通过限制扰动方向，并将协作信号显式编码到对抗性学习过程中。 我们 演示了DAT在广义矩阵因式分解(GM F)[15]上的应用，从而得到了我们的方法-定向对抗性训练广义矩阵化(DAGM F)。 </p>
+<p>我们支持 提出了一种新的技术，定向对抗性训练(DAT)，通过限制扰动方向，并将协作信号显式编码到对抗性学习过程中。 我们 演示了DAT在广义矩阵因式分解(GM F)[15]上的应用，从而得到了我们的方法-定向对抗性训练广义矩阵化(DAGMF)。 </p>
 <p>我们进行实验 在三个公共数据集上验证DAT对推荐系统的有效性。 具体来说，DAGMF在HR（命中率）和NDCG(归一化折扣Cu)上都有显著的改善 多项增益)指标与最先进的模型相比。</p>
-<p>相关工作</p>
-<p>建议。 随着信息的蓬勃发展，用户找到符合他们偏好的项目是一个巨大的挑战。 CF技术通过假设用户相似来解决这个挑战 行为对项目表现出类似的偏好，并专注于开发用户-项目交互。 基于邻域的CF[21]是利用显式相似的方法，是早期有效的CF方法之一测量（例如欧氏距离、余弦相似度）来计算用户和项目之间的交互强度。 基于模型的CF是最流行和最广泛使用的推荐方法之一近年来的ES。 矩阵因式分解(M F)[19]方法是基于模型的CF方法的重要实现。 它根据原始用户项比率的分解来预测未知的评级矩阵 通过将每个用户和项目的一个热向量映射为嵌入向量，然后在它们之间进行内积。 然而，它的线性结构使它无法捕获复杂和非用户与项目[15]之间的线性交互。 为此，最近的一些工作[15,6]将深度学习技术应用于CF推荐系统，如GMF。 这是通过建模用户项之间完成的具有多层感知器(MLP)的动作，可以学习更强大和更有表现力的交互功能。 后来，为了学习更有效的嵌入，已经投入了大量的精力来整合 侧信息，如文本或图像内容特征[5]，邻居关系[29]，用户和项目的属性[20,31]以及协作信号[30,7]。 此外，基于届会的建议[13]建议在模拟用户偏好时考虑基于会话的数据，而不是CF方法。 </p>
-<p>对抗性培训。 一开始，提出对抗性训练来解决最先进的分类模型由于其线性结构[12]而容易受到对抗性例子的影响。 它用可以生成的对抗性例子来训练模型 采用快速梯度符号法[12]有效地提高了模型的鲁棒性。 后来，对抗性训练的思想也被推广到自然语言上处理(NLP)任务（例如序列标签）[22]和网络分类器任务[11,8]，其中扰动被添加到嵌入而不是输入上。 他们证明了他们的策略 更可以看作是提高分类器模型泛**化性能的正则化方法，而不是作为防御方法工作**。 值得注意的是，大多数现有的作品都是关于阿巴拉里的所有的训练都集中在CV领域。 很少有研究来探索推荐系统的对抗性训练。 [28]提出了推荐系统中的极小极大极小博弈，即基于生成的IRGAN 对抗网(GANs)框架，这是为了学习更有效的嵌入MF。 [4]是基于向量GAN的CF，而不学习嵌入向量。 他们有非常复杂的框架工作和遭受公认的艰苦训练问题。 APR[14]考虑利用推荐系统中的对抗性训练作为增加最大扰动的正则化 在嵌入空间中忽略协作信号。</p>
-<p>值得注意的是，现有的对抗性培训大多集中在简历领域。针对推荐系统的对抗训练的研究很少。[28]提出了推荐系统中的极小极大对策，即IRGAN
+<h3 id="2_1">2 相关工作<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>建议</strong>。 随着信息的蓬勃发展，用户找到符合他们偏好的项目是一个巨大的挑战。 CF技术通过假设用户相似来解决这个挑战 行为对项目表现出类似的偏好，并专注于开发用户-项目交互。 基于邻域的CF[21]是利用显式相似的方法，是早期有效的CF方法之一测量（例如欧氏距离、余弦相似度）来计算用户和项目之间的交互强度。 基于模型的CF是最流行和最广泛使用的推荐方法之一近年来的ES。 矩阵因式分解(M F)[19]方法是基于模型的CF方法的重要实现。 它根据原始用户项比率的分解来预测未知的评级矩阵 通过将每个用户和项目的一个热向量映射为嵌入向量，然后在它们之间进行内积。 然而**，它的线性结构使它无法捕获复杂和非用户与项目[15]之间的线性交互。 为此**，最近的一些工作[15,6]将深度学习技术应用于CF推荐系统，如GMF。 这是通过建模用户项之间完成的具有多层感知器(MLP)的动作，可以学习更强大和更有表现力的交互功能。 后来，为了学习更有效的嵌入，已经投入了大量的精力来整合 侧信息，如文本或图像内容特征[5]，邻居关系[29]，用户和项目的属性[20,31]以及协作信号[30,7]。 此外，基于届会的建议[13]建议在模拟用户偏好时考虑基于会话的数据，而不是CF方法。 </p>
+<p><strong>对抗性培训</strong>。 一开始，提出对抗性训练来解决最先进的分类模型由于其线性结构[12]而容易受到对抗性例子的影响。 它用可以生成的对抗性例子来训练模型 采用快速梯度符号法[12]有效地提高了模型的鲁棒性。 后来，对抗性训练的思想也被推广到自然语言上处理(NLP)任务（例如序列标签）[22]和网络分类器任务[11,8]，其中扰动被添加到嵌入而不是输入上。 他们证明了他们的策略 更可以看作是提高分类器模型泛**化性能的正则化方法，而不是作为防御方法工作**。 值得注意的是，大多数现有的作品都是关于阿巴拉里的所有的训练都集中在CV领域。 很少有研究来探索推荐系统的对抗性训练。 [28]提出了推荐系统中的极小极大极小博弈，即基于生成的IRGAN 对抗网(GANs)框架，这是为了学习更有效的嵌入MF。 [4]是基于向量GAN的CF，而不学习嵌入向量。 他们有非常复杂的框架工作和遭受公认的艰苦训练问题。 APR[14]考虑利用推荐系统中的对抗性训练作为增加最大扰动的正则化 在嵌入空间中忽略协作信号。</p>
+<p>值得注意的是，现有的对抗性培训大多集中在cv 领域。针对推荐系统的对抗训练的研究很少。[28]提出了推荐系统中的极小极大对策，即IRGAN
 生成对抗网(GANs)框架，这是学习更有效的嵌入MF。CFGAN[4]是矢量方向的</p>
 <p>基于gan的CF，不需要学习嵌入向量。他们有非常复杂的框架和遭受公认的艰苦训练问题。APR[14]考虑在高校开展对抗性训练</p>
 <p>DAT应用于推荐系统中</p>
+<h3 id="3">3 初步<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>我们首先介绍了推荐系统的技术背景和GMF的制定。 然后，我们重新描述了贝叶斯个性化排序方法，并给出了一个成对排序损失函数。</p>
+<h4 id="31">3.1 问题定义<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<p>形式上，我们表示有一组m用户，U={u1，u2，...，um}，一组n项，i={i1，i1，...，in}和稀疏矩阵R×n。 如果用户u有i，则表示的R中的条目(u，i)为：若u,i之间有相互作用则表示为为rui=1。 </p>
+<p>在基于模型的推荐系统中，输入由两个特征向量<span><span class="MathJax_Preview">v_{u}^{U}</span><script type="math/tex">v_{u}^{U}</script></span>和<span><span class="MathJax_Preview">v_{i}^{I}</span><script type="math/tex">v_{i}^{I}</script></span>组成，分别描述用户u和项目i。 </p>
+<p>在本文中**，输入向量是一个二进制稀疏向量，通过一个one-hot编码用户或项目的身份。**</p>
+<p>在输入的上方是嵌入层，它将**稀疏特征向量----&gt;密集的embbding**向量。 之后，用户或项目将由密集向量表示，也称为嵌入向量（embedding vector)。</p>
+<p>接下来，用户和项嵌入向量将被输入到交互函数中 去 预测分数的潜在向量。 然后让rcui表示用户u在i项上的预测偏好得分。 推荐系统中rcui的计算制定如下:
+$$
+\widehat{r_{u i}}=f\left(\mathbf{p}<em>{u}, \mathbf{q}</em>{i} \mid \mathbf{P}, \mathbf{Q}, \Theta_{f}\right)
+$$
+ 其中f（·）是交互函数( the interaction function)，建模用户对项目I的偏好，Θf是它的参数。 </p>
+<p>我们定义P={pu}u∈U表示用户的嵌入矩阵，Q={qi}i∈I表示这是项目的嵌入矩阵。 </p>
+<p>设pu=p tvu(pu∈RD)和qi=qtvii(qi∈RD)，分别表示用户u和i项的嵌入向量，D 为嵌入向量的维数</p>
+<p>NCF[15]是一种深入的CF框架，它是为了捕捉用户与具有多层感知器(MLP)的项目之间复杂而非线性的关系而提出的)。 GMF是最具代表性的合作伙伴之一 在此框架下构造了Ive滤波模型。 在GMF中，利用MLP和内积将两两用户嵌入和项嵌入映射到偏好分数。</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 这是GMF的表示吧
+$$
+\begin{array}{l}
+\phi_{1}\left(\mathbf{p}<em>{u}, \mathbf{q}</em>{i}\right)=\mathbf{p}<em>{u} \odot \mathbf{q}</em>{i} \
+\widehat{r_{u i}}=\phi_{o u t}\left(\phi_{x} \ldots\left(\phi_{2}\left(\phi_{1}\left(\mathbf{p}<em>{u}, \mathbf{q}</em>{i}\right)\right)\right)\right)
+\end{array}
+$$
+其中φ1是用户与项目嵌入向量之间的内积，</p>
+<p>⊙一般是同或符号，相同为1，但是这里的意思是**内积**</p>
+<p>φx和φout是GMF的第x层和输出MLP层。</p>
+<h4 id="32-bpr">3.2 引入BPR：<a class="headerlink" href="#32-bpr" title="Permanent link">&para;</a></h4>
+<div>
+<div class="MathJax_Preview">
+L_{B P R}=\sum_{(u, i, j) \in T}-\ln \sigma(\widehat{r_{u i}}-\widehat{r_{u j}})+\lambda\|\Theta\|^{2}
+</div>
+<script type="math/tex; mode=display">
+L_{B P R}=\sum_{(u, i, j) \in T}-\ln \sigma(\widehat{r_{u i}}-\widehat{r_{u j}})+\lambda\|\Theta\|^{2}
+</script>
+</div>
+<h3 id="4_1">4 措施：<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>在这一部分中，我们首先介绍了对抗性训练GMF(AGMF)的体系结构)。 接下来，我们介绍了DAGMF方法，这是DAT与GMF相结合的实例化。 最后，选择的策略 详细讨论了扰动的方向。</p>
+<h4 id="41-bpr">4.1 构造对抗正则项并应用到BPR上：<a class="headerlink" href="#41-bpr" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>对抗性训练是[12]提出的一种新的正则化方法，以提高分类器模型在CV域中的鲁棒性。 与CV领域不同，[22]在CV领域应用对抗性训练 NLP域不再增加输入空间的扰动。 他们在嵌入层中加入对抗性扰动，并认为这种方法是有效的正则化，以防止过拟合提高泛化性能。 与语言处理类似，**APR[14]通过干扰表示用户和项目的嵌入向量，引入MF-BPR中的对抗性训练**** Ms。 在本文中，我们希望在深度学习模型GMF中扩展APR，**只在嵌入层即AGMF中施加扰动。**
+</code></pre></div>
+
+
+<p>​   在这一部分中，步骤为：</p>
+<p>对抗性训练GMF(AGMF)的体系结构)-------&gt;我们介绍了DAGMF方法(这是DAT与GMF相结合的实例化) --------&gt;  选择的策略 详细讨论了扰动的方向。</p>
+<p>设 <span><span class="MathJax_Preview">∆^u_{adv}</span><script type="math/tex">∆^u_{adv}</script></span> 表示要添加到用户u的嵌入向量中的对抗性扰动。 <span><span class="MathJax_Preview">∆^u_{adv}</span><script type="math/tex">∆^u_{adv}</script></span>  的维数大小为D，与用户u嵌入向量相同。 设<span><span class="MathJax_Preview">p ∆^u_{adv}</span><script type="math/tex">p ∆^u_{adv}</script></span> 表 示用户u的对抗性嵌入向量,可表示为：<span><span class="MathJax_Preview">p ∆^u_{adv} =  P_u + ∆^u_{adv}</span><script type="math/tex">p ∆^u_{adv} =  P_u + ∆^u_{adv}</script></span>。 类似地，我们可以得到第i项的对抗性嵌入向量<span><span class="MathJax_Preview">q ∆^i_{adv}</span><script type="math/tex">q ∆^i_{adv}</script></span>。 </p>
+<p>现在可以计算第i项中用户u的预测偏好分数：
+$$
+\widehat{r_{u i \Delta}}=f\left(\mathbf{p} \Delta_{a d v}^{u}, \mathbf{q} \Delta_{a d v}^{i} \mid \mathbf{P}<em>{\Delta a d v}, \mathbf{Q}</em>{\Delta a d v}, \Theta_{f}\right)
+$$
+注：</p>
+<p><span><span class="MathJax_Preview">\mathbf{P}_{\boldsymbol{\Delta} a d v}=\left\{\mathbf{p} \Delta_{a d v}^{u}\right\}_{u \in U}</span><script type="math/tex">\mathbf{P}_{\boldsymbol{\Delta} a d v}=\left\{\mathbf{p} \Delta_{a d v}^{u}\right\}_{u \in U}</script></span>  表示用户的对抗性嵌入矩阵,<img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />是其中一个，不是所有的用户吧</p>
+<p><span><span class="MathJax_Preview">\mathbf{Q}_{\boldsymbol{\Delta} a d v}=\left\{\mathbf{q} \Delta_{a d v}^{u}\right\}_{i \in I}</span><script type="math/tex">\mathbf{Q}_{\boldsymbol{\Delta} a d v}=\left\{\mathbf{q} \Delta_{a d v}^{u}\right\}_{i \in I}</script></span>  同上</p>
+<p>对抗性扰动旨在最大化推荐模型的目标函数。 因此，我们将其定义如下：
+$$
+\boldsymbol{\Delta}<em>{a d v}=\underset{\Delta,|\Delta| \leq \epsilon}{\arg \max } L</em>{B P R}\left(T \mid \widehat{\boldsymbol{\Theta}}+\boldsymbol{\Delta}, \Theta_{f}\right)
+$$</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 这里的<span><span class="MathJax_Preview">\widehat{\boldsymbol{\Theta}}</span><script type="math/tex">\widehat{\boldsymbol{\Theta}}</script></span>不是权重参数吧？</p>
+<p>其中Θb是用户和项目的嵌入矩阵，包括P和Q，</p>
+<p>∆表示嵌入矩阵的扰动，<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>表示控制∆范数的超参数。</p>
+<p>T表示所有成对训练实例的集。</p>
+<p>本文采用L2范数(k)。</p>
+<p>在上述方程中得到<span><span class="MathJax_Preview">∆_{adv}</span><script type="math/tex">∆_{adv}</script></span><em>估计是很难的。 因为目标函数和神经网络涉及复杂的操作。 因此，[12]提出了一种快速梯度符号的逼近方法，通过对∆周围的目标函数进行线性化。，表示如下：
+$$
+\boldsymbol{\Delta}</em>{a d v}=\epsilon \frac{\mathbf{g}}{|\mathbf{g}|}, \mathbf{g}=\nabla_{\widehat{\Theta}} L_{B P R}\left(T \mid \widehat{\mathbf{\Theta}}+\Delta, \Theta_{f}\right)
+$$</p>
+<p>现在， 构造对抗正则项并应用到BPR上
+$$
+L_{B P R \Delta}=\sum_{(u, i, j) \in T}-\ln \sigma\left(\widehat{r_{u i}} \Delta-\widehat{r_{u j}}_{\Delta}\right)
+$$</p>
+<div>
+<div class="MathJax_Preview">
+L_{a d v}=L_{B P R}+\lambda L_{B P R \Delta}
+</div>
+<script type="math/tex; mode=display">
+L_{a d v}=L_{B P R}+\lambda L_{B P R \Delta}
+</script>
+</div>
+<p><img alt="image-20200801113549697" src="https://gitee.com/moluggg/image/raw/master/img/202008/01/113551-650670.png" /></p>
+<h4 id="42-dat">4.2 DAT<a class="headerlink" href="#42-dat" title="Permanent link">&para;</a></h4>
+<p>然而，只有考虑到推荐模型嵌入空间中向最大方向的扰动，才能将一些噪声信息带入训练过程。 因此，我们建议DAT对抗性培训，以解决这一问题，以更好地应用对抗性培训在推荐系统。 我们方法的直觉**是嵌入空间中的扰动方向将限制在现有嵌入空间中的其他例子上，而不是最坏的扰动方向**，这样我们就可以将协作信号集成到训练过程中。 在游戏中 极小极小博弈，嵌入层的质量将逐步提高。 图3说明了在模型GMF中应用定向对抗性训练的框架。</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> worst perturbation direction与maximum direction in</p>
+<p>the embedding space 有何关系？</p>
+<p>在我们的方法中，训练示例将扰动的用户被定义为目标集</p>
+<div>
+<div class="MathJax_Preview">
+\boldsymbol{\Delta}\left(w^{u}\right)=w_{u^{\prime}}^{u} \mathbf{d}_{\mathbf{u}^{\prime}}^{\mathbf{u}^{\prime}}
+</div>
+<script type="math/tex; mode=display">
+\boldsymbol{\Delta}\left(w^{u}\right)=w_{u^{\prime}}^{u} \mathbf{d}_{\mathbf{u}^{\prime}}^{\mathbf{u}^{\prime}}
+</script>
+</div>
+<p>然后，将用户u的定向对抗性嵌入向量表示为：</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{p}_{\Delta_{d a d v}^{u}}=\mathbf{p}_{u}+\Delta\left(w^{u}\right)
+</div>
+<script type="math/tex; mode=display">
+\mathbf{p}_{\Delta_{d a d v}^{u}}=\mathbf{p}_{u}+\Delta\left(w^{u}\right)
+</script>
+</div>
+<p>由于BPR损失将在训练过程中最小化，我们**考虑如何寻求方向向量的最坏情况权重**，从而使BPR损失最大化：</p>
+<p>$$
+w_{\text {dadv}}<sup>{u}=\underset{w</sup>{u},\left|w^{u}\right| \leq \epsilon}{\arg \max } L_{B P R}\left(T \mid \widehat{\Theta}+\Delta\left(w^{u}\right), \Theta_{f}\right)
+$$
+ <img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />这里的<span><span class="MathJax_Preview">\widehat{\Theta}</span><script type="math/tex">\widehat{\Theta}</script></span> 就是上述同时中的P吧</p>
+<p>上文公式（10）改善成公式（16），对应的与公式（10）相邻的几个函数也要改变。改变步骤如下：</p>
+<p><strong>公式（11）----&gt;公式（17）</strong></p>
+<p>在限制扰动方向后，在计算最坏情况权重时不再是公式11。 因此，我们借用[23]的想法，通过在LBPR(T|Θb∆(Wu)，Θf)中应用二阶泰勒，可以近似估计扰动强度Wu)。 形式上，估计最坏情况权重的解决方案可以定义为如下：
+$$
+w_{d a d v}^{u}=\epsilon \frac{g}{|g|}, g=\nabla_{w^{u}} L_{B P R}\left(T \mid \widehat{\Theta}+\Delta\left(w^{u}\right), \Theta_{f}\right)
+$$</p>
+<p>类似地，则重新定义对抗性训练的总体目标函数优化如下：</p>
+<div>
+<div class="MathJax_Preview">
+&lt;\widehat{\Theta}, \Theta_{f}&gt;=\underset{\hat{\Theta}, \Theta_{f}}{\arg \min } L_{B P R}+\lambda L_{B P R \Delta_{d a d v}}
+$$
+通过对上述两个过程的统一，我们可以制定一个极小极大目标函数。 模型参数的优化&lt;Θb，Θf&gt;是最小化玩家，并寻求最坏情况下的扰动 重量是最大的玩家：
+$$
+&lt;\widehat{\mathbf{\Theta}}, \Theta_{f}, w_{\text {dadv}}&gt;=\underset{\hat{\mathbf{\Theta}}, \Theta_{f}}{\arg \min } \underset{w_{\text {dadv}}}{\arg \max } L_{B P R}+\lambda L_{B P R \Delta_{\text {dadv}}}
+</div>
+<script type="math/tex; mode=display">
+<\widehat{\Theta}, \Theta_{f}>=\underset{\hat{\Theta}, \Theta_{f}}{\arg \min } L_{B P R}+\lambda L_{B P R \Delta_{d a d v}}
+$$
+通过对上述两个过程的统一，我们可以制定一个极小极大目标函数。 模型参数的优化<Θb，Θf>是最小化玩家，并寻求最坏情况下的扰动 重量是最大的玩家：
+$$
+<\widehat{\mathbf{\Theta}}, \Theta_{f}, w_{\text {dadv}}>=\underset{\hat{\mathbf{\Theta}}, \Theta_{f}}{\arg \min } \underset{w_{\text {dadv}}}{\arg \max } L_{B P R}+\lambda L_{B P R \Delta_{\text {dadv}}}
+</script>
+</div>
+<p>从另一个角度来看，我们的DAT可以看作是一种数据增强的方法，它同时在包含协作信号的原始数据和扰动数据上训练模型。 w由于本文的重点是对抗性训练，因此将这一探索作为未来的工作。 算法1显示了我们的DAGMF的详细训练过程。 最后，值得注意的是，在BE中轧钢，模型参数Θb，Θf是通过优化GMF（第1行）初始化的，而不是随机的。 这是因为当模型欠拟合时，正常的训练过程就足以得到更好的参数。 在模型参数开始过拟合数据后，需要添加对抗性扰动。</p>
 <h2 id="fgsm">FGSM<a class="headerlink" href="#fgsm" title="Permanent link">&para;</a></h2>
 <div>
 <div class="MathJax_Preview">
@@ -1051,7 +1332,7 @@ w^{T} \tilde{x}=w^{T} x+w^{T} \eta \\
 \end{array}\right.
 </script>
 </div>
-<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />对抗扰动通过ωTη影响激活函数从而影响分类结果。如果ω有n个维度，权向量的一个元素的平均大小是mm，那么激活函数就会增加εmnεmn。虽然‖η‖∞不会随着维度增加而增加，但是η会随nn线性增长，然后就有高维问题了。</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" />对抗扰动通过ωTη影响激活函数从而影响分类结果。如果ω有n个维度，权向量的一个元素的平均大小是m，那么激活函数就会增加εmn。虽然‖η‖∞不会随着维度增加而增加，但是η会随n线性增长，然后就有高维问题了。</p>
 <p>非线性模型的线性扰动
 我们假设神经网络都太线性了以至于不能抵抗对抗样本。常见的LSTM、ReLU和maxout网络都趋向于线性表现，而类似sigmod这种非线性性模型也把大量的时间花在非饱和和线性系统中。（这里我也不怎么理解，望大神讲解）</p>
 <p>我们从公式开始理解（fast gradient sign method）：
@@ -1061,7 +1342,7 @@ $
 模型输入，即图像：x
 结果标签：y
 损失函数：J(θ,x,y)
-符号函数：sign()
+符号函数：sign() 就是激活函数
 我们可以线性化代价函数的当前值θ,获得最优max-norm η
 <img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 符号函数sign()是一个什么样的函数？</p>
 <h2 id="kl-">kl 散度---相对熵<a class="headerlink" href="#kl-" title="Permanent link">&para;</a></h2>
@@ -1089,7 +1370,7 @@ D(Q | P)=0.4 \times \log \left(\frac{0.4}{0.1}\right)+0.2 \times \log \left(\fra
 $$</p>
 <p>也就是用P来拟合Q和用Q来拟合P的相对熵居然不一样，而他们的距离是一样的。这也就是说，<strong>相对熵的大小并不跟距离有一一对应的关系</strong>。这点蛮头疼的，因为一般我们希望距离越远下降越快，而相对熵取哪个为参考在同等距离情况下下降的速度都不一样，这就非常尴尬了。</p>
 <p>5证明步骤：</p>
-<p><img alt="image-20200724124817276" src="E:\typora图片\image-20200724124817276.png" /></p>
+<p><img alt="image-20200724124817276" src="https://gitee.com/moluggg/image/raw/master/img/202007/27/140543-168642.png" /></p>
                 
                   
                 
