@@ -1735,14 +1735,14 @@ $$</p>
 <p>​   <mark><strong>对user和item的向量表示（如embedding）是现代推荐系统的核心</strong></mark> 从早期的矩阵分解到最近出现的基于我的深度学习这些，现有的努力通常通过从描述用户（或项目）的预先存在的特征(如ID和属性)映射来获得用户（或项目）的嵌入。 我们认为这是个继承者 这种方法的缺点是，<strong>user-item中潜在的交互collaborative signal没有嵌入</strong>。 因此，结果嵌入可能不足够捕捉协同**过滤效应**。 </p>
 <p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 什么是二部图？</p>
 <p>​   在本工作中，我们建议将用户项交互(-更具体地说是-)二部图结构-集成到嵌入过程中。 我们知道 开发了一种新的推荐框架神经图协同过滤(NGCF)，它**通过传播嵌入来利用用户项图结构**。 这导致了表现性的建模 用户项图中的==高阶连通性==，<strong>有效地将协作信号以显式的方式注入嵌入过程</strong>。 我们对三个公共基准进行了广泛的实验展示了对几种最先进的模型的显著改进，如HOPRec[40]和协作内存网络[5]。 进一步分析验证了嵌入传播f的重要性或者学习更好的用户和项目表示，证明NGCF的合理性和有效性。 守则可在https://github.com/xiangwang1223/neural_graph_collaborative_filtering.查阅</p>
-<p>​    个性化推荐无处不在，已经应用于电子商务、广告和社交媒体等许多在线服务。 <strong>其核心是评估基于用户的历史和互动预测用户是否会选中物品</strong>，用户的历史和互动如购买和点击等。 协作过滤CF的解决措施是： 通过假设行为相似的用户在项目上表现出相似的偏好来解决它。为了实现这个假设，通常通过==参数化==user和item来重建历史交互，并且基于参数去预测用户的偏好</p>
+<p>​    个性化推荐无处不在，已经应用于电子商务、广告和社交媒体等许多在线服务。 <strong>其核心是评估基于用户的历史和互动预测用户是否会选中物品</strong>，用户的历史和互动如购买和点击等。 协作过滤CF的解决措施是： 通过假设行为相似的用户在项目上表现出相似的偏好来解决它。为了实现这个假设，通常通过 <mark>参数化</mark> user和item来重建历史交互，并且基于参数去预测用户的偏好</p>
 <p>一般来说 在可学习的CF模型中有两个关键因素：</p>
 <p>1)嵌入，将用户和项目转换为embedding表示</p>
 <p>2)交互建模，重建基于embedding的历史interactions 问题。  </p>
 <blockquote>
 <p>MF用内积直接嵌入；collaborative deep learning从item的边信息中整合深度学习到的representations（embedding function ）；neural collaborative filtering 用非线性神经网络（interaction function）；translation-basedCF用Euclidean distance metric（interaction function）。</p>
 </blockquote>
-<div class="codehilite"><pre><span></span><code>尽管它们是有效的，但我们认为这些方法不足以为CF产生令人满意的嵌入。 关键原因是embedding function 缺乏对**collaborative signal**的==显式的编码，==这种signal是在user-item之间潜在的交互，它可以反映users（or items）间的行为相似度，大部分现存方法建立embedding function仅仅使用表面特征(例如ID和属性)而不考虑user-item间的交互，所以是低效的。
+<div class="codehilite"><pre><span></span><code>尽管它们是有效的，但我们认为这些方法不足以为CF产生令人满意的嵌入。 关键原因是embedding function 缺乏对**collaborative signal**的 ==显式的编码，== 这种signal是在user-item之间潜在的交互，它可以反映users（or items）间的行为相似度，大部分现存方法建立embedding function仅仅使用表面特征(例如ID和属性)而不考虑user-item间的交互，所以是低效的。
 
 虽然直观地将用户项交互集成到嵌入函数中很有用，但要做好它是不平凡的。 特别是，相互作用的规模很容易达到数百万甚至上千万，因此在实际应用中，很难提取所需的协作信号。 在本工作中，我们通过利用用户项交互的高阶连接（ **high-order connectivity** ）来解决这个挑战， 在交互图结构中编码协作信号的一种自然方法。
 </code></pre></div>
@@ -1759,8 +1759,8 @@ $$</p>
 <h3 id="2-methodology"><strong>2 METHODOLOGY</strong><a class="headerlink" href="#2-methodology" title="Permanent link">&para;</a></h3>
 <p>我们现在提出了所提出的NGCF模型，其体系结构如图2所示。 框架中有三个组件：</p>
 <p>（1）提供和初始化使用的嵌入层用户 嵌入和项嵌入；</p>
-<p>（2)通过注入高阶连通性关系来细化嵌入的多个嵌入传播层；</p>
-<p>(3） 从不同的传播层聚合细化的嵌入并输出用户项对的亲和力分数的预测层。 最后，我们讨论了NGCF的时间复杂度以及与现有方法的联系。</p>
+<p>（2）通过注入高阶连通性关系来细化嵌入的多个嵌入传播层；</p>
+<p>（3）从不同的传播层聚合细化的嵌入并输出用户项对的亲和力分数的预测层。 最后，我们讨论了NGCF的时间复杂度以及与现有方法的联系。</p>
 <p>概括来说：</p>
 <p>NGCF模型主要包含三个部分：
 （1）Embedding Layer：将 user 和 item 的 ID 映射为向量初始化表示；
@@ -1777,31 +1777,46 @@ $$</p>
 \mathbf{E}=[\underbrace{\mathbf{e}_{u_{1}}, \cdots, \mathbf{e}_{u_{N}}}_{\text {users embeddings }}, \underbrace{\mathbf{e}_{i_{1}}, \cdots, \mathbf{e}_{i_{M}}}_{\text {item embeddings }}]
 </script>
 </div>
-<p>值得注意的是，<strong>这个嵌入表作为用户嵌入和项嵌入的初始状态，以==端到端的方式==进行优化。</strong> 在传统的推荐模式，如MFAN 神经协作过滤[14]，将这些ID嵌入直接输入到交互层（或算子）中，以获得预测分数。 相反，<mark>在我们的NGCF框架中，我们细化了通过在user-item交互图上传播它们来进行embedings。</mark>  这导致了更有效的推荐嵌入，因为嵌入细化步骤显式地将协作信号注入嵌入。</p>
+<p>值得注意的是，<strong>这个嵌入表作为用户嵌入和项嵌入的初始状态，以 <mark>端到端的方式</mark> 进行优化。</strong> 在传统的推荐模式，如MFAN 神经协作过滤[14]，将这些ID嵌入直接输入到交互层（或算子）中，以获得预测分数。 相反， <mark>在我们的NGCF框架中，我们细化了通过在user-item交互图上传播它们来进行embedings。</mark>   这导致了更有效的推荐嵌入，因为嵌入细化步骤显式地将协作信号注入嵌入。</p>
 <h4 id="22-embedding-propagation-layers"><strong>2.2 Embedding Propagation Layers</strong><a class="headerlink" href="#22-embedding-propagation-layers" title="Permanent link">&para;</a></h4>
 <p>接下来，我们构建了GNN的消息传递体系结构以便沿着图结构捕获CF信号并细化用户和项的嵌入。 我们首先说明设计 一层传，然后将其推广到多个连续层。</p>
 <h5 id="221-first-order-propagation">2.2.1  First-order Propagation<a class="headerlink" href="#221-first-order-propagation" title="Permanent link">&para;</a></h5>
 <p>直观上，与用户交互过的项目可以体现用户的偏好，类似的，与item 交互过的用户也可以看作是item的特性，并且可以用于度量两个项目之间的协作相似性,为此气门需要将 user-item 联系起来</p>
-<p>那么定义一个 user-item 对 ，定义<code>从 i 到 u 的信息嵌入</code> mu←i为：
-$$
-\mathbf{m}<em>{u \leftarrow i}=\frac{1}{\sqrt{\left|\mathcal{N}</em>{u}\right|\left|\mathcal{N}<em>{i}\right|}}\left(\mathbf{W}</em>{1} \mathbf{e}<em>{i}+\mathbf{W}</em>{2}\left(\mathbf{e}<em>{i} \odot \mathbf{e}</em>{u}\right)\right)
-$$</p>
-<p>可以概括表示成：
-$$
-\mathbf{m}<em>{u \leftarrow i}=f\left(\mathbf{e}</em>{i}, \mathbf{e}<em>{u}, p</em>{u i}\right)
-$$
-这样就可以 在此基础上在连接的user 与 item 之间执行**嵌入传播**。</p>
+<p>那么定义一个 user-item 对 ，定义<code>从 i 到 u 的信息嵌入</code> mu←i为：</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{m}_{u \leftarrow i}=\frac{1}{\sqrt{\left|\mathcal{N}_{u}\right|\left|\mathcal{N}_{i}\right|}}\left(\mathbf{W}_{1} \mathbf{e}_{i}+\mathbf{W}_{2}\left(\mathbf{e}_{i} \odot \mathbf{e}_{u}\right)\right)
+</div>
+<script type="math/tex; mode=display">
+\mathbf{m}_{u \leftarrow i}=\frac{1}{\sqrt{\left|\mathcal{N}_{u}\right|\left|\mathcal{N}_{i}\right|}}\left(\mathbf{W}_{1} \mathbf{e}_{i}+\mathbf{W}_{2}\left(\mathbf{e}_{i} \odot \mathbf{e}_{u}\right)\right)
+</script>
+</div>
+<p>可以概括表示成：</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{m}_{u \leftarrow i}=f\left(\mathbf{e}_{i}, \mathbf{e}_{u}, p_{u i}\right)
+</div>
+<script type="math/tex; mode=display">
+\mathbf{m}_{u \leftarrow i}=f\left(\mathbf{e}_{i}, \mathbf{e}_{u}, p_{u i}\right)
+</script>
+</div>
+<p>这样就可以 在此基础上在连接的user 与 item 之间执行**嵌入传播**。</p>
 <p>公式说明：</p>
 <p>① <span><span class="MathJax_Preview">m_{u←i}</span><script type="math/tex">m_{u←i}</script></span>是消息embedding，f(⋅)是消息编码函数，ei和eu作为输入，利用系数pui控制边(u,i)上每次传播的衰减因子。</p>
-<p>② <span><span class="MathJax_Preview">p_{ui}=\frac{1}{\sqrt{\left|\mathcal{N}_{u}\right|\left|\mathcal{N}_{i}\right|}}</span><script type="math/tex">p_{ui}=\frac{1}{\sqrt{\left|\mathcal{N}_{u}\right|\left|\mathcal{N}_{i}\right|}}</script></span> 表示的是衰减因子，也是正则化系数，表示历史item对用户偏好的贡献程度，从消息传递的观点看，<span><span class="MathJax_Preview">p_{ui}</span><script type="math/tex">p_{ui}</script></span>被看成是一个折扣因子，表示消息在传播过程中的衰退。</p>
+<p>②  <span><span class="MathJax_Preview">p_{ui}=\frac{1}{\sqrt{\left|\mathcal{N}_{u}\right|\left|\mathcal{N}_{i}\right|}}</span><script type="math/tex">p_{ui}=\frac{1}{\sqrt{\left|\mathcal{N}_{u}\right|\left|\mathcal{N}_{i}\right|}}</script></span>  表示的是衰减因子，也是正则化系数，表示历史item对用户偏好的贡献程度，从消息传递的观点看，<span><span class="MathJax_Preview">p_{ui}</span><script type="math/tex">p_{ui}</script></span>被看成是一个折扣因子，表示消息在传播过程中的衰退。</p>
 <p>*③ W*1,*W*2是d′∗d维的权值矩阵，去提取有用信息进行传播。</p>
 <p>④ 公式特色： 传统的图神经网络只是考虑 ei 的作用，本文中我们通过ei⊙eu把ei和eu之间的交互编码到传递的信息中，这使得消息依赖于ei和eu之间的关联性，传递更多来自相似items的消息。</p>
 <p>上述说明了单层传播的设计，现在将其推广到多个连续层</p>
 <h5 id="222-high-order-propagation"><em>2.2.2</em>  <strong>High-order Propagation</strong><a class="headerlink" href="#222-high-order-propagation" title="Permanent link">&para;</a></h5>
-<p>这样就可以聚合从u的邻居传来的信息去更新u的表示，聚合函数为：
-$$
-\mathbf{e}<em>{u}^{(1)}=\text { LeakyReLU }\left(\mathbf{m}</em>{u \leftarrow u}+\sum_{i \in \mathcal{N}<em>{u}} \mathbf{m}</em>{u \leftarrow i}\right)
-$$</p>
+<p>这样就可以聚合从u的邻居传来的信息去更新u的表示，聚合函数为：</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{e}_{u}^{(1)}=\text { LeakyReLU }\left(\mathbf{m}_{u \leftarrow u}+\sum_{i \in \mathcal{N}_{u}} \mathbf{m}_{u \leftarrow i}\right)
+</div>
+<script type="math/tex; mode=display">
+\mathbf{e}_{u}^{(1)}=\text { LeakyReLU }\left(\mathbf{m}_{u \leftarrow u}+\sum_{i \in \mathcal{N}_{u}} \mathbf{m}_{u \leftarrow i}\right)
+</script>
+</div>
 <p>上述公式是一阶嵌入传播层，除了从邻居 Nu 传播的消息外，还考虑了 u 的自连接:mu←u = W1eu，保留了原始特征的信息。同理$ e_{i}^{(1)}$ </p>
 <p>综合上述（12）~（14）：</p>
 <div>
@@ -1841,20 +1856,28 @@ $$</p>
 <p>公式：</p>
 <p>①E 是用户和项经过 l 步嵌入传播后得到的表示
 ②I 表示一个单位矩阵
-③ L 表示用户-项目图的拉普拉斯矩阵:
-$$
+③ L 表示用户-项目图的拉普拉斯矩阵:</p>
+<div>
+<div class="MathJax_Preview">
 \mathcal{L}=\mathbf{D}^{-\frac{1}{2}} \mathbf{A D}^{-\frac{1}{2}} \text { and } \mathbf{A}=\left[\begin{array}{cc}
-\mathbf{0} &amp; \mathbf{R} \
+\mathbf{0} &amp; \mathbf{R} \\
 \mathbf{R}^{\top} &amp; \mathbf{0}
 \end{array}\right]
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\mathcal{L}=\mathbf{D}^{-\frac{1}{2}} \mathbf{A D}^{-\frac{1}{2}} \text { and } \mathbf{A}=\left[\begin{array}{cc}
+\mathbf{0} & \mathbf{R} \\
+\mathbf{R}^{\top} & \mathbf{0}
+\end{array}\right]
+</script>
+</div>
 <h4 id="23-model-prediction">2.3  Model Prediction<a class="headerlink" href="#23-model-prediction" title="Permanent link">&para;</a></h4>
 <p>由于在不同层中获得的表示强调通过不同连接传递的消息，所以它们在反映用户偏好方面有不同的贡献。
 因此，将它们串联起来，构成用户的最终嵌入；对 item 也做同样的操作。
-<img alt="在这里插入图片描述" src="E:\typora图片\20190819102352871.png" />
+<img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202008/07/122222-394690.png" />
 其中||为串联操作。除了连接，其他聚合器也可以应用，如加权平均、最大池、LSTM。使用串联在于它的简单性，不需要学习额外的参数，而且已经被非常有效地证明了。
 最后，我们进行内积来估计用户对目标物品的偏好:
-<img alt="在这里插入图片描述" src="E:\typora图片\20190819102421236.png" /></p>
+<img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202008/07/122229-358156.png" /></p>
 <h4 id="24-optimization">2.4 Optimization<a class="headerlink" href="#24-optimization" title="Permanent link">&para;</a></h4>
 <p><strong>optimize the pairwise BPR loss</strong>
 它考虑观察到的和未观察到的用户-项目交互之间的相对顺序。具体地说，BPR 假设用户引用的已观察到的交互作用应该比未观察到的交互作用具有更高的预测值。目标函数如下：
