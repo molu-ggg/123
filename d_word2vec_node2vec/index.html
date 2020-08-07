@@ -1,0 +1,1026 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>D word2vec node2vec - MOLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#word2vec-skip-gram" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="MOLU" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                MOLU
+              </span>
+              <span class="md-header-nav__topic">
+                D word2vec node2vec
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link md-tabs__link--active">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../a_算法/" title="机器与深度学习" class="md-tabs__link">
+          机器与深度学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../new_error/" title="问题与分析" class="md-tabs__link">
+          问题与分析
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../c视频经典算法/" title="经典算法" class="md-tabs__link">
+          经典算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link">
+          高级算法
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_算法/" title="数据分析算法" class="md-nav__link">
+      数据分析算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_cnn/" title="CNN" class="md-nav__link">
+      CNN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_百度技术认证/" title="百度技术认证" class="md-nav__link">
+      百度技术认证
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题与分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        问题与分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_error/" title="方差,偏差，噪声" class="md-nav__link">
+      方差,偏差，噪声
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_modern/" title="模型评估方法和性能指标" class="md-nav__link">
+      模型评估方法和性能指标
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_sigmoid/" title="激活函数与梯度消失，梯度爆炸" class="md-nav__link">
+      激活函数与梯度消失，梯度爆炸
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="验证集与测试集" class="md-nav__link">
+      验证集与测试集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_transfer/" title="欠拟合，过拟合，正则化" class="md-nav__link">
+      欠拟合，过拟合，正则化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      经典算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        经典算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c视频经典算法/" title="蓝桥杯基础" class="md-nav__link">
+      蓝桥杯基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c蓝桥杯练习题/" title="蓝桥杯题" class="md-nav__link">
+      蓝桥杯题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c背包问题/" title="背包问题" class="md-nav__link">
+      背包问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_leetcode/" title="leetcode" class="md-nav__link">
+      leetcode
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      高级算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_Deepwalk/" title="Deepwalk等" class="md-nav__link">
+      Deepwalk等
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAN/" title="GAN" class="md-nav__link">
+      GAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GCN论文解读/" title="GCN" class="md-nav__link">
+      GCN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAT/" title="GAT" class="md-nav__link">
+      GAT
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#word2vec-skip-gram" title="Word2vec 之 Skip-Gram 模型" class="md-nav__link">
+    Word2vec 之 Skip-Gram 模型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1word2vec" title="1.Word2Vec" class="md-nav__link">
+    1.Word2Vec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2embeddings" title="2.Embeddings？" class="md-nav__link">
+    2.Embeddings？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-skip-gram" title="3. skip-gram 模型" class="md-nav__link">
+    3. skip-gram 模型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-skip-gram" title="3.1 skip-gram 模型可视化：" class="md-nav__link">
+    3.1 skip-gram 模型可视化：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-one-hot" title="3.2 one-hot 编码" class="md-nav__link">
+    3.2 one-hot 编码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-lookup-table" title="3.2 Lookup Table（查表）" class="md-nav__link">
+    3.2 Lookup Table（查表）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" title="3.3 模型建立与参数更新" class="md-nav__link">
+    3.3 模型建立与参数更新
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" title="3.4 步骤总结" class="md-nav__link">
+    3.4 步骤总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" title="4. 直觉上的理解" class="md-nav__link">
+    4. 直觉上的理解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5python" title="5.python实现" class="md-nav__link">
+    5.python实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node2vec" title="node2vec" class="md-nav__link">
+    node2vec
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="采样策略" class="md-nav__link">
+    采样策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="优化目标：" class="md-nav__link">
+    优化目标：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>D word2vec node2vec</h1>
+                
+                <h2 id="word2vec-skip-gram">Word2vec 之 Skip-Gram 模型<a class="headerlink" href="#word2vec-skip-gram" title="Permanent link">&para;</a></h2>
+<p>转载<a href="https://me.csdn.net/qq_24003917">qq_24003917</a> 最后发布于2018-05-25 09:40:20 </p>
+<p>展开</p>
+<p>这次的分享主要是对Word2Vec模型的两篇英文文档的翻译、理解和整合，这两篇英文文档都是介绍Word2Vec中的Skip-Gram模型。下一篇专栏文章将会用TensorFlow实现基础版Word2Vec的skip-gram模型，所以本篇文章先做一个理论铺垫。</p>
+<p>原文英文文档请参考链接：</p>
+<blockquote>
+<p>- Word2Vec Tutorial - The Skip-Gram Model</p>
+<p><a href="http://t.cn/Rc5RfJ2">http://t.cn/Rc5RfJ2</a></p>
+<p>- Word2Vec (Part 1): NLP With Deep Learning with Tensorflow (Skip-gram)</p>
+<p><a href="http://t.cn/RoVEiUB">http://t.cn/RoVEiUB</a></p>
+</blockquote>
+<h3 id="1word2vec"><strong>1.Word2Vec</strong><a class="headerlink" href="#1word2vec" title="Permanent link">&para;</a></h3>
+<p>Word2vec，是一群用来产生词向量的相关模型。这些模型为浅而双层的<a href="https://baike.baidu.com/item/神经网络/16600562">神经网络</a>，用来训练以重新建构语言学之词文本。<a href="https://baike.baidu.com/item/网络/143243">网络</a>以词表现，并且需猜测相邻位置的输入词，在word2vec中词袋模型假设下，词的顺序是不重要的。训练完成之后，word2vec模型可用来映射每个词到一个向量，可用来表示词对词之间的关系，该向量为神经网络之隐藏层。</p>
+<p>Word2Vec是从大量文本语料中以无监督的方式学习语义知识的一种模型，它被大量地用在自然语言处理（NLP）中。那么它是如何帮助我们做自然语言处理呢？<strong>Word2Vec通过学习文本来用词向量的方式表征词的语义信息，即通过一个嵌入空间使得语义上相似的单词在该空间内距离很近</strong>。</p>
+<h3 id="2embeddings">2.Embeddings？<a class="headerlink" href="#2embeddings" title="Permanent link">&para;</a></h3>
+<p>Embedding其实就是一个映射，将单词从原先所属的空间映射到新的多维空间中，也就是把原先词所在空间嵌入到一个新的空间中去。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/46016518">https://zhuanlan.zhihu.com/p/46016518</a></p>
+<p>Embedding 是一个将离散变量转为连续向量表示的一个方式。在神经网络中，embedding 是非常有用的，因为它不光可以减少离散变量的空间维数，同时还可以有意义的表示该变量。</p>
+<p>我们可以总结一下，embedding 有以下 3 个主要目的：</p>
+<ol>
+<li>在 embedding 空间中查找最近邻，这可以很好的用于根据用户的兴趣来进行推荐。</li>
+<li>作为监督性学习任务的输入。</li>
+<li>用于可视化不同离散变量之间的关系。</li>
+</ol>
+<p><strong>浅显易懂的理解方法：</strong></p>
+<p>原本的下面的及几个词语，one-hot编码，但是one-hot 编码长度太长，于是我们embedding :</p>
+<p>一个将离散变量转为连续向量表示,减少离散变量的空间维数,更可以使得相关的向量</p>
+<p>o  词映射到低维连续向量(如图) </p>
+<p>cat: (-0.065, -0.035,  0.019, -0.026, 0.085,…)</p>
+<p>dog: (-0.019, -0.076,  0.044, 0.021,0.095,…)</p>
+<p>table: (0.027,  0.013,  0.006, -0.023, 0.014, …)</p>
+<p>o  相似词映射到相似方向 -- 语义相似性被编码了</p>
+<p>o  Cosine相似度衡量方向</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/105706-647977.png" /></p>
+<p>我们从直观角度上来理解一下，cat这个单词和kitten属于语义上很相近的词，而dog和kitten则不是那么相近，iphone这个单词和kitten的语义就差的更远了。通过对词汇表中单词进行这种数值表示方式的学习（也就是将单词转换为词向量），能够让我们基于这样的数值进行向量化的操作从而得到一些有趣的结论。比如说，如果我们对词向量kitten、cat以及dog执行这样的操作：<strong>kitten - cat + dog，那么最终得到的嵌入向量（embedded vector）将与puppy（幼犬）这个词向量十分相近。</strong></p>
+<h3 id="3-skip-gram"><strong>3. skip-gram 模型</strong><a class="headerlink" href="#3-skip-gram" title="Permanent link">&para;</a></h3>
+<p>Word2Vec模型中，主要有Skip-Gram和CBOW两种模型，从直观上理解，**Skip-Gram是给定input word来预测上下文。**而CBOW是给定上下文，来预测input word。本篇文章仅讲解Skip-Gram模型。</p>
+<p><img alt="一文详解 Word2vec 之 Skip-Gram 模型（结构篇）" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/105057-755439.jpeg" /></p>
+<p>Skip-Gram模型的基础形式非常简单，为了更清楚地解释模型，我们先从最一般的基础模型来看Word2Vec（下文中所有的Word2Vec都是指Skip-Gram模型）。</p>
+<p>Word2Vec模型实际上分为了两个部分，<strong>第一部分为建立模型，第二部分是通过模型获取嵌入词向量</strong>。Word2Vec的整个建模过程实际上与自编码器（auto-encoder）的思想很相似，即先基于训练数据构建一个神经网络，当这个模型训练好以后，我们并不会用这个训练好的模型处理新的任务，我们真正需要的是这个模型通过训练数据所学得的参数，例如隐层的权重矩阵——后面我们将会看到这些权重在Word2Vec中实际上就是我们试图去学习的“word vectors”。基于训练数据建模的过程，我们给它一个名字叫“Fake Task”，意味着建模并不是我们最终的目的。</p>
+<blockquote>
+<p>上面提到的这种方法实际上会在无监督特征学习（unsupervised feature learning）中见到，最常见的就是自编码器（auto-encoder）：通过在隐层将输入进行编码压缩，继而在输出层将数据解码恢复初始状态，训练完成后，我们会将输出层“砍掉”，仅保留隐层。</p>
+</blockquote>
+<h4 id="31-skip-gram"><strong>3.1 skip-gram 模型可视化：</strong><a class="headerlink" href="#31-skip-gram" title="Permanent link">&para;</a></h4>
+<p><img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/112308-360404.png" /></p>
+<p>我们在上面提到，训练模型的真正目的是获得模型基于训练数据学得的隐层权重。为了得到这些权重，我们首先要构建一个完整的神经网络作为我们的“Fake Task”，后面再返回来看通过“Fake Task”我们如何间接地得到这些词向量。</p>
+<p>目标： 预测上下文词汇</p>
+<p>中间历程： </p>
+<h4 id="32-one-hot">3.2 one-hot 编码<a class="headerlink" href="#32-one-hot" title="Permanent link">&para;</a></h4>
+<p>简单易懂容易操作的编码方式，但是唯独高，无法计算词之间的相似度。</p>
+<p>比如我这里的文本序列为：[“the”，“man”，“loves”，“his”，“son”]，那么可以进行如下编码了。</p>
+<ul>
+<li>the ：[1,0,0,0,0]</li>
+<li>man：[0,1,0,0,0]</li>
+<li>loves：[0,0,1,0,0]</li>
+<li>his：[0,0,0,1,0]</li>
+<li>son：[0,0,0,0,1]</li>
+</ul>
+<h4 id="32-lookup-table">3.2 Lookup Table（查表）<a class="headerlink" href="#32-lookup-table" title="Permanent link">&para;</a></h4>
+<p>我们需要将单词的one -hot 编码映射到一个n维的向量空间去。下图表示的是将5维one -hot 映射到 三维的词向量空间去。</p>
+<p><img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/113127-532027.png" /></p>
+<p>但实际单词维数很高，我们一般映射到300维的词向量空间去：</p>
+<p>查表如下：</p>
+<p><img alt="image-20200804113835943" src="E:\typora图片\image-20200804113835943.png" /></p>
+<p>这个10000*300 的矩阵，就是我们需要训练调整的参数矩阵</p>
+<p><strong>那么这个模型是如何学习的呢？</strong></p>
+<h4 id="33">3.3 模型建立与参数更新<a class="headerlink" href="#33" title="Permanent link">&para;</a></h4>
+<ul>
+<li>举个例子</li>
+<li>假设文本序列是“the”“man”“loves”“his”“son”。</li>
+<li>以“loves”作为中心词，设背景窗口大小为2。如图所示，跳字模型所关心的是，给定中心词“loves”，生成与它距离不超过2个词的背景词“the”“man”“his”“son”的条件概率，即</li>
+</ul>
+<p><span><span class="MathJax_Preview">P(“the",“man",“his",“son"∣“loves")</span><script type="math/tex">P(“the",“man",“his",“son"∣“loves")</script></span>.</p>
+<ul>
+<li>假设给定中心词的情况下，背景词的生成是相互独立的，那么上式可以改写成</li>
+</ul>
+<p><span><span class="MathJax_Preview">P(“the"∣“loves")⋅*P(“man"∣“loves")⋅*P(“his"∣“loves")⋅*P(“son"∣“loves"))</span><script type="math/tex">P(“the"∣“loves")⋅*P(“man"∣“loves")⋅*P(“his"∣“loves")⋅*P(“son"∣“loves"))</script></span>
+<img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/114449-820488.png" /></p>
+<p><strong>那么如何求条件概率呢？</strong></p>
+<p>在跳字模型中，每个词被表示成**两个d维向量**，用来计算条件概率。</p>
+<p>①假设这个词在词典中索引为i，当它为中心词时向量表示为<span><span class="MathJax_Preview">\boldsymbol{v}_i\in\mathbb{R}^d</span><script type="math/tex">\boldsymbol{v}_i\in\mathbb{R}^d</script></span>，而为背景词时向量表示为<span><span class="MathJax_Preview">\boldsymbol{u}_i\in\mathbb{R}^d</span><script type="math/tex">\boldsymbol{u}_i\in\mathbb{R}^d</script></span><em>。</em></p>
+<p>*②设中心词wc在词典中索引为c，背景词wo*在词典中索引为o，给定中心词生成背景词的条件概率可以通过对向量内积做softmax运算而得到：</p>
+<p>$$
+P\left(w_{o} \mid w_{c}\right)=\frac{\exp \left(\boldsymbol{u}<em>{o}^{\top} \boldsymbol{v}</em>{c}\right)}{\sum_{i \in \mathcal{V}} \exp \left(\boldsymbol{u}<em>{i}^{\top} \boldsymbol{v}</em>{c}\right)}
+$$
+这样上述<span><span class="MathJax_Preview">P(“the"∣“loves")⋅*P(“man"∣“loves")⋅*P(“his"∣“loves")⋅*P(“son"∣“loves"))</span><script type="math/tex">P(“the"∣“loves")⋅*P(“man"∣“loves")⋅*P(“his"∣“loves")⋅*P(“son"∣“loves"))</script></span>的联合概率为：
+$$
+\prod_{t=1}^{T} \prod_{-m \leq j \leq m, j=0} P\left(w^{(t+j)} \mid w^{(t)}\right)
+$$
+学习过概率论或者相关科目的应该知道，上述公式我们需要进一步转化成可加的公式以便进行参数的更新，在这里就是加log :
+$$
+-\sum_{t=1}^{T} \sum_{-m \leq j \leq m, j=0} \log P\left(w^{(t+j)} \mid w^{(t)}\right)
+$$
+1）对数似然变换，因为对数是单调递增，不会影响原函数的单调性；</p>
+<p>2）添加负号“-”，会使得原函数的单调性对调。</p>
+<p>我们的目标就是（将概率最大化），也就是最小化该公式，(一个背景词）目标函数具体可以表示为：
+$$
+\log P\left(w_{o} \mid w_{c}\right)=\boldsymbol{u}<em>{o}^{\top} \boldsymbol{v}</em>{c}-\log \left(\sum_{i \in \mathcal{V}} \exp \left(\boldsymbol{u}<em>{i}^{\top} \boldsymbol{v}</em>{c}\right)\right)
+$$
+梯度下降法更新：
+$$
+\begin{aligned}
+\frac{\partial \log P\left(w_{o} \mid w_{c}\right)}{\partial v_{c}} &amp;=\boldsymbol{u}<em>{o}-\frac{\sum</em>{j \in \mathcal{V}} \exp \left(\boldsymbol{u}<em>{j}^{\top} \boldsymbol{v}</em>{c}\right) \boldsymbol{u}<em>{j}}{\sum</em>{i \in \mathcal{V}} \exp \left(\boldsymbol{u}<em>{i}^{\top} \boldsymbol{v}</em>{c}\right)} \
+&amp;=\boldsymbol{u}<em>{o}-\sum</em>{j \in \mathcal{V}}\left(\frac{\exp \left(\boldsymbol{u}<em>{j}^{\top} \boldsymbol{v}</em>{c}\right)}{\sum_{i \in \mathcal{V}} \exp \left(\boldsymbol{u}<em>{i}^{\top} \boldsymbol{v}</em>{c}\right)}\right) \boldsymbol{u}<em>{j} \
+&amp;=\boldsymbol{u}</em>{o}-\sum_{j \in \mathcal{V}} P\left(w_{j} \mid w_{c}\right) \boldsymbol{u}_{j}
+\end{aligned}
+$$</p>
+<h4 id="34">3.4 步骤总结<a class="headerlink" href="#34" title="Permanent link">&para;</a></h4>
+<p><img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/121113-105249.png" /></p>
+<p><img alt="image-20200804120927843" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/120928-894916.png" /></p>
+<p><img alt="image-20200804120952802" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/120953-254943.png" /></p>
+<p>摘录于：<a href="https://blog.csdn.net/weixin_41843918/article/details/90312339">https://blog.csdn.net/weixin_41843918/article/details/90312339</a></p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> Deepwalk更新的是哪一个参数？w和w'都更新吗？是的吧</p>
+<h3 id="4">4. 直觉上的理解<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>下面我们将通过直觉来进行一些思考。</p>
+<p>如果两个不同的单词有着非常相似的“上下文”（也就是窗口单词很相似，比如“Kitty climbed the tree”和“Cat climbed the tree”），那么通过我们的模型训练，这两个单词的嵌入向量将非常相似。</p>
+<p>那么两个单词拥有相似的“上下文”到底是什么含义呢？比如对于同义词“intelligent”和“smart”，我们觉得这两个单词应该拥有相同的“上下文”。而例如”engine“和”transmission“这样相关的词语，可能也拥有着相似的上下文。</p>
+<p>实际上，这种方法实际上也可以帮助你进行词干化（stemming），例如，神经网络对”ant“和”ants”两个单词会习得相似的词向量。</p>
+<blockquote>
+<p>词干化（stemming）就是去除词缀得到词根的过程。</p>
+</blockquote>
+<h3 id="5python">5.python实现<a class="headerlink" href="#5python" title="Permanent link">&para;</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/29668368">https://zhuanlan.zhihu.com/p/29668368</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">orig_shape</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># 根据输入类型是矩阵还是向量分别计算softmax</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># 矩阵</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 得到每行的最大值，用于缩放每行的元素，避免溢出</span>
+        <span class="n">x</span><span class="o">-=</span><span class="n">tmp</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 使每行减去所在行的最大值（广播运算）</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 第一步，计算所有值以e为底的x次幂</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 将每行求和并保存</span>
+        <span class="n">x</span> <span class="o">/=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># 所有元素除以所在行的元素和（广播运算）</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># 向量</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 得到最大值</span>
+        <span class="n">x</span> <span class="o">-=</span> <span class="n">tmp</span> <span class="c1"># 利用最大值缩放数据</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 对所有元素求以e为底的x次幂</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 求元素和</span>
+        <span class="n">x</span> <span class="o">/=</span> <span class="n">tmp</span> <span class="c1"># 求somftmax</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="c1"># 使用np.true_divide进行加法运算</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="k">def</span> <span class="nf">sigmoid_grad</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="c1"># 可以证明：sigmoid函数关于输入x的导数等于`sigmoid(x)(1-sigmoid(x))`</span>
+    <span class="k">return</span> <span class="n">ds</span>
+
+<span class="k">def</span> <span class="nf">softmaxCostAndGradient</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">outputVectors</span><span class="p">):</span>
+    <span class="n">v_hat</span> <span class="o">=</span> <span class="n">predicted</span> <span class="c1"># 中心词向量</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">outputVectors</span><span class="p">,</span> <span class="n">v_hat</span><span class="p">)</span> <span class="c1"># 预测得分</span>
+    <span class="n">y_hat</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># 预测输出y_hat</span>
+
+    <span class="n">cost</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y_hat</span><span class="p">[</span><span class="n">target</span><span class="p">])</span> <span class="c1"># 计算代价</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="n">y_hat</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">z</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">-=</span> <span class="mf">1.0</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">v_hat</span><span class="p">)</span> <span class="c1"># 计算中心词的梯度</span>
+    <span class="n">gradPred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">outputVectors</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="c1"># 计算输出词向量矩阵的梯度</span>
+
+    <span class="k">return</span> <span class="n">cost</span><span class="p">,</span> <span class="n">gradPred</span><span class="p">,</span> <span class="n">grad</span>
+
+<span class="k">def</span> <span class="nf">skipgram</span><span class="p">(</span><span class="n">currentWord</span><span class="p">,</span> <span class="n">contextWords</span><span class="p">,</span> <span class="n">tokens</span><span class="p">,</span> <span class="n">inputVectors</span><span class="p">,</span> <span class="n">outputVectors</span><span class="p">):</span>
+    <span class="c1"># 初始化变量</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">gradIn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">inputVectors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">gradOut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">outputVectors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="n">cword_idx</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">currentWord</span><span class="p">]</span> <span class="c1"># 得到中心单词的索引</span>
+    <span class="n">v_hat</span> <span class="o">=</span> <span class="n">inputVectors</span><span class="p">[</span><span class="n">cword_idx</span><span class="p">]</span> <span class="c1"># 得到中心单词的词向量</span>
+
+    <span class="c1"># 循环预测上下文中每个字母</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">contextWords</span><span class="p">:</span>
+        <span class="n">u_idx</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="c1"># 得到目标字母的索引</span>
+        <span class="n">c_cost</span><span class="p">,</span> <span class="n">c_grad_in</span><span class="p">,</span> <span class="n">c_grad_out</span> <span class="o">=</span> <span class="n">softmaxCostAndGradient</span><span class="p">(</span><span class="n">v_hat</span><span class="p">,</span> <span class="n">u_idx</span><span class="p">,</span> <span class="n">outputVectors</span><span class="p">)</span> <span class="c1">#计算一个中心字母预测一个上下文字母的情况</span>
+        <span class="n">cost</span> <span class="o">+=</span> <span class="n">c_cost</span> <span class="c1"># 所有代价求和</span>
+        <span class="n">gradIn</span><span class="p">[</span><span class="n">cword_idx</span><span class="p">]</span> <span class="o">+=</span> <span class="n">c_grad_in</span> <span class="c1"># 中心词向量梯度求和</span>
+        <span class="n">gradOut</span> <span class="o">+=</span> <span class="n">c_grad_out</span> <span class="c1"># 输出词向量矩阵梯度求和</span>
+
+    <span class="k">return</span> <span class="n">cost</span><span class="p">,</span> <span class="n">gradIn</span><span class="p">,</span> <span class="n">gradOut</span>
+
+<span class="n">inputVectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 输入矩阵，语料库中字母的数量是5，我们使用3维向量表示一个字母</span>
+<span class="n">outputVectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 输出矩阵</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="c1"># 句子</span>
+<span class="n">centerword</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span> <span class="c1"># 中心字母</span>
+<span class="n">context</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="c1"># 上下文字母</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span> <span class="c1"># 用于映射字母在输入输出矩阵中的索引</span>
+
+<span class="n">c</span><span class="p">,</span> <span class="n">gin</span><span class="p">,</span> <span class="n">gout</span> <span class="o">=</span> <span class="n">skipgram</span><span class="p">(</span><span class="n">centerword</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">tokens</span><span class="p">,</span> <span class="n">inputVectors</span><span class="p">,</span> <span class="n">outputVectors</span><span class="p">)</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1">#更新步进</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;原始输入矩阵:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">inputVectors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;原始输出矩阵:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">outputVectors</span><span class="p">)</span>
+<span class="n">inputVectors</span> <span class="o">-=</span> <span class="n">step</span> <span class="o">*</span> <span class="n">gin</span> <span class="c1"># 更行输入词向量矩阵</span>
+<span class="n">outputVectors</span> <span class="o">-=</span> <span class="n">step</span> <span class="o">*</span> <span class="n">gout</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;更新后的输入矩阵:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">inputVectors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;更新后的输出矩阵:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">outputVectors</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="node2vec">node2vec<a class="headerlink" href="#node2vec" title="Permanent link">&para;</a></h2>
+<p>\alpha \Omega(\omega)</p>
+<p>可以说是deepwalk的改进</p>
+<h3 id="_1">采样策略<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Deepwalk游走的方式是：</p>
+<p><img alt="image-20200805100752132" src="https://gitee.com/moluggg/image/raw/master/img/202008/05/100753-131713.png" /></p>
+<p>从15开始，随机选择与他相连的点，然后再随机选择，这样产生一个节点连接序列，这样作为信息进行训练。</p>
+<p>现在node2vec 改进DeepWalk中随机游走的方式，使它综合DFS和BFS的特性</p>
+<p>如图所示：</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202008/05/101105-913820.jpeg" /></p>
+<p>现在，嗯已经采样了（.....,t,v)这样一个序列，现在我们要继续采样充实序列。给出了下一步的去向的计算公式：
+$$
+\alpha_{p q}(t, x)=\left{\begin{array}{ll}
+\frac{1}{p} &amp; \text { if } d_{t x}=0 \
+1 &amp; \text { if } d_{t x}=1 \
+\frac{1}{q} &amp; \text { if } d_{t x}=2
+\end{array}\right.
+$$</p>
+<p>这里的p,q是参数需要人为调节的，怎么调节就要明白以下原则：</p>
+<ul>
+<li>如果t与x相等，那么采样x的概率为 <img alt="[公式]" src="https://www.zhihu.com/equation?tex=%5Cfrac%7B1%7D%7Bp%7D" /> ；</li>
+<li>如果t与x相连，那么采样x的概率1；</li>
+<li>如果t与x不相连，那么采样x概率为 <img alt="[公式]" src="E:\typora图片\equation-1596593678886.svg" /> 。</li>
+</ul>
+<p>参数p、q的意义分别如下：</p>
+<p>返回概率p：</p>
+<ul>
+<li>如果 <img alt="[公式]" src="https://www.zhihu.com/equation?tex=p%3Emax%28q%2C1%29" /> ，那么采样会尽量不往回走，对应上图的情况，就是下一个节点不太可能是上一个访问的节点t。</li>
+<li>如果 <img alt="[公式]" src="https://www.zhihu.com/equation?tex=p%3Cmin%28q%2C1%29" /> ，那么采样会更倾向于返回上一个节点，这样就会一直在起始点周围某些节点来回转来转去。</li>
+</ul>
+<p>出入参数q：</p>
+<ul>
+<li>如果 <img alt="[公式]" src="https://www.zhihu.com/equation?tex=q%3E1" /> ，那么游走会倾向于在起始点周围的节点之间跑，可以反映出一个节点的BFS特性。</li>
+<li>如果 <img alt="[公式]" src="https://www.zhihu.com/equation?tex=q%3C1" /> ，那么游走会倾向于往远处跑，反映出DFS特性。</li>
+</ul>
+<p><strong>当p=1，q=1时，游走方式就等同于DeepWalk中的随机游走。</strong></p>
+<h3 id="_2">优化目标：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>我们优化的目标就是将顶点的近邻结点出现的概率最大。这样构造一个损失函数，其实跟DeepWalk也是一样的，只不过换了种表达而已。</p>
+<p><img alt="[公式]" src="https://www.zhihu.com/equation?tex=%5Cmax+%5Climits_%7Bf%7D+%5Csum_%7Bu%E2%88%88V%7DlogPr%28N_s%28u%29%7Cf%28u%29%29" /></p>
+<p>其中 <img alt="[公式]" src="E:\typora图片\equation-1596593875809.svg" /> 就是当前节点， <img alt="[公式]" src="E:\typora图片\equation-1596593875816.svg" /> 就是邻居节点（以s的方法采样得到的），为了让这个结果更容易计算，引入了两个假设，其实这都是skip-gram模型中的。</p>
+<p><strong>第一个假设是条件独立（Conditional independence）</strong>，即采样每个邻居是相互独立的，所以如果要计算采样所有邻居的概率只需要将采样每个邻居的概率相乘就行了，公式化表达就是：</p>
+<p><img alt="[公式]" src="https://www.zhihu.com/equation?tex=Pr%28N_s%28u%29%7Cf%28u%29%29%3D%5Cprod_%7Bn_i%E2%88%88N_s%28u%29%7DPr%28n_i%7Cf%28u%29%29" /></p>
+<p><strong>第二个假设是特征空间的对称性（Symmetry in feature space）</strong>，其实也很好理解，比如一条边连接了a和b，那么映射到特征空间时，a对b的影响和b对a的影响应该是一样的。用一个模型来表示一个（节点，邻居）对：</p>
+<p><img alt="[公式]" src="https://www.zhihu.com/equation?tex=Pr%28n_i%7Cf%28u%29%29+%3D+%5Cfrac%7Bexp%28f%28n_i%29%C2%B7f%28u%29%29%7D%7B%5Csum_%7Bv%E2%88%88V%7Dexp%28f%28v%29%C2%B7f%28u%29%29%7D" /></p>
+<p>将上面三个公式结合起来得到**最终要优化的损失函数为**：</p>
+<p><img alt="[公式]" src="https://www.zhihu.com/equation?tex=%5Cmax+%5Climits_%7Bf%7D+%5Csum_%7Bu%E2%88%88V%7D%5B-logZ_u+%2B+%5Csum_%7Bn_i%E2%88%88N_s%28u%29%7Df%28n_i%29%C2%B7f%28u%29%5D" /></p>
+<p>注意两点：</p>
+<ol>
+<li><span><span class="MathJax_Preview">Z_u</span><script type="math/tex">Z_u</script></span> 直接计算特别费时，本文用Negative Sampling方法解决的。</li>
+<li><span><span class="MathJax_Preview">N_s{(u)}</span><script type="math/tex">N_s{(u)}</script></span>未必是u的直接邻居，只是用s方法采样得到的邻居，跟具体的采样方法有关。</li>
+</ol>
+<p>到这里之前这些公式基本都是NLP中处理词向量那块的，现在让我们把目光放到node2vec中的创新内容。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/baidu-tongji.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
