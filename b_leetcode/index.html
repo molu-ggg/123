@@ -1,0 +1,1777 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>B leetcode - MOLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="MOLU" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                MOLU
+              </span>
+              <span class="md-header-nav__topic">
+                B leetcode
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link md-tabs__link--active">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../a_算法/" title="机器与深度学习" class="md-tabs__link">
+          机器与深度学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../new_error/" title="问题与分析" class="md-tabs__link">
+          问题与分析
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../c视频经典算法/" title="经典算法" class="md-tabs__link">
+          经典算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link">
+          高级算法
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_算法/" title="数据分析算法" class="md-nav__link">
+      数据分析算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_cnn/" title="CNN" class="md-nav__link">
+      CNN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_百度技术认证/" title="百度技术认证" class="md-nav__link">
+      百度技术认证
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题与分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        问题与分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_error/" title="方差,偏差，噪声" class="md-nav__link">
+      方差,偏差，噪声
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_modern/" title="模型评估方法和性能指标" class="md-nav__link">
+      模型评估方法和性能指标
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_sigmoid/" title="激活函数与梯度消失，梯度爆炸" class="md-nav__link">
+      激活函数与梯度消失，梯度爆炸
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="验证集与测试集" class="md-nav__link">
+      验证集与测试集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_transfer/" title="欠拟合，过拟合，正则化" class="md-nav__link">
+      欠拟合，过拟合，正则化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      经典算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        经典算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c视频经典算法/" title="蓝桥杯基础" class="md-nav__link">
+      蓝桥杯基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c蓝桥杯练习题/" title="蓝桥杯题" class="md-nav__link">
+      蓝桥杯题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c背包问题/" title="背包问题" class="md-nav__link">
+      背包问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_leetcode/" title="leetcode" class="md-nav__link">
+      leetcode
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      高级算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_Deepwalk/" title="Deepwalk等" class="md-nav__link">
+      Deepwalk等
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAN/" title="GAN" class="md-nav__link">
+      GAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GCN论文解读/" title="GCN" class="md-nav__link">
+      GCN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAT/" title="GAT" class="md-nav__link">
+      GAT
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="哈希表：" class="md-nav__link">
+    哈希表：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#714" title="714双指针法：" class="md-nav__link">
+    714双指针法：
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#z" title="z形状字符串" class="md-nav__link">
+    z形状字符串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#716" title="716" class="md-nav__link">
+    716
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="整数转罗马数字" class="md-nav__link">
+    整数转罗马数字
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#718" title="718" class="md-nav__link">
+    718
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33" title="33. 搜索旋转排序数组" class="md-nav__link">
+    33. 搜索旋转排序数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#97" title="97. 交错字符串" class="md-nav__link">
+    97. 交错字符串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#720" title="720" class="md-nav__link">
+    720
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#95-ii" title="95. 不同的二叉搜索树 II" class="md-nav__link">
+    95. 不同的二叉搜索树 II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" title="62. 不同路径" class="md-nav__link">
+    62. 不同路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#722" title="722" class="md-nav__link">
+    722
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#154-ii" title="154. 寻找旋转排序数组中的最小值 II" class="md-nav__link">
+    154. 寻找旋转排序数组中的最小值 II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" title="10. 正则表达式匹配" class="md-nav__link">
+    10. 正则表达式匹配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#724" title="724" class="md-nav__link">
+    724
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1025" title="1025. 除数博弈" class="md-nav__link">
+    1025. 除数博弈
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#726" title="726" class="md-nav__link">
+    726
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#801" title="801 关键路径" class="md-nav__link">
+    801 关键路径
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#802" title="802" class="md-nav__link">
+    802
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="小朋友排队：" class="md-nav__link">
+    小朋友排队：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="地宫取宝" class="md-nav__link">
+    地宫取宝
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#804" title="804" class="md-nav__link">
+    804
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#806" title="806" class="md-nav__link">
+    806
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="连锁反应 + 大数相乘" class="md-nav__link">
+    连锁反应 + 大数相乘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-toy" title="机组--TOY计算机建模与模拟" class="md-nav__link">
+    机组--TOY计算机建模与模拟
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>B leetcode</h1>
+                
+                <p>​---</p>
+<p>快乐数</p>
+<p>简单题，但是复杂度的分析是个难题</p>
+<p>同时，学会 <code>getNext</code> ，快慢指针方法，哈希表</p>
+<p><a href="https://leetcode-cn.com/problems/happy-number/solution/kuai-le-shu-by-leetcode-solution/">https://leetcode-cn.com/problems/happy-number/solution/kuai-le-shu-by-leetcode-solution/</a></p>
+<h2 id="_1">哈希表：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>有好多种哈希表，需要仔细的研究一下，如何构建哈希表</p>
+<p>哈希表有：平方取中法，折叠法，除数余数法</p>
+<p>构造一个映射函数，是关键所在。</p>
+<p><a href="https://leetcode-cn.com/problems/happy-number/solution/kuai-le-shu-by-leetcode-solution/">https://leetcode-cn.com/problems/happy-number/solution/kuai-le-shu-by-leetcode-solution/</a></p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/11/173757-758490.jpeg" /></p>
+<h2 id="714">714双指针法：<a class="headerlink" href="#714" title="Permanent link">&para;</a></h2>
+<p><a href="https://leetcode-cn.com/problems/container-with-most-water/">https://leetcode-cn.com/problems/container-with-most-water/</a></p>
+<p>该体暴力法修剪能够运行，</p>
+<p>技巧法：双指针法。</p>
+<p><img alt="image-20200714185241352" src="E:\typora图片\image-20200714185241352.png" /></p>
+<p>算法：就是从两端开始，谁矮谁向里面移动</p>
+<p>证明：</p>
+<p>若最开始如图，左1&lt;右1，则以左1为一条边的所有正方形都不如当前的大，所以换下一条左边</p>
+<p>若左n&gt;右m，则应该以右m为正方形的最右边一定没有当前的大，（包括在n~m之间的，n之前的在前面的左i,i&lt;n为左边的时候就已经不可能成为最大值。</p>
+<p>以此类推一直到n&gt;=m结束</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">maxArea</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">height</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">area</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">height</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">);</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">area</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="p">{</span>
+                <span class="o">++</span><span class="n">l</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="o">--</span><span class="n">r</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="z">z形状字符串<a class="headerlink" href="#z" title="Permanent link">&para;</a></h3>
+<p>启示：</p>
+<p>o(n)算法；化时间为空间</p>
+<p>边走边存，变量碰边改变方向（递增还是递减</p>
+<h2 id="716">716<a class="headerlink" href="#716" title="Permanent link">&para;</a></h2>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> <a href="https://leetcode-cn.com/problems/is-graph-bipartite/">https://leetcode-cn.com/problems/is-graph-bipartite/</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isBipartite</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">graph</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">vis</span><span class="p">[</span><span class="mi">99999</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+      <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">q</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">graph</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+      <span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+      <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+          <span class="n">k</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+          <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+             <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="n">vis</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">=-</span><span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+             <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">==</span><span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                 <span class="k">else</span> <span class="k">continue</span><span class="p">;</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+
+      <span class="p">}</span>
+       <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="_2">整数转罗马数字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>数字中的贪心问题：</p>
+<p><img alt="在这里插入图片描述" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/171510-803032.png" /></p>
+<p>可以这样做，当前数num，</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202007/16/171545-423563.jpeg" /></p>
+<p>每一次从小到大的与上述数组比较即可。</p>
+<p>三数之和-双指针</p>
+<p><a href="https://leetcode-cn.com/problems/3sum/">https://leetcode-cn.com/problems/3sum/</a></p>
+<p>排序sort，不重复枚举；</p>
+<p>三重循环，第二层和第三层实际上是并列关系，大小的排序已经固定</p>
+<p>第一层枚举a</p>
+<p>第二层，第三层用一个双指针法o(n)空间的大小</p>
+<p>从左到右枚举b，b增大，由于b+c=-a固定，c一定减小，</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">threeSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+
+       <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span> <span class="p">();</span>
+       <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+       <span class="kt">int</span> <span class="n">pai</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+       <span class="kt">int</span> <span class="n">times</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+       <span class="n">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+       <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+           <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">continue</span> <span class="p">;</span>
+          <span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+          <span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+          <span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&lt;</span><span class="n">c</span><span class="p">){</span>
+              <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">&gt;</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span><span class="n">j</span><span class="o">++</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
+              <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span><span class="n">c</span><span class="o">--</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
+
+              <span class="k">if</span><span class="p">(</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+              <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="n">c</span><span class="o">--</span><span class="p">;</span>
+              <span class="k">else</span> <span class="p">{</span>
+                  <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">c</span><span class="p">]});</span>
+                  <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+       <span class="p">}</span>
+       <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h2 id="718">718<a class="headerlink" href="#718" title="Permanent link">&para;</a></h2>
+<h4 id="33"><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a><a class="headerlink" href="#33" title="Permanent link">&para;</a></h4>
+<p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p>
+<p>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。</p>
+<p>搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</p>
+<p>你可以假设数组中不存在重复的元素。</p>
+<p>你的算法时间复杂度必须是 O(log n) 级别。</p>
+<p>思路很简单，就是，找到那个轴点，然后分成两个上升数组，就可以了。</p>
+<p>我要说的是：</p>
+<p>下面的代码中有：</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+       <span class="kt">int</span> <span class="n">flag</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+
+     <span class="kt">void</span> <span class="nf">find</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">target</span><span class="p">){</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="n">flag</span> <span class="o">=</span><span class="n">l</span><span class="p">;</span>
+               <span class="k">return</span><span class="p">;</span>
+           <span class="p">}</span>
+         <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="p">{</span><span class="n">flag</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="k">return</span><span class="p">;}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">target</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+        <span class="k">else</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="c1">//7 1 2 3 4 5 6 3</span>
+     <span class="kt">void</span> <span class="nf">dian</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+         <span class="c1">//下面的语句如果不带大括号会导致 后面的内容也会囊括在内</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">mid</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="n">f</span><span class="o">=</span><span class="mi">0</span><span class="p">;}</span>
+         <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">mid</span><span class="o">==</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">;</span>
+         <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="n">f</span><span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+
+    <span class="c1">//  cout&lt;&lt;nums[mid]&lt;&lt;endl;         </span>
+         <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">dian</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">mid</span><span class="p">);</span>       <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="n">dian</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>        <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">;</span>
+         <span class="c1">//特别是在dfs中，全局变量引领结束函数，后面一定要跟上判断条件</span>
+         <span class="k">return</span><span class="p">;</span>
+     <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">search</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//看下面的几行，在真正的算法考试中一定务必要特判定，因为你不知道的小问题即可暴露</span>
+        <span class="c1">//也就是说，对一道题而言，要有一般性，也要考虑特殊性。</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span> <span class="k">return</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">dian</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span> <span class="n">f</span><span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span><span class="o">&lt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">target</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="n">find</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="p">);</span> 
+        <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p><img alt="🅰" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f170.png" title=":a:" /> 也就是说**，对一道题而言，要有一般性，也要考虑特殊性。**</p>
+<h4 id="97"><a href="https://leetcode-cn.com/problems/interleaving-string/">97. 交错字符串</a><a class="headerlink" href="#97" title="Permanent link">&para;</a></h4>
+<p>这道题告诉我们，方法走不通可以巧妙的选择别的方法</p>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 你的动态规划需要继续探索</p>
+<h2 id="720">720<a class="headerlink" href="#720" title="Permanent link">&para;</a></h2>
+<h4 id="95-ii"><a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">95. 不同的二叉搜索树 II</a><a class="headerlink" href="#95-ii" title="Permanent link">&para;</a></h4>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 递归构造一棵树，遍历所有节点：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Definition for a binary tree node.</span>
+<span class="cm"> * struct TreeNode {</span>
+<span class="cm"> *     int val;</span>
+<span class="cm"> *     TreeNode *left;</span>
+<span class="cm"> *     TreeNode *right;</span>
+<span class="cm"> *     TreeNode() : val(0), left(nullptr), right(nullptr) {}</span>
+<span class="cm"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}</span>
+<span class="cm"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}</span>
+<span class="cm"> * };</span>
+<span class="cm"> */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">generateTrees</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span> <span class="k">nullptr</span> <span class="p">};</span>
+        <span class="p">}</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">allTrees</span><span class="p">;</span>
+        <span class="c1">// 枚举可行根节点</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 获得所有可行的左子树集合</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">leftTrees</span> <span class="o">=</span> <span class="n">generateTrees</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+            <span class="c1">// 获得所有可行的右子树集合</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">rightTrees</span> <span class="o">=</span> <span class="n">generateTrees</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+
+            <span class="c1">// 从左子树集合中选出一棵左子树，从右子树集合中选出一棵右子树，拼接到根节点上</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">left</span> <span class="p">:</span> <span class="n">leftTrees</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">right</span> <span class="p">:</span> <span class="n">rightTrees</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">currTree</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                    <span class="n">currTree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="p">;</span>
+                    <span class="n">currTree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">;</span>
+                    <span class="n">allTrees</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">currTree</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">allTrees</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">generateTrees</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{};</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">generateTrees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="62"><a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a><a class="headerlink" href="#62" title="Permanent link">&para;</a></h4>
+<p><img alt="💯" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4af.png" title=":100:" /> 排列组合问题</p>
+<p>需要看一看</p>
+<h2 id="722">722<a class="headerlink" href="#722" title="Permanent link">&para;</a></h2>
+<h4 id="154-ii"><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">154. 寻找旋转排序数组中的最小值 II</a><a class="headerlink" href="#154-ii" title="Permanent link">&para;</a></h4>
+<p>本题是 153. 寻找旋转排序数组中的最小值 的延伸。读者可以先尝试 153 题，体会在旋转数组中进行二分查找的思路，再来尝试解决本题。</p>
+<p>方法一：二分查找
+思路与算法</p>
+<p>一个包含重复元素的升序数组在经过旋转之后，可以得到下面可视化的折线图：</p>
+<p><img alt="fig1" src="https://gitee.com/moluggg/image/raw/master/img/202007/22/160131-709054.png" /></p>
+<p><img alt="fig2" src="https://gitee.com/moluggg/image/raw/master/img/202007/22/160143-61760.png" /></p>
+<p>最后一幅图是最不好处理的：</p>
+<p>就是当左右两端相等的情况有多种可能：</p>
+<p><img alt="fig4" src="https://gitee.com/moluggg/image/raw/master/img/202007/22/160151-883430.png" /></p>
+<p>这里 处理方法是：high--;</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">findMin</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">high</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">high</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="n">low</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="10"><a href="https://leetcode-cn.com/problems/regular-expression-matching/">10. 正则表达式匹配</a><a class="headerlink" href="#10" title="Permanent link">&para;</a></h4>
+<p>这道题比较难理解，是个字符串的匹配问题，这里用到了动态规划。</p>
+<p>首先，对于一般情况，就是不含有，*和.的，可以的转移方程式：
+$$
+f[i][j]=\left{\begin{array}{ll}
+f[i-1][j-1], &amp; s[i]=p[j] \
+\text { false }, &amp; s[i] \neq p[j]
+\end{array}\right.
+$$
+现在，考虑这个其次复杂的.,很显然，.存在，一定可以够匹配
+$$
+\text { f[i][j] }=\left{\begin{array}{ll}
+f[i-1][j-1] \text , &amp; \text { matches }(s[i], p[j]) \
+0, &amp; \text { otherwise }
+\end{array}\right.
+$$
+matches(s[i],p[j])表示相等，或者p[j]是.</p>
+<p>最后，考虑最为复杂的*：</p>
+<p>x*可以与前面的x联合在一起，醉成x*组合，多个*连在一起并没有多大的意义，前期处理可以去掉。</p>
+<p>当<span><span class="MathJax_Preview">s[i]!=p[j-1]</span><script type="math/tex">s[i]!=p[j-1]</script></span>的时候，<span><span class="MathJax_Preview">f[i][j]=f[i][j-2]</span><script type="math/tex">f[i][j]=f[i][j-2]</script></span>，</p>
+<p>当存在一个，<span><span class="MathJax_Preview">s[i]=p[j-1]</span><script type="math/tex">s[i]=p[j-1]</script></span>的时候，<span><span class="MathJax_Preview">f[i][j]=f[i-1][j-2]</span><script type="math/tex">f[i][j]=f[i-1][j-2]</script></span></p>
+<p>也可以是两个<span><span class="MathJax_Preview">s[i-1]=s[i]=p[j-1]</span><script type="math/tex">s[i-1]=s[i]=p[j-1]</script></span>，<span><span class="MathJax_Preview">f[i][j]=f[i-2][j-2]</span><script type="math/tex">f[i][j]=f[i-2][j-2]</script></span></p>
+<p>也可以是n个,<span><span class="MathJax_Preview">s[i-n+1]=s[i-n+2].....=s[i]=p[j-1]</span><script type="math/tex">s[i-n+1]=s[i-n+2].....=s[i]=p[j-1]</script></span>,<span><span class="MathJax_Preview">f[i][j]=f[i-n][j-2]</span><script type="math/tex">f[i][j]=f[i-n][j-2]</script></span></p>
+<p>以上可以概括为，</p>
+<p>本质上只会有两种情况：</p>
+<ul>
+<li>匹配 <em>s</em> 末尾的一个字符，将该字符扔掉，而该组合还可以继续进行匹配；</li>
+</ul>
+<p>（就是说，s如果存在重复的元素，且与*相遇，则<span><span class="MathJax_Preview">f[i][j]=f[i-1][j]</span><script type="math/tex">f[i][j]=f[i-1][j]</script></span>)</p>
+<ul>
+<li>不匹配字符，将该组合扔掉，不再进行匹配。</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+f[i][j]=\left\{\begin{array}{ll}
+f[i-1][j] \text { or } f[i][j-2], &amp; s[i]=p[j-1] \\
+f[i][j-2], &amp; s[i] \neq p[j-1]
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+f[i][j]=\left\{\begin{array}{ll}
+f[i-1][j] \text { or } f[i][j-2], & s[i]=p[j-1] \\
+f[i][j-2], & s[i] \neq p[j-1]
+\end{array}\right.
+</script>
+</div>
+<p>综合上述三个方面，可以列总的状态转移方程为：
+$$
+f[i][j]=\left{\begin{array}{l}\text { if }\left(p[j] \neq{ }^{*},\right)=\left{\begin{array}{ll}f[i-1][j-1], &amp; \text { matches }(s[i], p[j]) \\text { false, }\end{array}\right. \\text { otherwise }=\left{\begin{array}{ll}f[i-1][j] \text { or } f[i][j-2], &amp; \text { otherwise } \f[i][j-2], &amp; \text { otherwise }\end{array}\right.\end{array}\right.
+$$</p>
+<h2 id="724">724<a class="headerlink" href="#724" title="Permanent link">&para;</a></h2>
+<h4 id="1025"><a href="https://leetcode-cn.com/problems/divisor-game/">1025. 除数博弈</a><a class="headerlink" href="#1025" title="Permanent link">&para;</a></h4>
+<p>难度简单203收藏分享切换为英文关注反馈</p>
+<p>爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。</p>
+<p>最初，黑板上有一个数字 <code>N</code> 。在每个玩家的回合，玩家需要执行以下操作：</p>
+<ul>
+<li>选出任一 <code>x</code>，满足 <code>0 &lt; x &lt; N</code> 且 <code>N % x == 0</code> 。</li>
+<li>用 <code>N - x</code> 替换黑板上的数字 <code>N</code> 。</li>
+</ul>
+<p>如果玩家无法执行这些操作，就会输掉游戏。</p>
+<p>只有在爱丽丝在游戏中取得胜利时才返回 <code>True</code>，否则返回 <code>false</code>。假设两个玩家都以最佳状态参与游戏。</p>
+<p>找规律</p>
+<p><strong>思路与算法</strong></p>
+<p>博弈类的问题常常让我们摸不着头脑。当我们没有解题思路的时候，不妨试着写几项试试：</p>
+<p>N = 1的时候，区间 (0, 1)(0,1) 中没有整数是 nn 的因数，所以此时 Alice 败。
+N = 2的时候，Alice 只能拿 1，N 变成 1，Bob 无法继续操作，故 Alice 胜。
+N = 3 的时候，Alice 只能拿 1，N 变成 2，根据 N = 2 的结论，我们知道此时 Bob 会获胜，Alice 败。
+N = 4 的时候，Alice 能拿 1 或 2，如果 Alice 拿 1，根据 NN=3 的结论，Bob 会失败，Alice 会获胜。
+N = 5的时候，Alice 只能拿 1，根据 N = 4的结论，Alice 会失败。
+......
+写到这里，也许你有了一些猜想。没关系，请大胆地猜想，在这种情况下大胆地猜想是 AC 的第一步。也许你会发现这样一个现象：NN 为奇数的时候 Alice（先手）必败，NN 为偶数的时候 Alice 必胜。 这个猜想是否正确呢？下面我们来想办法证明它。</p>
+<p><strong>证明</strong></p>
+<p>数学归纳：</p>
+<p><img alt="image-20200724220827637" src="https://gitee.com/moluggg/image/raw/master/img/202007/24/220830-607827.png" /></p>
+<h2 id="726">726<a class="headerlink" href="#726" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">dx</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">dy</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dir</span><span class="p">[</span><span class="mi">666666</span><span class="p">];</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">flag</span><span class="p">[</span><span class="mi">500000</span><span class="p">]</span> <span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">size</span>  <span class="p">){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">dir</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">xx</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">size</span> <span class="p">;</span>
+        <span class="kt">int</span> <span class="n">yy</span> <span class="o">=</span><span class="n">x</span><span class="o">%</span><span class="n">size</span> <span class="p">;</span> 
+        <span class="n">maxn</span> <span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">maxn</span><span class="p">,</span> <span class="n">flag</span><span class="p">[</span><span class="n">xx</span><span class="p">][</span><span class="n">yy</span><span class="p">]);</span>  
+            <span class="k">return</span> <span class="p">;</span>
+        <span class="p">}</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">dir</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+          <span class="kt">int</span> <span class="n">xx</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">size</span> <span class="p">;</span>
+          <span class="kt">int</span> <span class="n">yy</span> <span class="o">=</span><span class="n">x</span><span class="o">%</span><span class="n">size</span> <span class="p">;</span> 
+          <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">dir</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+
+       <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">xx</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]][</span><span class="n">yy</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span><span class="o">&lt;</span><span class="n">flag</span><span class="p">[</span><span class="n">xx</span><span class="p">][</span><span class="n">yy</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">flag</span><span class="p">[</span><span class="n">xx</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]][</span><span class="n">yy</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">xx</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]][</span><span class="n">yy</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]],</span><span class="n">flag</span><span class="p">[</span><span class="n">xx</span><span class="p">][</span><span class="n">yy</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>   
+           <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">size</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">size</span><span class="p">);</span>
+           <span class="p">}</span>
+      <span class="p">}</span>
+
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">longestIncreasingPath</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">matrix</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">start</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span> <span class="p">();</span>
+            <span class="c1">//存方向</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+                    <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                    <span class="kt">int</span> <span class="n">flag1</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">){</span> 
+                <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">||</span><span class="n">i</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">||</span><span class="n">j</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">||</span><span class="n">j</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">())</span>
+                       <span class="p">{</span><span class="n">flag1</span><span class="o">++</span><span class="p">;}</span>
+                <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]][</span><span class="n">j</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]])</span> 
+                       <span class="p">{</span><span class="n">flag1</span> <span class="o">++</span><span class="p">,</span> <span class="n">dir</span><span class="p">[</span><span class="n">size</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">k</span><span class="p">);}</span>
+
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">k</span><span class="p">]][</span><span class="n">j</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">k</span><span class="p">]])</span>  <span class="n">flag1</span><span class="o">++</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">flag1</span> <span class="o">==</span><span class="mi">4</span><span class="p">)</span> <span class="p">{</span><span class="n">start</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">);}</span><span class="c1">//二维转一维</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+
+           <span class="c1">// return maxn;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">start</span><span class="p">.</span><span class="n">size</span> <span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">size</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="n">size</span><span class="p">;</span>
+
+                <span class="n">dfs</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">size</span> <span class="p">);</span>
+            <span class="p">}</span>
+            <span class="c1">//解析:这是找到了最大路径</span>
+           <span class="k">return</span> <span class="n">maxn</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h2 id="801">801 关键路径<a class="headerlink" href="#801" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.dotcpp.com/oj/problem1433.html">https://www.dotcpp.com/oj/problem1433.html</a></p>
+<p>问题描述
+抗日战争时期，冀中平原的地道战曾发挥重要作用。
+地道的多个站点间有通道连接，形成了庞大的网络。但也有隐患，当敌人发现了某个站点后，其它站点间可能因此会失去联系。
+我们来定义一个危险系数DF(x,y)：
+对于两个站点x和y (x != y), 如果能找到一个站点z，当z被敌人破坏后，x和y不连通，那么我们称z为关于x,y的关键点。相应的，对于任意一对站点x和y，危险系数DF(x,y)就表示为这两点之间的关键点个数。
+本题的任务是：已知网络结构，求两站点之间的危险系数</p>
+<p>。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;set&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;  </span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span> <span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1002</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">path</span><span class="p">[</span><span class="mi">30000</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">du</span><span class="p">,</span><span class="n">c</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">vis</span><span class="p">[</span><span class="mi">20003</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span>
+<span class="kt">int</span> <span class="n">times</span><span class="p">[</span><span class="mi">20002</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span> <span class="p">){</span> 
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">){</span>
+
+        <span class="c1">//path[++ans].assign(du.begin(),du.end());</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">du</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">times</span><span class="p">[</span><span class="n">du</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+            <span class="n">du</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+            <span class="n">vis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+            <span class="n">du</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">}</span>   
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">;</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">p</span><span class="o">&gt;&gt;</span><span class="n">q</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">q</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">u</span><span class="o">&gt;&gt;</span><span class="n">v</span><span class="p">;</span>
+    <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ans</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">times</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">ans</span><span class="p">)</span> <span class="n">num</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">num</span><span class="p">;</span>
+<span class="p">}</span> 
+</code></pre></div>
+
+<h2 id="802">802<a class="headerlink" href="#802" title="Permanent link">&para;</a></h2>
+<h3 id="_3"><a href="https://www.dotcpp.com/oj/problem1439.html">小朋友排队：</a><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>xdl或者树状数组</p>
+<h3 id="_4"><a href="https://www.dotcpp.com/oj/problem1436.html">地宫取宝</a><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>这道题我们考虑到了用动态规划，实际上动态规划不仅仅是局限在二维数组，也可以用一维，三维甚至四维数组，这就要根据提供的数据的范围，给个极限。</p>
+<p>本题有三个数 50 50 13  </p>
+<p>50 *50 *50 *50 四维数组以内均可以,我尝试的是三维数组，但是无法解决</p>
+<p>同时，看见要mod 1000000007 ，一定是个大数，可能要用到剪枝以及记忆化搜索。</p>
+<p>动态规划法：</p>
+<p><span><span class="MathJax_Preview">dp[i][j][k][l]</span><script type="math/tex">dp[i][j][k][l]</script></span>    前i,j 个格，</p>
+<p>尝试：k可以表示现在手中的物品个数</p>
+<p>另外，题目中还提供了物品价值的数据范围，且很小可以考虑，当前物品价值不大于l</p>
+<p>当前可以拿这个物品:则说明， 前面的价值一定小于 <span><span class="MathJax_Preview">c[i][j]</span><script type="math/tex">c[i][j]</script></span>，于是转移方程是：</p>
+<p><span><span class="MathJax_Preview">dp[i][j][k][l] = dp[i-1][j][k-1][c[i][j]]+dp[i][j-1][k-1][c[i][j]]</span><script type="math/tex">dp[i][j][k][l] = dp[i-1][j][k-1][c[i][j]]+dp[i][j-1][k-1][c[i][j]]</script></span></p>
+<p>当不可以拿或者不想拿的时候：(直接路线继承，不需要改变或者讨论最小价值以及物品的个数)</p>
+<p><span><span class="MathJax_Preview">dp[i][j][k][l] = dp[i-1][j][k][l]+dp[i][j-1][k][l]</span><script type="math/tex">dp[i][j][k][l] = dp[i-1][j][k][l]+dp[i][j-1][k][l]</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#define _for(i,a,b) for(int i=a;i&lt;b;i++)</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+<span class="n">LL</span> <span class="n">d</span><span class="p">[</span><span class="mi">51</span><span class="p">][</span><span class="mi">51</span><span class="p">][</span><span class="mi">13</span><span class="p">][</span><span class="mi">13</span><span class="p">],</span><span class="n">mod</span><span class="o">=</span><span class="mi">1000000007</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">55</span><span class="p">][</span><span class="mi">55</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">K</span><span class="p">;</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="o">&gt;&gt;</span><span class="n">K</span><span class="p">;</span>
+    <span class="n">_for</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="n">_for</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">_for</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="n">_for</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="n">_for</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">K</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="n">_for</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">13</span><span class="p">){</span>
+        <span class="n">LL</span> <span class="n">na</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">buna</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">k</span><span class="o">||</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">c</span><span class="o">&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]))</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">k</span><span class="o">&amp;&amp;</span><span class="n">c</span><span class="o">&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="n">na</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span><span class="o">+</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]];</span>
+        <span class="n">buna</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">+</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">c</span><span class="p">];</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">=</span><span class="n">na</span><span class="o">+</span><span class="n">buna</span><span class="p">;</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">%=</span><span class="n">mod</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">][</span><span class="n">K</span><span class="p">][</span><span class="mi">12</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>dfs + 记忆化搜索+  dp</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#define N 1000000007 </span>
+<span class="cp">#include</span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">mapvalue</span><span class="p">[</span><span class="mi">51</span><span class="p">][</span><span class="mi">51</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">55</span><span class="p">][</span><span class="mi">55</span><span class="p">][</span><span class="mi">15</span><span class="p">][</span><span class="mi">15</span><span class="p">];</span><span class="c1">//动态规划路径 </span>
+<span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span><span class="p">,</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span><span class="kt">int</span> <span class="n">maxv</span><span class="p">){</span>
+     <span class="c1">//判断路径有没走过 </span>
+<span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">][</span><span class="n">num</span><span class="p">][</span><span class="n">maxv</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">][</span><span class="n">num</span><span class="p">][</span><span class="n">maxv</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span> <span class="c1">//走过就用统计过的路径(“记忆”的部分) </span>
+<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">y</span><span class="o">==</span><span class="n">m</span><span class="p">){</span>  <span class="c1">//走到了右下角</span>
+     <span class="c1">//分拿走或者不拿走右下角那个宝藏,都是一种方案 </span>
+   <span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="o">==</span><span class="n">k</span><span class="o">||</span><span class="p">(</span><span class="n">num</span><span class="o">==</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">maxv</span><span class="o">&lt;</span><span class="n">mapvalue</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]))</span>
+   <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">][</span><span class="n">num</span><span class="p">][</span><span class="n">maxv</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+   <span class="k">else</span> <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">][</span><span class="n">num</span><span class="p">][</span><span class="n">maxv</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">// 否则失败</span>
+<span class="p">}</span>
+<span class="c1">//统计路径方案 </span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="c1">//向下深搜，分取或者不取这个宝物，由宝物价值判断 </span>
+<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">){</span>   <span class="c1">//向下控制不出界限 </span>
+      <span class="k">if</span><span class="p">(</span><span class="n">maxv</span><span class="o">&lt;</span><span class="n">mapvalue</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
+<span class="n">s</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">mapvalue</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]);</span>
+<span class="n">s</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">num</span><span class="p">,</span><span class="n">maxv</span><span class="p">);</span><span class="c1">//也可以不取 </span>
+<span class="p">}</span>
+<span class="c1">//向右深搜 分取或者不取这个宝物，由宝物价值判断</span>
+<span class="k">if</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">){</span> <span class="c1">//向下控制不出界 </span>
+<span class="k">if</span><span class="p">(</span><span class="n">maxv</span><span class="o">&lt;</span><span class="n">mapvalue</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
+<span class="n">s</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">mapvalue</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]);</span>
+<span class="n">s</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">num</span><span class="p">,</span><span class="n">maxv</span><span class="p">);</span><span class="c1">//也可以不取 </span>
+  <span class="p">}</span>
+   <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">][</span><span class="n">num</span><span class="p">][</span><span class="n">maxv</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">s</span><span class="o">%</span><span class="n">N</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+<span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span>
+<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="o">&gt;&gt;</span><span class="n">k</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">mapvalue</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">dp</span><span class="p">));</span> 
+    <span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+
+<h2 id="804">804<a class="headerlink" href="#804" title="Permanent link">&para;</a></h2>
+<p>题目 1449: [蓝桥杯][2014年第五届真题]波动数列</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 622 解决: 196</p>
+<p>题目描述</p>
+<p>观察这个数列：
+1 3 0 2 -1 1 -2 ...</p>
+<p>这个数列中后一项总是比前一项增加2或者减少3。</p>
+<p>栋栋对这种数列很好奇，他想知道长度为 n 和为 s 而且后一项总是比前一项增加a或者减少b的整数数列可能有多少种呢？</p>
+<p>样例说明
+这两个数列分别是2 4 1 3和7 4 1 -2。
+数据规模和约定
+对于100%的数据，1&lt; =n&lt; =1000，-1,000,000,000&lt; =s&lt; =1,000,000,000，1&lt; =a, b&lt; =1,000,000。</p>
+<p>输入</p>
+<p>输入的第一行包含四个整数 n s a b，含义如前面说述。 </p>
+<p>输出</p>
+<p>输出一行，包含一个整数，表示满足条件的方案数。由于这个数很大，请输出方案数除以100000007的余数。 </p>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span> 
+<span class="kt">int</span> <span class="n">F</span> <span class="p">[</span><span class="mi">1001002</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+     <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
+     <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span> <span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="n">j</span><span class="o">&gt;=</span><span class="n">i</span> <span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">){</span>
+            <span class="n">F</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">])</span><span class="o">%</span><span class="mi">100000007</span><span class="p">;</span>
+        <span class="c1">//  cout&lt;&lt;i&lt;&lt;j&lt;&lt;F[j]&lt;&lt;endl;</span>
+        <span class="p">}</span>
+     <span class="p">}</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">sumn</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="p">,</span><span class="n">ans</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+   <span class="c1">// long long int start_sum = s + (n) * b;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">sumn</span> <span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">((</span><span class="n">s</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">sumn</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">%</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//  cout&lt;&lt; i&lt;&lt; sumn- i&lt;&lt;endl ;</span>
+            <span class="n">ans</span><span class="o">=</span><span class="p">(</span><span class="n">ans</span><span class="o">+</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">%</span><span class="mi">100000007</span><span class="p">;</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span> <span class="p">;</span>
+    <span class="c1">//system(&quot;pause&quot;);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>题目 1447: [蓝桥杯][2013年第四届真题]格子刷油漆</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 416 解决: 119</p>
+<p>题目描述</p>
+<p>X国的一段古城墙的顶端可以看成 2*N个格子组成的矩形（如下图所示），现需要把这些格子刷上保护漆。</p>
+<p><img alt="img" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/180416-427184.jpeg" />
+你可以从任意一个格子刷起，刷完一格，可以移动到和它相邻的格子（对角相邻也算数），但不能移动到较远的格子（因为油漆未干不能踩！）
+比如：a d b c e f 就是合格的刷漆顺序。
+c e f d a b 是另一种合适的方案。
+当已知 N 时，求总的方案数。当N较大时，结果会迅速增大，请把结果对 1000000007 (十亿零七) 取模。</p>
+<p>问题分析：</p>
+<p><img alt="img_1110" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/180251-56267.png" /></p>
+<p><img alt="img_1111" src="https://gitee.com/moluggg/image/raw/master/img/202008/04/180257-183429.png" /></p>
+<p><img alt="img_1112" src="E:\typora图片\180306-153877.png" /></p>
+<h2 id="806">806<a class="headerlink" href="#806" title="Permanent link">&para;</a></h2>
+<p>2n皇后</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;bits\stdc++.h&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span> <span class="p">;</span>
+<span class="cp">#define MAXN 2003</span>
+
+<span class="kt">int</span> <span class="n">line1</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">line2</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">row1</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">row2</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">l1</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">l2</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">r1</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">r2</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span> 
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">MAXN</span><span class="p">][</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="p">,</span><span class="n">ans</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span>
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">floor</span> <span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">floor</span> <span class="o">==</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">){</span>
+        <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">floor</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">l1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">&amp;&amp;!</span><span class="n">r1</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">&amp;&amp;!</span><span class="n">line1</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">!=</span><span class="n">j</span> <span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">floor</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+                        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">l2</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">&amp;&amp;!</span><span class="n">r2</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">&amp;&amp;!</span><span class="n">line2</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+                            <span class="n">l1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">r1</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">line1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+                            <span class="n">l2</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">r2</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">line2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+                            <span class="n">a</span><span class="p">[</span><span class="n">floor</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">floor</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+                            <span class="n">dfs</span><span class="p">(</span><span class="n">floor</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                            <span class="n">a</span><span class="p">[</span><span class="n">floor</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">floor</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
+                            <span class="n">l1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">r1</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">line1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+                            <span class="n">l2</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">r2</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">floor</span><span class="p">]</span><span class="o">=</span><span class="n">line2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> 
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="n">cin</span><span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span> <span class="p">;</span>
+   <span class="c1">// system(&quot;pause&quot;);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a href="https://www.dotcpp.com/oj/problem1492.html">产生数：</a></p>
+<h3 id="_5">连锁反应 + 大数相乘<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>大数相乘：请你牢牢记住：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">cheng</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">num</span> <span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">copy_num</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">copy_num</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">copy_num</span><span class="p">));</span><span class="c1">//一定要初始化 </span>
+    <span class="kt">int</span> <span class="n">kk</span> <span class="o">=</span> <span class="n">k</span> <span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span><span class="n">i</span><span class="o">&lt;</span> <span class="n">len</span> <span class="p">;</span><span class="n">i</span><span class="o">++</span> <span class="p">){</span>
+        <span class="n">kk</span> <span class="o">=</span> <span class="n">k</span> <span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span><span class="n">kk</span> <span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">kk</span><span class="o">%</span><span class="mi">10</span> <span class="p">;</span>
+            <span class="n">kk</span><span class="o">/=</span><span class="mi">10</span><span class="p">;</span>
+            <span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">t</span><span class="o">*</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">len</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="n">len</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span> <span class="p">;</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+
+        <span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span> <span class="p">;</span> <span class="c1">//一定要注意顺序问题 </span>
+        <span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">10</span> <span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">&amp;&amp;</span> <span class="n">len</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="n">len</span> <span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span> <span class="p">){</span>
+        <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy_num</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>#include&lt;iostream&gt;
+#include &lt;string.h&gt;
+//#include&lt;bits\stdc++.h&gt;
+using namespace std ;
+#define MAXN 2003
+int dis[MAXN][MAXN];
+
+int x[MAXN],y[MAXN];
+int times[20],flag =0 ;
+int num[MAXN],len = 1;
+void dfs(int orgin,int j ){
+    if( orgin == j){
+        return ;
+    }
+   flag =1 ;
+   for (int k =0;k&lt;=9;k++){
+    if (dis[j][k]==1&amp;&amp; dis[orgin][k]==0&amp;&amp; orgin !=k){
+        dis[orgin][k]=2 ;   
+    //  cout &lt;&lt; orgin &lt;&lt; j&lt;&lt; k &lt;&lt;endl;
+        times[orgin]++ ;
+        dfs(orgin,k);       
+    }
+   }
+}
+ void cheng (int *num ,int k){
+    int copy_num[MAXN];
+    memset(copy_num,0,sizeof(copy_num));//一定要初始化 
+ // for (int i=len-1 ;i&gt;=0;i--) cout &lt;&lt; num[i];
+ // cout &lt;&lt;&quot; &quot;;
+ // cout &lt;&lt;k&lt;&lt;endl ; 
+    int kk = k ;
+    for (int i =0 ;i&lt; len ;i++ ){
+        kk = k ;
+        for (int j = 0 ;kk ; j++){
+            int t = kk%10 ;
+            kk/=10;
+            copy_num[i+j] += t*num[i];
+            if (copy_num[i+j] &amp;&amp; len &lt;= i+ j) len = i+ j+1 ;
+
+        }
+    }
+    for (int i =0 ;i&lt;len ; i++){
+
+
+        copy_num[i+1] += copy_num[i]/10 ; //一定要注意顺序问题 
+        copy_num[i] = copy_num[i]%10 ;
+        if (copy_num[i+1]&amp;&amp; len &lt;= i+2) len =i+2 ;
+    }
+
+    for (int i=0;i&lt;len;i++ ){
+        num[i] = copy_num[i];
+    }
+}
+int main(){
+    string s ;cin&gt;&gt;s ;
+    int k ;
+    cin&gt;&gt; k ;
+    for (int i=1;i&lt;= k;i++){
+        cin&gt;&gt;x[i]&gt;&gt;y[i];
+        dis[x[i]][y[i]]=1;
+    }
+    for (int i=0;i&lt;=9;i++){
+        for (int j=0;j&lt;=9;j++){
+            if(dis[i][j]==1){
+    //          cout &lt;&lt; i&lt;&lt; j&lt;&lt;endl ;
+                times[i]++ ;
+                flag = 0 ;
+                dfs(i,j) ;
+            }
+
+        }
+    }
+    num[0]= 1 ;
+    long long sum =1;
+    for(int i=0;i&lt;s.length();i++){
+   //   cout &lt;&lt; times[s[i]-48];
+        if(times[s[i]-48]==0) continue ; 
+        cheng ( num ,times[s[i]-48]+1);
+    //  sum*= ( times[s[i]-48]+1);
+    }
+    for (int i=len-1;i&gt;=0;i--) cout &lt;&lt; num[i];
+    //cout &lt;&lt;endl&lt;&lt;sum;
+  // system(&quot;pause&quot;);
+
+}
+</code></pre></div>
+
+<h3 id="-toy">机组--TOY计算机建模与模拟<a class="headerlink" href="#-toy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>mem = [0] * 1000
+reg = [0] * 10
+pReg = 0
+iReg = 0
+
+
+def printMachineState():
+    global pReg, iReg, reg, mem
+    print(&#39;       The TOY Machine       &#39;)
+    print(&#39;P reg  &#39; + str(pReg) + &#39;       I reg &#39; + str(iReg))
+    print(&#39;\n&#39;)
+    for i in range(0, 5):
+        print(&#39;reg &#39; + str(i) + &#39;  &#39; + str(reg[i]) + &#39;       reg &#39; + str(i + 5) + &#39;  &#39; + str(reg[i + 5]))
+    print(&#39;\n&#39;)
+
+
+def loadProgram(file):
+    global pReg, iReg, reg, mem
+    fil = open(file, &quot;r&quot;)
+    first = True
+    while 1:
+        lin = fil.readline()
+        if lin == &quot;&quot;:
+            break
+        if lin[0] &lt; &#39;0&#39;:
+            continue
+        try:
+            # 请在此添加代码，补全函数loadProgram
+            #-----------Begin----------
+            addr = int (lin[:3])
+
+            stru =int ( lin[6:12])
+            mem[addr] = stru 
+            if first:
+                first =False
+                pReg = int(addr)
+
+
+            #------------End-----------
+        except:
+            pass
+    fil.close()
+
+
+def cycle():
+    global pReg, iReg, reg, mem
+
+    # 请在此添加代码，补全函数cycle
+    #-----------Begin----------
+    #print (pReg)
+    iReg = int(mem[pReg]) #从程序寄存器取地址存入指令寄存器
+    pReg +=1  #程序寄存器加1
+    #译码
+    opcode = iReg // 10000 #前两位是操作码
+    r = (iReg//1000) %10 #其次一位是寄存器编号
+    addr =(iReg)%1000 #后三位是 内存地址，与前面近期编号组合在一起为操作数
+    s =addr % 10
+
+    #------------End-----------
+
+    if opcode == 0:
+        printMachineState() #打印CPU内部状态信息
+        return 0
+    elif opcode == 1:
+        reg[r] = mem[addr]
+    # 请在此添加代码，补全函数cycle
+    #-----------Begin----------
+    elif opcode == 2:
+        mem[addr] = reg[r]
+    elif opcode == 3 :
+        reg[r] = int( addr )
+    elif opcode == 4 : #????
+        reg[r] =  mem[reg[s]]
+    elif opcode == 5 :
+        reg[r] = reg[r] + reg[s]
+    elif opcode == 6 :
+        reg [r] = reg[r] - reg[s]
+    elif opcode == 7 :
+        reg [r] = reg[r] * reg[s]
+    elif opcode == 8 :
+        reg [r] = reg[r] // reg[s] #???
+    elif opcode == 10:
+         pReg = addr 
+    elif opcode == 11 :
+        if reg[r] == 0:
+            pReg = addr  
+
+    #------------End-----------
+    return 1
+
+
+def run(fileName):
+    global pReg, iReg, reg, mem
+    printMachineState()
+    loadProgram(fileName)
+    printMachineState()
+
+    # 请在此添加代码，补全函数run
+    #-----------Begin----------
+    while 1: 
+        k = cycle()
+        if k == 0:
+            break   
+    #------------End-----------
+
+
+if __name__==&quot;__main__&quot;:
+    run(&#39;prog1.mml&#39;)
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/baidu-tongji.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

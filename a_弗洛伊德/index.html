@@ -1,0 +1,863 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>最短路径之弗洛伊德算法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="MOLU" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                MOLU
+              </span>
+              <span class="md-header-nav__topic">
+                最短路径之弗洛伊德算法
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link md-tabs__link--active">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../a_算法/" title="机器与深度学习" class="md-tabs__link">
+          机器与深度学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../new_error/" title="问题与分析" class="md-tabs__link">
+          问题与分析
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../c视频经典算法/" title="经典算法" class="md-tabs__link">
+          经典算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link">
+          高级算法
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="MOLU" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    MOLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      机器与深度学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        机器与深度学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_算法/" title="数据分析算法" class="md-nav__link">
+      数据分析算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_cnn/" title="CNN" class="md-nav__link">
+      CNN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../a_百度技术认证/" title="百度技术认证" class="md-nav__link">
+      百度技术认证
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      问题与分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        问题与分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_error/" title="方差,偏差，噪声" class="md-nav__link">
+      方差,偏差，噪声
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_modern/" title="模型评估方法和性能指标" class="md-nav__link">
+      模型评估方法和性能指标
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_sigmoid/" title="激活函数与梯度消失，梯度爆炸" class="md-nav__link">
+      激活函数与梯度消失，梯度爆炸
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_test/" title="验证集与测试集" class="md-nav__link">
+      验证集与测试集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new_transfer/" title="欠拟合，过拟合，正则化" class="md-nav__link">
+      欠拟合，过拟合，正则化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      经典算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        经典算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c视频经典算法/" title="蓝桥杯基础" class="md-nav__link">
+      蓝桥杯基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c蓝桥杯练习题/" title="蓝桥杯题" class="md-nav__link">
+      蓝桥杯题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c背包问题/" title="背包问题" class="md-nav__link">
+      背包问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c_leetcode/" title="leetcode" class="md-nav__link">
+      leetcode
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      高级算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        高级算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_Deepwalk/" title="Deepwalk等" class="md-nav__link">
+      Deepwalk等
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAN/" title="GAN" class="md-nav__link">
+      GAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GCN论文解读/" title="GCN" class="md-nav__link">
+      GCN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_GAT/" title="GAT" class="md-nav__link">
+      GAT
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="算法视频" class="md-nav__link">
+    算法视频
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="算法文章" class="md-nav__link">
+    算法文章
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#floyd" title="Floyd优缺点分析" class="md-nav__link">
+    Floyd优缺点分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floyddijkstra" title="Floyd算法与Dijkstra算法的不同" class="md-nav__link">
+    Floyd算法与Dijkstra算法的不同
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="算法拓展" class="md-nav__link">
+    算法拓展
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1.负权回路" class="md-nav__link">
+    1.负权回路
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.贪心算法" class="md-nav__link">
+    2.贪心算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3.动态规划" class="md-nav__link">
+    3.动态规划
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>最短路径之弗洛伊德算法</h1>
+                
+                <p>本文章基于对数据结构的图部分而写，</p>
+<p>多参考于其他文章以及视频，是对最短路径之弗洛伊德算法的总结，便于初学者的学习。</p>
+<h2 id="_1">算法视频<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本视频（电脑版）</p>
+<iframe 
+height=498 width=510 
+src="//player.bilibili.com/player.html?aid=69399865&cid=120279383&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>（手机版）</p>
+<iframe src="//player.bilibili.com/player.html?aid=69399865&cid=120279383&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://www.bilibili.com/video/av69399865?from=search&amp;seid=6037309969003625068">https://www.bilibili.com/video/av69399865?from=search&amp;seid=6037309969003625068</a></p>
+<h2 id="_2">算法文章<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>原文链接：<a href="https://blog.csdn.net/qq_34374664/article/details/52261597">https://blog.csdn.net/qq_34374664/article/details/52261597</a></p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzA5NTIzMTcyNi02NzYwMDIwNzYucG5n" /></p>
+<p>​        暑假，小哼准备去一些城市旅游。有些城市之间有公路，有些城市之间则没有，如下图。为了节省经费以及方便计划旅程，小哼希望在出发之前知道任意两个城市之前的最短路程。</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzA5NTI0NDA3Ny0zNTM2NDYxODQucG5n" /></p>
+<p>​        上图中有4个城市8条公路，公路上的数字表示这条公路的长短。请注意这些公路是单向的。我们现在需要求任意两个城市之间的最短路程，也就是求任意两个点之间的最短路径。这个问题这也被称为“多源最短路径”问题。</p>
+<p>​        现在需要一个数据结构来存储图的信息，我们仍然可以用一个4*4的矩阵（二维数组e）来存储。比如1号城市到2号城市的路程为2，则设e[1][2]的值为2。2号城市无法到达4号城市，则设置e[2][4]的值为∞。另外此处约定一个城市自己是到自己的也是0，例如e[1][1]为0，具体如下。</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzA5NTI1MjQzNC0xNjUwMzgzMjc4LnBuZw" /></p>
+<p>​        现在回到问题：如何求任意两点之间最短路径呢？通过之前的学习我们知道通过深度或广度优先搜索可以求出两点之间的最短路径。所以进行n2遍深度或广度优先搜索，即对每两个点都进行一次深度或广度优先搜索，便可以求得任意两点之间的最短路径。可是还有没有别的方法呢？</p>
+<p>​        我们来想一想，根据我们以往的经验，如果要让任意两点（例如从顶点a点到顶点b）之间的路程变短，只能引入第三个点（顶点k），并通过这个顶点k中转即a-&gt;k-&gt;b，才可能缩短原来从顶点a点到顶点b的路程。那么这个中转的顶点k是1~n中的哪个点呢？甚至有时候不只通过一个点，而是经过两个点或者更多点中转会更短，即a-&gt;k1-&gt;k2b-&gt;或者a-&gt;k1-&gt;k2…-&gt;k-&gt;i…-&gt;b。比如上图中从4号城市到3号城市（4-&gt;3）的路程e[4][3]原本是12。如果只通过1号城市中转（4-&gt;1-&gt;3），路程将缩短为11（e[4][1]+e[1][3]=5+6=11）。其实1号城市到3号城市也可以通过2号城市中转，使得1号到3号城市的路程缩短为5（e[1][2]+e[2][3]=2+3=5）。所以如果同时经过1号和2号两个城市中转的话，从4号城市到3号城市的路程会进一步缩短为10。通过这个的例子，我们发现每个顶点都有可能使得另外两个顶点之间的路程变短。好，下面我们将这个问题一般化。</p>
+<p>​        当任意两点之间不允许经过第三个点时，这些城市之间最短路程就是初始路程，如下。</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzA5NTMwMDkxMC02Mjk4MDQxNS5wbmc" /></p>
+<p>​        假如现在只允许经过1号顶点，求任意两点之间的最短路程，应该如何求呢？只需判断e[i][1]+e[1][j]是否比e[i][j]要小即可。e[i][j]表示的是从i号顶点到j号顶点之间的路程。e[i][1]+e[1][j]表示的是从i号顶点先到1号顶点，再从1号顶点到j号顶点的路程之和。其中i是1<sub>n循环，j也是1</sub>n循环，代码实现如下。</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+
+<span class="p">{</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span>
+
+              <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>在只允许经过1号顶点的情况下，任意两点之间的最短路程更新为：</p>
+<p><img alt="img" src="https://img-blog.csdnimg.cn/20191018163306231.png" /></p>
+<p>​        通过上图我们发现：在只通过1号顶点中转的情况下，3号顶点到2号顶点（e[3][2]）、4号顶点到2号顶点（e[4][2]）以及4号顶点到3号顶点（e[4][3]）的路程都变短了。</p>
+<p>​        接下来继续求在只允许经过1和2号两个顶点的情况下任意两点之间的最短路程。如何做呢？我们需要在只允许经过1号顶点时任意两点的最短路程的结果下，再判断如果经过2号顶点是否可以使得i号顶点到j号顶点之间的路程变得更短。即判断e[i][2]+e[2][j]是否比e[i][j]要小，代码实现为如下。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//经过1号顶点</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>  <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+
+<span class="c1">//经过2号顶点</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>  <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</code></pre></div>
+
+<p>在只允许经过1和2号顶点的情况下，任意两点之间的最短路程更新为：</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzEwMTIwMzkzNS0xMjgyMjAxMjQzLnBuZw" /></p>
+<p>​        通过上图得知，在相比只允许通过1号顶点进行中转的情况下，这里允许通过1和2号顶点进行中转，使得e[1][3]和e[4][3]的路程变得更短了。</p>
+<p>​        同理，继续在只允许经过1、2和3号顶点进行中转的情况下，求任意两点之间的最短路程。任意两点之间的最短路程更新为：</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzEwMTIxNzQ0NC00ODI5MjE3MzcucG5n" /></p>
+<p>最后允许通过所有顶点作为中转，任意两点之间最终的最短路程为：</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzEwMTIyNjA4MC0xNzM2MDA4ODUwLnBuZw" /></p>
+<p>整个算法过程虽然说起来很麻烦，但是代码实现却非常简单，核心代码只有五行：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+                 <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</code></pre></div>
+
+<p><code>这段代码的基本思想就是：最开始只允许经过1号顶点进行中转，接下来只允许经过1和2号顶点进行中转……允许经过1~n号所有顶点进行中转，求任意两点之间的最短路程。用一句话概括就是：从i号顶点到j号顶点只经过前k号点的最短路程。</code></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">e</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">10</span><span class="p">],</span><span class="n">k</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">t3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">inf</span><span class="o">=</span><span class="mi">99999999</span><span class="p">;</span> <span class="c1">//用inf(infinity的缩写)存储一个我们认为的正无穷值</span>
+    <span class="c1">//读入n和m，n表示顶点个数，m表示边的条数</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="c1">//初始化</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="n">j</span><span class="p">)</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>  
+              <span class="k">else</span> <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">inf</span><span class="p">;</span>
+
+    <span class="c1">//读入边</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+
+    <span class="p">{</span>
+
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d %d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t2</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t3</span><span class="p">);</span>
+
+        <span class="n">e</span><span class="p">[</span><span class="n">t1</span><span class="p">][</span><span class="n">t2</span><span class="p">]</span><span class="o">=</span><span class="n">t3</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">//Floyd-Warshall算法核心语句</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+
+            <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="p">)</span> 
+
+                    <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="n">e</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+
+    <span class="c1">//输出最终的结果</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+     <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+
+        <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%10d&quot;</span><span class="p">,</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+
+        <span class="p">}</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>​    </p>
+<h3 id="floyd">Floyd优缺点分析<a class="headerlink" href="#floyd" title="Permanent link">&para;</a></h3>
+<p>优点：容易理解，可以算出任意两个节点之间的最短距离，代码编写简单。
+缺点：时间复杂度比较高(n3)，不适合计算大量数据。</p>
+<h3 id="floyddijkstra">Floyd算法与Dijkstra算法的不同<a class="headerlink" href="#floyddijkstra" title="Permanent link">&para;</a></h3>
+<p>1.Floyd算法是求任意两点之间的距离，是多源最短路，而Dijkstra(迪杰斯特拉)算法是求一个顶点到其他所有顶点的最短路径，是单源最短路。
+2.Floyd算法可以算带负权的，而Dijkstra(迪杰斯特拉)算法是不可以算带负权的。并且Floyd算法不能算负权回路。
+3.Dijkstra(迪杰斯特拉)算法时间复杂度一般是o(n<sup>2),Floyd算法时间复杂度是o(n</sup>3),Dijkstra(迪杰斯特拉)算法比Floyd算法块。
+4.Floyd算法属于动态规划，Dijkstra(迪杰斯特拉)算法属于贪心算法。</p>
+<h2 id="_3">算法拓展<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1.负权回路<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>另外需要注意的是：Floyd-Warshall算法不能解决带有“负权回路”（或者叫“负权环”）的图，因为带有“负权回路”的图没有最短路。例如下面这个图就不存在1号顶点到3号顶点的最短路径。因为1-&gt;2-&gt;3-&gt;1-&gt;2-&gt;3-&gt;…-&gt;1-&gt;2-&gt;3这样路径中，每绕一次1-&gt;-2&gt;3这样的环，最短路就会减少1，永远找不到最短路。其实如果一个图中带有“负权回路”那么这个图则没有最短路。</p>
+<p><img alt="img" src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMzQ1MC8yMDE4MDYvMTAzMzQ1MC0yMDE4MDYyMzEwMTIzODEzNy0xNjA1NDYzMjY1LnBuZw" /></p>
+<h2 id="2">2.贪心算法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><a href="https://blog.csdn.net/fbz123456/article/details/51072736">点这里查看贪心算法的理解</a></p>
+<h2 id="3">3.动态规划<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html">点击这里查看动态规划算法</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/baidu-tongji.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -36,7 +36,7 @@
     
     
       
-        <title>GAN</title>
+        <title>错排公式</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#gan" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -105,7 +105,7 @@
                 MOLU
               </span>
               <span class="md-header-nav__topic">
-                GAN
+                错排公式
               </span>
             
           
@@ -153,16 +153,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="主页" class="md-tabs__link">
+      <a href=".." title="主页" class="md-tabs__link md-tabs__link--active">
         主页
       </a>
     
@@ -213,7 +211,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link md-tabs__link--active">
+        <a href="../d_Deepwalk/" title="高级算法" class="md-tabs__link">
           高级算法
         </a>
       
@@ -476,12 +474,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       高级算法
@@ -509,70 +505,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        GAN
-      </label>
-    
-    <a href="./" title="GAN" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../d_GAN/" title="GAN" class="md-nav__link">
       GAN
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="论文下载：" class="md-nav__link">
-    论文下载：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="论文思想：" class="md-nav__link">
-    论文思想：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="训练过程：" class="md-nav__link">
-    训练过程：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="代码实现：" class="md-nav__link">
-    代码实现：
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -619,36 +556,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="论文下载：" class="md-nav__link">
-    论文下载：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="论文思想：" class="md-nav__link">
-    论文思想：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="训练过程：" class="md-nav__link">
-    训练过程：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="代码实现：" class="md-nav__link">
-    代码实现：
+  <a href="#_1" title="错排公式" class="md-nav__link">
+    错排公式
   </a>
   
 </li>
@@ -670,49 +584,31 @@
               
                 
                 
-                <h1 id="gan">GAN（对抗网络）<a class="headerlink" href="#gan" title="Permanent link">&para;</a></h1>
-<p>本文章综合各路大神的经验，提取精华而写：</p>
-<h3 id="_1">论文下载：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><a href="https://gitee.com/moluggg/sources123/blob/master/GAN.pdf">https://gitee.com/moluggg/sources123/blob/master/GAN.pdf</a> </p>
-<h3 id="_2">论文思想：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>通俗理解版：</p>
-<p>建立两张神经网络，起名分别为生成网络<span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>和辨别网络<span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>。假的图片放入生成网络生成一张尽量逼真的图片，放入辨别网络，试图骗过辨别网络，让他**以为**是真的图片。而真的图片放入辨别网络输出为正确的答案（真）</p>
-<p>一图理解GAN：</p>
-<p><img src="https://gitee.com/moluggg/image/raw/master/img/2.png"/> </p>
-<p>解读：</p>
-<p>1.黑色部分解读：</p>
-<p>Pata 是 真实图片，Pg是假图片</p>
-<p>图中有两个x，一个是真实数据，另一个数假图片z经过生成器G成的数据，两个x都要经过$D(X)判别器</p>
-<p>生成器和判别器的目标恰好相反</p>
-<p>2.蓝色部分解读：</p>
-<p>判别器要做的事情：</p>
-<p>就是如果输入x来自Pata 则 输出的**值**（是的，输入一张图片或者数据，输出一个值），该值<span><span class="MathJax_Preview">D()</span><script type="math/tex">D()</script></span>应该越大越好</p>
-<p>反之，来自<span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>则  <span><span class="MathJax_Preview">D(X)</span><script type="math/tex">D(X)</script></span>值越小越好，为了方便，我们可以说 <span><span class="MathJax_Preview">1-D(X)</span><script type="math/tex">1-D(X)</script></span>越大越好，即<span><span class="MathJax_Preview">1-D(G(Z))</span><script type="math/tex">1-D(G(Z))</script></span>值越大越好</p>
-<p>则可以退出max公式</p>
-<p>3.绿色部分解读：</p>
-<p>生成器的输入输出都是照片（矩阵）</p>
-<p>他的目标就是改变参数，让输出的照片更加接近真实的照片。</p>
-<p>4.部分解读：</p>
-<p>绿色推导出来的公式与红色推导出来的公式联合</p>
-<h3 id="_3">训练过程：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>解读：</p>
-<p>GAN的训练在同一轮梯度反传的过程中可以细分为2步，先训练D在训练G；注意不是等所有的D训练好以后，才开始训练G，因为D的训练也需要上一轮梯度反传中G的输出值作为输入。</p>
-<p>当训练D的时候，上一轮G产生的图片，和真实图片，直接拼接在一起，作为x。然后根据，按顺序摆放0和1，假图对应0，真图对应1。然后就可以通过，x输入生成一个score（从0到1之间的数），通过score和y组成的损失函数，就可以进行梯度反传了。（我在图片上举的例子是batch = 1，len(y)=2*batch，训练时通常可以取较大的batch）</p>
-<p>当训练G的时候， 需要把G和D当作一个整体，我在这里取名叫做’D_on_G’。这个整体(下面简称DG系统)的输出仍然是score。输入一组随机向量，就可以在G生成一张图，通过D对生成的这张图进行打分，这就是DG系统的前向过程。score=1就是DG系统需要优化的目标，score和y=1之间的差异可以组成损失函数，然后可以反向传播梯度。注意，这里的D的参数是不可训练的。这样就能保证G的训练是符合D的打分标准的。这就好比：如果你参加考试，你别指望能改变老师的评分标准</p>
-<p>出自: <a href="https://blog.csdn.net/leviopku/article/details/81292192">https://blog.csdn.net/leviopku/article/details/81292192</a> </p>
-<p>原理推导：</p>
-<iframe src="//player.bilibili.com/player.html?aid=94538788&bvid=BV1eE411g7xc&cid=161337441&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<p>视频大概10+20+20 = 50分钟</p>
-<p>第一部分 引入</p>
-<p>第二部分 理解</p>
-<p>第三部分 公式推导 ： GAN的训练原理</p>
-<p>根据自己的需求观看： <a href="https://www.bilibili.com/video/BV1eE411g7xc?p=1">https://www.bilibili.com/video/BV1eE411g7xc?p=1</a> </p>
-<h3 id="_4">代码实现：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>GAN：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/89503068">https://zhuanlan.zhihu.com/p/89503068</a> </p>
-<p>代码简单举例:</p>
-<p><a href="https://mp.weixin.qq.com/s/sg9O761F0KHAmCPOfMW_kQ">https://mp.weixin.qq.com/s/sg9O761F0KHAmCPOfMW_kQ</a> </p>
+                  <h1>错排公式</h1>
+                
+                <h2 id="_1">错排公式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>​    1、当N=1和2时，易得解～，假设F(N-1)和F(N-2)已经得到，重点分析下面的情况：
+​     2、当有N封信的时候，前面N-1封信可以有N-1或者 N-2封错装
+​     3、前者，对于每一种错装，可以从N-1封信中任意取一封和第 N封错装，故=F(N-1) * (N-1)
+​     4、后者简单，只能是没装错的那封信和第N封信交换信封，没装错的那封信可以是前面N-1封信中的任意一个，故= F(N-2) * (N-1)
+​    得到如下递推公式：
+​     基本形式：d[1]=0;   d[2]=1 递归式：d[n]= (n-1)*( d[n-1] + d[n-2])
+​    </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">_int64</span> <span class="n">arr</span><span class="p">[</span><span class="mi">21</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">,</span><span class="n">i</span><span class="p">;</span>
+    <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">21</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">num</span><span class="p">)</span><span class="o">!=</span><span class="n">EOF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">arr</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
                 
                   
                 
@@ -729,41 +625,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../d_Deepwalk/" title="Deepwalk等" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  后退
-                </span>
-                Deepwalk等
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../d_GCN论文解读/" title="GCN" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  前进
-                </span>
-                GCN
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
